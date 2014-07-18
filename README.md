@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/pokitdok/pokitdok-ruby.svg?branch=master)](https://travis-ci.org/pokitdok/pokitdok-java)
-[![Gem Version](https://badge.fury.io/rb/pokitdok-ruby.svg)](http://badge.fury.io/rb/pokitdok-java)
+[![Build Status](https://travis-ci.org/pokitdok/pokitdok-java.svg?branch=master)](https://travis-ci.org/pokitdok/pokitdok-java)
+[![Gem Version](https://badge.fury.io/rb/pokitdok-java.svg)](http://badge.fury.io/rb/pokitdok-java)
 [![Dependency Freshness](https://www.versioneye.com/user/projects/538e498b46c4739edd0000ee/badge.svg)](https://www.versioneye.com/user/projects/538e498b46c4739edd0000ee)
 
 
