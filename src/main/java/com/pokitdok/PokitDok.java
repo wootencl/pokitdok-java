@@ -32,44 +32,65 @@ import org.json.simple.parser.ParseException;
 public class PokitDok {
   private String clientId;
   private String clientSecret;
+  private String apiVersion;
   private String accessToken;
   private JSONParser parser;
 
-  private String API_URL = "http://localhost:5002";
+  private String API_BASE = "http://localhost:5002";
 
-  public PokitDok(String clientId, String clientSecret) throws Exception {
-  	this.clientId 		= clientId;
-  	this.clientSecret = clientSecret;
-
-    connect();
-    parser = new JSONParser();
+  public PokitDok(String clientId, String clientSecret)
+    throws IOException, ParseException {
+    this(clientId, clientSecret, "v4");
   }
 
-  private void connect() throws Exception {
-    HttpPost request = new HttpPost(API_URL + "/oauth2/token");
+  public PokitDok(String clientId, String clientSecret, String apiVersion)
+    throws IOException, ParseException {
+    this.clientId     = clientId;
+    this.clientSecret = clientSecret;
+    this.apiVersion = apiVersion;
+
+    parser = new JSONParser();
+    connect();
+  }
+
+  private void connect() throws IOException, ParseException {
+    HttpPost request = new HttpPost(API_BASE + "/oauth2/token");
     List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
     urlParameters.add(new BasicNameValuePair("grant_type", "client_credentials"));
     request.setEntity(new UrlEncodedFormEntity(urlParameters)); 
 
     String auth = clientId + ":" + clientSecret;
+    System.out.println("auth string = " + auth);
     byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
     String authHeader = "Basic " + new String(encodedAuth);
+
     request.setHeader(HttpHeaders.AUTHORIZATION, authHeader);
+    setDefaultHeaders(request);
 
     CloseableHttpClient client = HttpClients.createDefault();
     HttpResponse response = client.execute(request);
-    accessToken = EntityUtils.toString(response.getEntity());
+    Map parsedResponse = (JSONObject) parser.parse(
+      EntityUtils.toString(response.getEntity()));
+
+    accessToken = (String) parsedResponse.get("access_token");
+    
     client.close();
   }
 
+  private void setDefaultHeaders(HttpRequestBase request) {
+    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.1");
+  }
+
   private Map executeAndParse(HttpRequestBase request) throws IOException {
-    request.setHeader(HttpHeaders.AUTHORIZATION, this.accessToken);
+    request.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + this.accessToken);
+    setDefaultHeaders(request);
     CloseableHttpClient client = HttpClients.createDefault();
     HttpResponse response = client.execute(request);
 
     Map parsedResponse = null;
     try {
-      parsedResponse = (JSONObject) parser.parse(EntityUtils.toString(response.getEntity()));
+      String res = EntityUtils.toString(response.getEntity());
+      parsedResponse = (JSONObject) parser.parse(res);
     }
     catch (ParseException pe) {
       System.out.println("Error while parsing response: " + pe.toString());
@@ -81,14 +102,18 @@ public class PokitDok {
     return parsedResponse;
   }
 
+  private String apiUrl(String endpoint) {
+    return API_BASE + "/api/" + apiVersion + "/" + endpoint;
+  }
+
   private Map get(String url, Map params) throws IOException {
-    HttpGet getRequest = new HttpGet(API_URL + url);
+    HttpGet getRequest = new HttpGet(apiUrl(url));
     
     return executeAndParse(getRequest);
   }
 
   private Map post(String url, Map params) throws IOException {
-    HttpPost postRequest = new HttpPost(API_URL + url);
+    HttpPost postRequest = new HttpPost(apiUrl(url));
     
     return executeAndParse(postRequest); 
   }
