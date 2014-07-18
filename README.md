@@ -171,7 +171,7 @@ public class PokitDokTest {
     batchQuery.put("parent_id", "537cd4b240b35755f5128d5c");
     pd.activities(batchQuery);
 
-    /* Upload an EDI file /*
+    /* Upload an EDI file */
     pd.files("trading_partner_id", "path/to/a_file.edi");
 
     /* Get cash prices */
