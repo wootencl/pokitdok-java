@@ -31,21 +31,38 @@ import com.pokitdok;
 public class PokitDokTest {
 	public static void main(String args[]) {
 		PokitDok pd = new PokitDok("your_client_id", "your_client_secret");
-		# Retrieve provider information by NPI
-		pd.providers(npi: '1467560003')
+		
+		/* Retrieve provider information by NPI */
+		Map npiQuery = new HashMap<String, String>();
+		npiQuery.put("npi", "1467560003")
+		pd.providers(npiQuery);
 
-		# Search providers by name (individuals)
-		pd.providers(first_name: 'JEROME', last_name: 'AYA-AY')
+		/* Search providers by name (individuals) */
+		Map nameQuery = new HashMap<String, String>();
+		nameQuery.put("first_name", "JEROME");
+		nameQuery.put("last_name", "AYA-AY")
+		pd.providers(nameQuery);
 
-		# Search providers by name (organizations)
-		pd.providers(name: 'Qliance')
+		/* Search providers by name (organizations) */
+		Map orgQuery = new HashMap<String, String>();
+		orgQuery.put("name", "Qliance");
+		pd.providers(orgQuery);
 
-		# Search providers by location and/or specialty
-		pd.providers(zipcode: '29307', radius: '10mi')
-		pd.providers(zipcode: '29307', radius: '10mi', specialty: 'RHEUMATOLOGY')
+		/* Search providers by location and/or specialty */
+		Map providerQuery = new HashMap<String, String>();
+		providerQuery.put("zipcode", "29307");
+		providerQuery.put("radius", "10mi");
+		providerQuery.put("specialty", "RHEUMATOLOGY");
+		pd.providers(providerQuery);
 
-		# Eligibility
-		@eligibility_query = {
+		/*
+			Eligibility endpoint example. This example uses the SimpleJSON library
+			to parse a file named eligibility.json into a Map, which is then passed
+			into the Eligibility endpoint. You can create this Map in any way you
+			prefer - loading it from JSON is done for succintness of discussion. The
+			contents of eligibility.json are as follows:
+		*/
+		{
 		  member: {
 		      birth_date: '1970-01-01',
 		      first_name: 'Jane',
@@ -61,10 +78,16 @@ public class PokitDokTest {
 		  trading_partner_id: 'MOCKPAYER'
 		}
 
-		pd.eligibility @eligibility_query
+		Map eligibilityQuery = JSONValue.parse("eligibility.json");
+		pd.eligibility(eligibilityQuery);
 
-		# Claim
-		@claim = {
+		/*
+			Claim endpoint example. This example parses a JSON file similarly to the
+			above Eligibility example. The JSON, contained in claim.json, is as
+			follows:
+		*/
+		
+		{
 		  transaction_code: 'chargeable',
 		  trading_partner_id: 'MOCKPAYER',
 		  billing_provider: {
@@ -107,25 +130,56 @@ public class PokitDokTest {
 		  }
 		}
 
-		pd.claim @claim
+		Map claimJSON = JSONValue.parse("claim.json");
+		pd.claim(claimJSON);
 
-		# Retrieve an index of activities
-		pd.activities 
+		/* Check the status of a Claim. claim_status.json looks like this: */
+		{
+		    "patient": {
+		        "birth_date": "1970-01-01",
+		        "first_name": "JANE",
+		        "last_name": "DOE",
+		        "id": "1234567890"
+		    },
+		    "provider": {
+		        "first_name": "Jerome",
+		        "last_name": "Aya-Ay",
+		        "npi": "1467560003",
+		    },
+		    "service_date": "2014-01-01",
+		    "trading_partner_id": "MOCKPAYER"
+		}
 
-		# Check on a specific activity
-		pd.activities(activity_id: '5362b5a064da150ef6f2526c')
+		Map claimStatusQuery = JSONValue.parse("claim_status.json");
+		pd.claimStatus(claimStatusQuery);
 
-		# Check on a batch of activities
-		pd.activities(parent_id: '537cd4b240b35755f5128d5c')
+		/* Retrieve an index of activities */
+		pd.activities();
 
-		# Upload an EDI file
-		pd.files('trading_partner_id', 'path/to/a_file.edi')
+		/* Check on a specific activity */
+		Map activityQuery = new HashMap<String, String>();
+		activityQuery.put("activity_id", "5362b5a064da150ef6f2526c");
+		pd.activities(activityQuery);
 
-		# Get cash prices
-		pd.cash_prices(cpt_code: '87799', zip_code: '75201')
+		/* Check on a batch of activities */
+		Map batchQuery = new HashMap<String, String>();
+		batchQuery.put("parent_id", "537cd4b240b35755f5128d5c");
+		pd.activities(batchQuery);
 
-		# Get insurance prices
-		pd.insurance_prices(cpt_code: '87799', zip_code: '29403')
+		/* Upload an EDI file /*
+		pd.files('trading_partner_id', 'path/to/a_file.edi');
+
+		/* Get cash prices */
+		Map cashQuery = new HashMap<String, String>();
+		cashQuery.put("cpt_code", "87799");
+		cashQuery.put("zip_code", "75201");
+		pd.cashPrices(cashQuery);
+
+		/* Get insurance prices */
+		Map insuranceQuery = new HashMap<String, String>();
+		cashQuery.put("cpt_code", "87799");
+		cashQuery.put("zip_code", "29403");
+		pd.insurancePrices(insuranceQuery);
 	}
 }
     
