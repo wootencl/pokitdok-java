@@ -1,6 +1,9 @@
 /**	
 	Client access library to the PokitDok APIs.
 */
+
+package com.pokitdok;
+
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.oltu.oauth2.client.*;
