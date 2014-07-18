@@ -1,0 +1,13 @@
+language: java
+jdk:
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
+  - openjdk6
+rvm:
+  - 2.1
+install:
+  - rvm use 2.1
+  - gem install bundler
+  - bundle install
+script: buildr clean package

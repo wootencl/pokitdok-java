@@ -201,10 +201,8 @@ PokitDok pd = new PokitDok("my_client_id", "my_client_secret", "v3")
 This library aims to support and is tested against these Java versions, 
 using travis-ci:
 
-* Java SE 8
-* Java SE 7
-* Java SE 6
-* OpenJDK
+* Oracle: Java SE 8, Java SE 7
+* OpenJDK: OpenJDK 7, OpenJDK 6
 
 ## License
 Copyright (c) 2014 PokitDok Inc. See [LICENSE][] for details.
