@@ -63,19 +63,19 @@ public class PokitDokTest {
       contents of eligibility.json are as follows:
     */
     {
-      member: {
-          birth_date: '1970-01-01',
-          first_name: 'Jane',
-          last_name: 'Doe',
-          id: 'W000000000'
+      "member": {
+          "birth_date": "1970-01-01",
+          "first_name": "Jane",
+          "last_name": "Doe",
+          "id": "W000000000"
       },
-      provider: {
-          first_name: 'JEROME',
-          last_name: 'AYA-AY',
-          npi: '1467560003'
+      "provider": {
+          "first_name": "JEROME",
+          "last_name": "AYA-AY",
+          "npi": "1467560003"
       },
-      service_types: ['health_benefit_plan_coverage'],
-      trading_partner_id: 'MOCKPAYER'
+      "service_types": ["health_benefit_plan_coverage"],
+      "trading_partner_id": "MOCKPAYER"
     }
 
     Map eligibilityQuery = JSONValue.parse("eligibility.json");
@@ -88,43 +88,43 @@ public class PokitDokTest {
     */
     
     {
-      transaction_code: 'chargeable',
-      trading_partner_id: 'MOCKPAYER',
-      billing_provider: {
-        taxonomy_code: '207Q00000X',
-        first_name: 'Jerome',
-        last_name: 'Aya-Ay',
-        npi: '1467560003',
-        address: {
-          address_lines: ['8311 WARREN H ABERNATHY HWY'],
-          city: 'SPARTANBURG',
-          state: 'SC',
-          zipcode: '29301'
+      "transaction_code": "chargeable",
+      "trading_partner_id": "MOCKPAYER",
+      "billing_provider": {
+        "taxonomy_code": "207Q00000X",
+        "first_name": "Jerome",
+        "last_name": "Aya-Ay",
+        "npi": "1467560003",
+        "address": {
+          "address_lines": ["8311 WARREN H ABERNATHY HWY"],
+          "city": "SPARTANBURG",
+          "state": "SC",
+          "zipcode": "29301"
         },
-        tax_id: '123456789'
+        "tax_id": "123456789"
       },
-      subscriber: {
-        first_name: 'Jane',
-        last_name: 'Doe',
-        member_id: 'W000000000',
-        address: {
-          address_lines: ['123 N MAIN ST'],
-          city: 'SPARTANBURG',
-          state: 'SC',
-          zipcode: '29301'
+      "subscriber": {
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "member_id": "W000000000",
+        "address": {
+          "address_lines": ["123 N MAIN ST"],
+          "city": "SPARTANBURG",
+          "state": "SC",
+          "zipcode": "29301"
         },
-        birth_date: '1970-01-01',
-        gender: 'female'
+        "birth_date": "1970-01-01",
+        "gender": "female"
       },
-      claim: {
-        total_charge_amount: 60.0,
-        service_lines: [
+      "claim": {
+        "total_charge_amount": 60.0,
+        "service_lines": [
           {
-            procedure_code: '99213',
-            charge_amount: 60.0,
-            unit_count: 1.0,
-            diagnosis_codes: ['487.1'],
-            service_date: '2014-06-01'
+            "procedure_code": "99213",
+            "charge_amount": 60.0,
+            "unit_count": 1.0,
+            "diagnosis_codes": ["487.1"],
+            "service_date": "2014-06-01"
           }
         ]
       }
@@ -167,7 +167,7 @@ public class PokitDokTest {
     pd.activities(batchQuery);
 
     /* Upload an EDI file /*
-    pd.files('trading_partner_id', 'path/to/a_file.edi');
+    pd.files("trading_partner_id", "path/to/a_file.edi");
 
     /* Get cash prices */
     Map cashQuery = new HashMap<String, String>();
@@ -186,7 +186,7 @@ public class PokitDokTest {
 ```
 
 This version of pokitdok-java supports, and defaults to using, the new
-PokitDok v4 API. If you'd like to continue using the previous v3 API,
+PokitDok v4 API. If you"d like to continue using the previous v3 API,
 instantiate the PokitDok object like this:
 
 ```
