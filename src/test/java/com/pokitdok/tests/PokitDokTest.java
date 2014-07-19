@@ -21,11 +21,16 @@ public class PokitDokTest {
   public void providersTest() throws Exception {
     PokitDok pd = new PokitDok("2MBlqahR2xiaBtVSS50n", "FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS");
     Map query = new HashMap<String, String>();
-    query.put("a", "b");
-    query.put("c", "d");
+    query.put("npi", "1467560003");
 
     Map response = pd.providers(query);
+    assertDataAndMeta(response);
+    
+  }
+
+  private void assertDataAndMeta(Map response) {
     assertNotNull(response);
-    System.out.println(response);
+    assert(response.containsKey("meta"));
+    assert(response.containsKey("data"));
   }
 }

@@ -5,11 +5,13 @@
 package com.pokitdok;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;
@@ -21,20 +23,24 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class PokitDok {
-  private String clientId;
-  private String clientSecret;
-  private String apiVersion;
-  private String accessToken;
-  private JSONParser parser;
+  private String      clientId;
+  private String      clientSecret;
+  private String      apiVersion;
+  private String      accessToken;
+  private JSONParser  parser;
 
   private String API_BASE = "http://localhost:5002";
 
@@ -44,7 +50,7 @@ public class PokitDok {
   }
 
   public PokitDok(String clientId, String clientSecret, String apiVersion)
-    throws IOException, ParseException {
+  throws IOException, ParseException {
     this.clientId     = clientId;
     this.clientSecret = clientSecret;
     this.apiVersion = apiVersion;
@@ -60,7 +66,6 @@ public class PokitDok {
     request.setEntity(new UrlEncodedFormEntity(urlParameters)); 
 
     String auth = clientId + ":" + clientSecret;
-    System.out.println("auth string = " + auth);
     byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
     String authHeader = "Basic " + new String(encodedAuth);
 
@@ -69,7 +74,7 @@ public class PokitDok {
 
     CloseableHttpClient client = HttpClients.createDefault();
     HttpResponse response = client.execute(request);
-    Map parsedResponse = (JSONObject) parser.parse(
+    Map<String, Object> parsedResponse = (JSONObject) parser.parse(
       EntityUtils.toString(response.getEntity()));
 
     accessToken = (String) parsedResponse.get("access_token");
@@ -81,13 +86,14 @@ public class PokitDok {
     request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.1");
   }
 
-  private Map executeAndParse(HttpRequestBase request) throws IOException {
+  private Map<String, Object> executeAndParse(HttpRequestBase request)
+  throws IOException {
     request.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + this.accessToken);
     setDefaultHeaders(request);
     CloseableHttpClient client = HttpClients.createDefault();
     HttpResponse response = client.execute(request);
 
-    Map parsedResponse = null;
+    Map<String, Object> parsedResponse = null;
     try {
       String res = EntityUtils.toString(response.getEntity());
       parsedResponse = (JSONObject) parser.parse(res);
@@ -102,54 +108,92 @@ public class PokitDok {
     return parsedResponse;
   }
 
-  private String apiUrl(String endpoint) {
-    return API_BASE + "/api/" + apiVersion + "/" + endpoint;
+  private String apiUrl(String endpoint, Map<String, Object> params) {
+    String uri = API_BASE + "/api/" + apiVersion + "/" + endpoint;
+
+    if ((params != null) && (!params.isEmpty())) {
+      try {
+        URIBuilder uriWithParams = new URIBuilder(uri);
+
+        for(String key: params.keySet()) {
+          uriWithParams.addParameter(key, (String) params.get(key));
+        }
+
+        uri = uriWithParams.build().toString();
+        System.out.println(uri);
+      }
+      catch (URISyntaxException use) {
+        System.out.println("URI Syntax Exception " + use);
+        uri = null;
+      }
+    }
+    
+    return uri;
   }
 
-  private Map get(String url, Map params) throws IOException {
-    HttpGet getRequest = new HttpGet(apiUrl(url));
-    
+  private String apiUrl(String endpoint) {
+    return apiUrl(endpoint, null);
+  }
+
+  private Map<String, Object> get(String url, Map<String, Object> params)
+  throws IOException {
+    HttpGet getRequest = new HttpGet(apiUrl(url, params));
+
     return executeAndParse(getRequest);
   }
 
-  private Map post(String url, Map params) throws IOException {
+  private Map<String, Object> post(String url, Map<String, Object> params)
+  throws IOException {
     HttpPost postRequest = new HttpPost(apiUrl(url));
     
+    String json = JSONValue.toJSONString(params);
+    StringEntity entity = new StringEntity(json);
+    entity.setContentEncoding(HTTP.UTF_8);
+    entity.setContentType("application/json");
+    postRequest.setEntity(entity);
+
     return executeAndParse(postRequest); 
   }
 
   /** Invokes the activities endpoint, with a HashMap of parameters. */
-  public Map activities(Map params) throws IOException { 
-    return get("activities/", params);
+  public Map<String, Object> activities(Map<String, Object> params)
+  throws IOException { 
+    return get("activities", params);
   }
 
   /** Invokes the cash prices endpoint, with a HashMap of parameters. */
-  public Map cashPrices(Map params) throws IOException {
+  public Map<String, Object> cashPrices(Map<String, Object> params)
+  throws IOException {
     return get("prices/cash", params);
   }
    
   /** Invokes the insurance prices endpoint, with a HashMap of parameters. */
-  public Map insurancePrices(Map params) throws IOException { 
+  public Map<String, Object> insurancePrices(Map<String, Object> params)
+  throws IOException { 
     return get("prices/insurance", params);
   }
 
   /** Invokes the claims endpoint, with a HashMap of parameters. */
-  public Map claims(Map params) throws IOException {
+  public Map<String, Object> claims(Map<String, Object> params)
+  throws IOException {
     return post("claims/", params);
   }
 
   /** Invokes the claim status endpoint, with a HashMap of parameters. */
-  public Map claimStatus(Map params) throws IOException {
+  public Map<String, Object> claimStatus(Map<String, Object> params)
+  throws IOException {
     return post("claims/status", params);
   }
 
   /** Invokes the eligibility endpoint, with a HashMap of parameters. */
-  public Map eligibility(Map params) throws IOException {
+  public Map<String, Object> eligibility(Map<String, Object> params)
+  throws IOException {
     return post("eligibility/", params);
   }
 
   /** Invokes the enrollment endpoint, with a HashMap of parameters. */
-  public Map enrollment(Map params) throws IOException { 
+  public Map<String, Object> enrollment(Map<String, Object> params)
+  throws IOException { 
     return post("enrollment", params);
   }
 
@@ -160,17 +204,20 @@ public class PokitDok {
     
     @param filename the path to the file to transmit
   */
-  public Map files(String tradingPartnerId, String filename) throws IOException {
+  public Map<String, Object> files(String tradingPartnerId, String filename)
+  throws IOException {
     return new HashMap();
   }
 
   /** Invokes the payers endpoint, with a HashMap of parameters. */
-  public Map payers(Map params) throws IOException {
+  public Map<String, Object> payers(Map<String, Object> params)
+  throws IOException {
     return get("payers", params);
   }
 
   /** Invokes the providers endpoint, with a HashMap of parameters. */
-  public Map providers(Map params) throws IOException {
+  public Map<String, Object> providers(Map<String, Object> params)
+  throws IOException {
     return get("providers", params);
   }
 }

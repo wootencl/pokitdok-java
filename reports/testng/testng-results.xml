@@ -2,22 +2,22 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="pokitdok-java" duration-ms="392" started-at="2014-07-18T21:20:49Z" finished-at="2014-07-18T21:20:50Z">
+  <suite name="pokitdok-java" duration-ms="429" started-at="2014-07-19T01:18:55Z" finished-at="2014-07-19T01:18:56Z">
     <groups>
       <group name="providers">
-        <method signature="PokitDokTest.providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2abe0e27]" name="providersTest" class="com.pokitdok.tests.PokitDokTest"/>
+        <method signature="PokitDokTest.providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="providersTest" class="com.pokitdok.tests.PokitDokTest"/>
       </group> <!-- providers -->
       <group name="basic">
-        <method signature="PokitDokTest.shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2abe0e27]" name="shouldCreateTest" class="com.pokitdok.tests.PokitDokTest"/>
+        <method signature="PokitDokTest.shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="shouldCreateTest" class="com.pokitdok.tests.PokitDokTest"/>
       </group> <!-- basic -->
     </groups>
-    <test name="Command line test" duration-ms="392" started-at="2014-07-18T21:20:49Z" finished-at="2014-07-18T21:20:50Z">
+    <test name="Command line test" duration-ms="429" started-at="2014-07-19T01:18:55Z" finished-at="2014-07-19T01:18:56Z">
       <class name="com.pokitdok.tests.PokitDokTest">
-        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2abe0e27]" name="providersTest" duration-ms="359" started-at="2014-07-18T17:20:49Z" finished-at="2014-07-18T17:20:50Z">
+        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="providersTest" duration-ms="398" started-at="2014-07-18T21:18:55Z" finished-at="2014-07-18T21:18:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- providersTest -->
-        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2abe0e27]" name="shouldCreateTest" duration-ms="26" started-at="2014-07-18T17:20:50Z" finished-at="2014-07-18T17:20:50Z">
+        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="shouldCreateTest" duration-ms="25" started-at="2014-07-18T21:18:56Z" finished-at="2014-07-18T21:18:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldCreateTest -->
