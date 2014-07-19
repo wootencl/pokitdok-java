@@ -19,10 +19,14 @@ PokitDok Platform API Client for Java
 ## Installation
 
 ### Manual Install
-You can download pokitdok-java.jar from this site and include it on your classpath, like any other JAR.
+You can download pokitdok-java-0.1.jar from this site and include it on your classpath, like any other JAR.
+A few other JAR requirements need to be on your classpath - they can be obtained from the usual sources. They are:
+* Apache HTTPCore and HTTPClient, available from [http://hc.apache.org/downloads.cgi](http://hc.apache.org/downloads.cgi)
+* Apache Commons Codec, available from [http://commons.apache.org/proper/commons-codec/download_codec.cgi](http://commons.apache.org/proper/commons-codec/download_codec.cgi)
+* Apache Commons Logging, available from [http://commons.apache.org/proper/commons-logging/download_logging.cgi](http://commons.apache.org/proper/commons-logging/download_logging.cgi)
+* json-simple, available from [https://code.google.com/p/json-simple/downloads/detail?name=json-simple-1.1.1.jar](https://code.google.com/p/json-simple/downloads/detail?name=json-simple-1.1.1.jar)
 
-### Maven
-_Maven central install steps?_
+Future versions will be deployed to Maven, to automate installation and the management of these dependencies.
 
 ## Quick Start
 ```java
