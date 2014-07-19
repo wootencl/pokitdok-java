@@ -2,52 +2,52 @@
 <testng-results skipped="0" failed="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="pokitdok-java" duration-ms="994" started-at="2014-07-19T02:23:37Z" finished-at="2014-07-19T02:23:38Z">
+  <suite name="pokitdok-java" duration-ms="4164" started-at="2014-07-19T02:58:10Z" finished-at="2014-07-19T02:58:14Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="994" started-at="2014-07-19T02:23:37Z" finished-at="2014-07-19T02:23:38Z">
+    <test name="Command line test" duration-ms="4164" started-at="2014-07-19T02:58:10Z" finished-at="2014-07-19T02:58:14Z">
       <class name="com.pokitdok.tests.PokitDokTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="setup" is-config="true" duration-ms="279" started-at="2014-07-18T22:23:37Z" finished-at="2014-07-18T22:23:37Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="setup" is-config="true" duration-ms="1162" started-at="2014-07-18T22:58:09Z" finished-at="2014-07-18T22:58:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="activitiesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="activitiesTest" duration-ms="231" started-at="2014-07-18T22:23:37Z" finished-at="2014-07-18T22:23:37Z">
+        <test-method status="PASS" signature="activitiesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="activitiesTest" duration-ms="614" started-at="2014-07-18T22:58:10Z" finished-at="2014-07-18T22:58:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- activitiesTest -->
-        <test-method status="PASS" signature="cashPricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="cashPricesTest" duration-ms="63" started-at="2014-07-18T22:23:37Z" finished-at="2014-07-18T22:23:37Z">
+        <test-method status="PASS" signature="cashPricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="cashPricesTest" duration-ms="452" started-at="2014-07-18T22:58:10Z" finished-at="2014-07-18T22:58:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cashPricesTest -->
-        <test-method status="PASS" signature="claimsStatusTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsStatusTest" duration-ms="29" started-at="2014-07-18T22:23:37Z" finished-at="2014-07-18T22:23:37Z">
+        <test-method status="PASS" signature="claimsStatusTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsStatusTest" duration-ms="471" started-at="2014-07-18T22:58:11Z" finished-at="2014-07-18T22:58:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- claimsStatusTest -->
-        <test-method status="PASS" signature="claimsTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsTest" duration-ms="29" started-at="2014-07-18T22:23:37Z" finished-at="2014-07-18T22:23:37Z">
+        <test-method status="PASS" signature="claimsTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsTest" duration-ms="482" started-at="2014-07-18T22:58:11Z" finished-at="2014-07-18T22:58:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- claimsTest -->
-        <test-method status="PASS" signature="eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="eligibilityTest" duration-ms="471" started-at="2014-07-18T22:23:37Z" finished-at="2014-07-18T22:23:38Z">
+        <test-method status="PASS" signature="eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="eligibilityTest" duration-ms="475" started-at="2014-07-18T22:58:12Z" finished-at="2014-07-18T22:58:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- eligibilityTest -->
-        <test-method status="PASS" signature="filesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="filesTest" duration-ms="1" started-at="2014-07-18T22:23:38Z" finished-at="2014-07-18T22:23:38Z">
+        <test-method status="PASS" signature="filesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="filesTest" duration-ms="0" started-at="2014-07-18T22:58:12Z" finished-at="2014-07-18T22:58:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filesTest -->
-        <test-method status="PASS" signature="insurancePricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="insurancePricesTest" duration-ms="39" started-at="2014-07-18T22:23:38Z" finished-at="2014-07-18T22:23:38Z">
+        <test-method status="PASS" signature="insurancePricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="insurancePricesTest" duration-ms="478" started-at="2014-07-18T22:58:12Z" finished-at="2014-07-18T22:58:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- insurancePricesTest -->
-        <test-method status="PASS" signature="payersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="payersTest" duration-ms="64" started-at="2014-07-18T22:23:38Z" finished-at="2014-07-18T22:23:38Z">
+        <test-method status="PASS" signature="payersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="payersTest" duration-ms="598" started-at="2014-07-18T22:58:13Z" finished-at="2014-07-18T22:58:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payersTest -->
-        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="providersTest" duration-ms="57" started-at="2014-07-18T22:23:38Z" finished-at="2014-07-18T22:23:38Z">
+        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="providersTest" duration-ms="583" started-at="2014-07-18T22:58:13Z" finished-at="2014-07-18T22:58:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- providersTest -->
-        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="shouldCreateTest" duration-ms="0" started-at="2014-07-18T22:23:38Z" finished-at="2014-07-18T22:23:38Z">
+        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="shouldCreateTest" duration-ms="0" started-at="2014-07-18T22:58:14Z" finished-at="2014-07-18T22:58:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldCreateTest -->
