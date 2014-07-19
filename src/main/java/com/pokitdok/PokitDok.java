@@ -120,7 +120,6 @@ public class PokitDok {
         }
 
         uri = uriWithParams.build().toString();
-        System.out.println(uri);
       }
       catch (URISyntaxException use) {
         System.out.println("URI Syntax Exception " + use);

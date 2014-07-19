@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="pokitdok-java" duration-ms="429" started-at="2014-07-19T01:18:55Z" finished-at="2014-07-19T01:18:56Z">
+  <suite name="pokitdok-java" duration-ms="486" started-at="2014-07-19T02:00:55Z" finished-at="2014-07-19T02:00:55Z">
     <groups>
       <group name="providers">
-        <method signature="PokitDokTest.providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="providersTest" class="com.pokitdok.tests.PokitDokTest"/>
+        <method signature="PokitDokTest.providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="providersTest" class="com.pokitdok.tests.PokitDokTest"/>
       </group> <!-- providers -->
       <group name="basic">
-        <method signature="PokitDokTest.shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="shouldCreateTest" class="com.pokitdok.tests.PokitDokTest"/>
+        <method signature="PokitDokTest.shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="shouldCreateTest" class="com.pokitdok.tests.PokitDokTest"/>
       </group> <!-- basic -->
+      <group name="eligibility">
+        <method signature="PokitDokTest.eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="eligibilityTest" class="com.pokitdok.tests.PokitDokTest"/>
+      </group> <!-- eligibility -->
     </groups>
-    <test name="Command line test" duration-ms="429" started-at="2014-07-19T01:18:55Z" finished-at="2014-07-19T01:18:56Z">
+    <test name="Command line test" duration-ms="486" started-at="2014-07-19T02:00:55Z" finished-at="2014-07-19T02:00:55Z">
       <class name="com.pokitdok.tests.PokitDokTest">
-        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="providersTest" duration-ms="398" started-at="2014-07-18T21:18:55Z" finished-at="2014-07-18T21:18:56Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="setup" is-config="true" duration-ms="257" started-at="2014-07-18T22:00:54Z" finished-at="2014-07-18T22:00:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="eligibilityTest" duration-ms="419" started-at="2014-07-18T22:00:55Z" finished-at="2014-07-18T22:00:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eligibilityTest -->
+        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="providersTest" duration-ms="62" started-at="2014-07-18T22:00:55Z" finished-at="2014-07-18T22:00:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- providersTest -->
-        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@2393385d]" name="shouldCreateTest" duration-ms="25" started-at="2014-07-18T21:18:56Z" finished-at="2014-07-18T21:18:56Z">
+        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="shouldCreateTest" duration-ms="0" started-at="2014-07-18T22:00:55Z" finished-at="2014-07-18T22:00:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldCreateTest -->
