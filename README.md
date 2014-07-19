@@ -19,7 +19,7 @@ PokitDok Platform API Client for Java
 ## Installation
 
 ### Manual Install
-You can download pokitdok-java-0.1.jar from this site and include it on your classpath, like any other JAR.
+You can download pokitdok-java-0.1.jar from this [https://github.com/pokitdok/pokitdok-java/blob/master/target/pokitdok-java-0.1.jar](this site) and include it on your classpath, like any other JAR.
 A few other JAR requirements need to be on your classpath as well. They are:
 * Apache HTTPCore and HTTPClient, available from [http://hc.apache.org/downloads.cgi](http://hc.apache.org/downloads.cgi)
 * Apache Commons Codec, available from [http://commons.apache.org/proper/commons-codec/download_codec.cgi](http://commons.apache.org/proper/commons-codec/download_codec.cgi)
