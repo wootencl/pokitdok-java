@@ -61,10 +61,10 @@ public class PokitDokTest {
 
     /*
       Eligibility endpoint example. This example uses the SimpleJSON library
-      to parse a file named eligibility.json into a Map, which is then passed
-      into the Eligibility endpoint. You can create this Map in any way you
-      prefer - loading it from JSON is done for succintness of discussion. The
-      contents of eligibility.json are as follows:
+      to parse a string called "eligibility", containing JSON, into a Map,
+      which is then passed into the Eligibility endpoint. You can create this
+      Map in any way you prefer - loading it from a JSON string is done for
+      succintness of discussion. The contents of the string are as follows:
 
       {
         "member": {
@@ -83,13 +83,12 @@ public class PokitDokTest {
       }
     */
 
-    Map eligibilityQuery = JSONValue.parse("eligibility.json");
+    Map eligibilityQuery = JSONValue.parse(eligibility);
     pd.eligibility(eligibilityQuery);
 
     /*
-      Claim endpoint example. This example parses a JSON file similarly to the
-      above Eligibility example. The JSON, contained in claim.json, is as
-      follows:
+      Claim endpoint example. This example parses a JSON string similarly to the
+      above Eligibility example. The JSON is as follows:
 
       {
         "transaction_code": "chargeable",
@@ -135,11 +134,11 @@ public class PokitDokTest {
       }
     */
 
-    Map claimJSON = JSONValue.parse("claim.json");
+    Map claimJSON = JSONValue.parse(claim);
     pd.claim(claimJSON);
 
     /*
-      Check the status of a Claim. claim_status.json looks like this:
+      Check the status of a Claim. The JSON looks like this:
       
       {
           "patient": {
@@ -158,7 +157,7 @@ public class PokitDokTest {
       }
     */
 
-    Map claimStatusQuery = JSONValue.parse("claim_status.json");
+    Map claimStatusQuery = JSONValue.parse(claimStatus);
     pd.claimStatus(claimStatusQuery);
 
     /* Retrieve an index of activities */
