@@ -26,7 +26,7 @@ A few other JAR requirements need to be on your classpath as well. They are:
 * Apache Commons Logging, available from [http://commons.apache.org/proper/commons-logging/download_logging.cgi](http://commons.apache.org/proper/commons-logging/download_logging.cgi)
 * json-simple, available from [https://code.google.com/p/json-simple/downloads/detail?name=json-simple-1.1.1.jar](https://code.google.com/p/json-simple/downloads/detail?name=json-simple-1.1.1.jar)
 
-Future versions will be deployed to Maven, to automate installation and the management of these dependencies.
+Future versions will be deployed to the Maven central repository, to automate installation and the management of these dependencies.
 
 ## Quick Start
 ```java
