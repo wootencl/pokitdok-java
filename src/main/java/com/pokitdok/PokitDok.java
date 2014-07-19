@@ -160,6 +160,10 @@ public class PokitDok {
     return get("activities", params);
   }
 
+  public Map<String, Object> activities() throws IOException {
+    return activities(null);
+  }
+
   /** Invokes the cash prices endpoint, with a HashMap of parameters. */
   public Map<String, Object> cashPrices(Map<String, Object> params)
   throws IOException {
@@ -214,9 +218,19 @@ public class PokitDok {
     return get("payers", params);
   }
 
+  /** Invokes the payers endpoint, with no parameters. */
+  public Map<String, Object> payers() throws IOException {
+    return payers(null);
+  }
+
   /** Invokes the providers endpoint, with a HashMap of parameters. */
   public Map<String, Object> providers(Map<String, Object> params)
   throws IOException {
     return get("providers", params);
+  }
+
+  /** Invokes the providers endpoint, with no parameters. */
+  public Map<String, Object> providers() throws IOException {
+    return providers(null);
   }
 }

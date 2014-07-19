@@ -20,12 +20,34 @@ public class PokitDokTest {
     pd = new PokitDok("2MBlqahR2xiaBtVSS50n", "FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS");
   }
 
-  @Test(groups = { "basic" })
+  @Test
   public void shouldCreateTest() throws Exception {
     assertNotNull(pd);
   }
 
-  @Test(groups = { "providers" })
+  @Test
+  public void cashPricesTest() throws Exception {
+    Map cashQuery = new HashMap<String, String>();
+    cashQuery.put("cpt_code", "87799");
+    cashQuery.put("zip_code", "75201");
+
+    Map<String, Object> response = pd.cashPrices(cashQuery);
+    assertDataAndMeta(response);
+    assertSomeData(response);
+  }
+
+  @Test
+  public void insurancePricesTest() throws Exception {
+    Map insuranceQuery = new HashMap<String, String>();
+    insuranceQuery.put("cpt_code", "87799");
+    insuranceQuery.put("zip_code", "29403");
+
+    Map<String, Object> response = pd.insurancePrices(insuranceQuery);
+    assertDataAndMeta(response);
+    assertSomeData(response);
+  }
+
+  @Test
   public void providersTest() throws Exception {
     Map query = new HashMap<String, String>();
     query.put("npi", "1467560003");
@@ -35,7 +57,7 @@ public class PokitDokTest {
     assertSomeData(response);
   }
 
-  @Test(groups = { "eligibility" })
+  @Test
   public void eligibilityTest() throws Exception {
     String eligibility = readEntireFile("src/test/scaffold/eligibility.json");
 
@@ -45,6 +67,50 @@ public class PokitDokTest {
     assertDataAndMeta(response);
     assertSomeData(response);
   }
+
+  @Test
+  public void claimsTest() throws Exception {
+    String claim = readEntireFile("src/test/scaffold/claim.json");
+
+    Map claimQuery = (JSONObject) JSONValue.parse(claim);
+    Map<String, Object> response = pd.eligibility(claimQuery);
+
+    assertDataAndMeta(response);
+    assertSomeData(response);
+  }
+
+  @Test
+  public void claimsStatusTest() throws Exception {
+    String claimStatus = readEntireFile("src/test/scaffold/claim_status.json");
+
+    Map claimStatusQuery = (JSONObject) JSONValue.parse(claimStatus);
+    Map<String, Object> response = pd.eligibility(claimStatusQuery);
+
+    assertDataAndMeta(response);
+    assertSomeData(response);
+  }
+
+  @Test
+  public void filesTest() throws Exception {
+
+  }
+
+  @Test
+  public void activitiesTest() throws Exception {
+    Map<String, Object> response = pd.activities();
+    assertDataAndMeta(response);
+  }
+  
+  @Test
+  public void payersTest() throws Exception {
+    Map<String, Object> response = pd.payers();
+    assertDataAndMeta(response);
+  }
+
+
+  /****************************************************************************
+    Beyond lie utility methods for testing purposes. Nothing to see here.
+  ****************************************************************************/
 
   private void assertDataAndMeta(Map response) {
     assertNotNull(response);

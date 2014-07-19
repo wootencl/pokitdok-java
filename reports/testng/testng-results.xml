@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="pokitdok-java" duration-ms="486" started-at="2014-07-19T02:00:55Z" finished-at="2014-07-19T02:00:55Z">
+  <suite name="pokitdok-java" duration-ms="913" started-at="2014-07-19T02:18:36Z" finished-at="2014-07-19T02:18:37Z">
     <groups>
-      <group name="providers">
-        <method signature="PokitDokTest.providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="providersTest" class="com.pokitdok.tests.PokitDokTest"/>
-      </group> <!-- providers -->
-      <group name="basic">
-        <method signature="PokitDokTest.shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="shouldCreateTest" class="com.pokitdok.tests.PokitDokTest"/>
-      </group> <!-- basic -->
-      <group name="eligibility">
-        <method signature="PokitDokTest.eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="eligibilityTest" class="com.pokitdok.tests.PokitDokTest"/>
-      </group> <!-- eligibility -->
     </groups>
-    <test name="Command line test" duration-ms="486" started-at="2014-07-19T02:00:55Z" finished-at="2014-07-19T02:00:55Z">
+    <test name="Command line test" duration-ms="913" started-at="2014-07-19T02:18:36Z" finished-at="2014-07-19T02:18:37Z">
       <class name="com.pokitdok.tests.PokitDokTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="setup" is-config="true" duration-ms="257" started-at="2014-07-18T22:00:54Z" finished-at="2014-07-18T22:00:55Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="setup" is-config="true" duration-ms="265" started-at="2014-07-18T22:18:36Z" finished-at="2014-07-18T22:18:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="eligibilityTest" duration-ms="419" started-at="2014-07-18T22:00:55Z" finished-at="2014-07-18T22:00:55Z">
+        <test-method status="PASS" signature="activitiesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="activitiesTest" duration-ms="205" started-at="2014-07-18T22:18:36Z" finished-at="2014-07-18T22:18:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- activitiesTest -->
+        <test-method status="PASS" signature="cashPricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="cashPricesTest" duration-ms="38" started-at="2014-07-18T22:18:36Z" finished-at="2014-07-18T22:18:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cashPricesTest -->
+        <test-method status="PASS" signature="claimsStatusTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsStatusTest" duration-ms="31" started-at="2014-07-18T22:18:36Z" finished-at="2014-07-18T22:18:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- claimsStatusTest -->
+        <test-method status="PASS" signature="claimsTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsTest" duration-ms="26" started-at="2014-07-18T22:18:36Z" finished-at="2014-07-18T22:18:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- claimsTest -->
+        <test-method status="PASS" signature="eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="eligibilityTest" duration-ms="413" started-at="2014-07-18T22:18:36Z" finished-at="2014-07-18T22:18:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- eligibilityTest -->
-        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="providersTest" duration-ms="62" started-at="2014-07-18T22:00:55Z" finished-at="2014-07-18T22:00:55Z">
+        <test-method status="PASS" signature="insurancePricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="insurancePricesTest" duration-ms="39" started-at="2014-07-18T22:18:37Z" finished-at="2014-07-18T22:18:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insurancePricesTest -->
+        <test-method status="PASS" signature="filesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="filesTest" duration-ms="0" started-at="2014-07-18T22:18:37Z" finished-at="2014-07-18T22:18:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filesTest -->
+        <test-method status="PASS" signature="payersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="payersTest" duration-ms="89" started-at="2014-07-18T22:18:37Z" finished-at="2014-07-18T22:18:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- payersTest -->
+        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="providersTest" duration-ms="64" started-at="2014-07-18T22:18:37Z" finished-at="2014-07-18T22:18:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- providersTest -->
-        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@4ac9131c]" name="shouldCreateTest" duration-ms="0" started-at="2014-07-18T22:00:55Z" finished-at="2014-07-18T22:00:55Z">
+        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="shouldCreateTest" duration-ms="0" started-at="2014-07-18T22:18:37Z" finished-at="2014-07-18T22:18:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldCreateTest -->
