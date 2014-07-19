@@ -17,6 +17,10 @@ public class PokitDokTest {
 
   @BeforeSuite
   public void setup() throws Exception {
+    /*
+      For your own testing, you'll need to replace this client id and secret
+      with your own.
+    */
     pd = new PokitDok("2MBlqahR2xiaBtVSS50n", "FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS");
   }
 
