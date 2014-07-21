@@ -5,20 +5,22 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
+import co.freeside.betamax.Recorder;
 import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.*;
-
-
 import org.testng.annotations.*;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import com.pokitdok.PokitDok;
 
 public class PokitDokTest {
+  private Recorder recorder;
   private PokitDok pd;
 
   @BeforeSuite
   public void setup() throws Exception {
+    recorder = new Recorder();
+
     /*
       For your own testing, you'll need to replace this client id and secret
       with your own.
