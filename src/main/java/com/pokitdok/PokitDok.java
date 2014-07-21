@@ -4,6 +4,7 @@
 
 package com.pokitdok;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
@@ -20,6 +21,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -36,13 +38,14 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class PokitDok {
-  private String      clientId;
-  private String      clientSecret;
-  private String      apiVersion;
-  private String      accessToken;
-  private JSONParser  parser;
+  private String            clientId;
+  private String            clientSecret;
+  private String            apiVersion;
+  private String            accessToken;
+  private HttpClientBuilder builder;
+  private JSONParser        parser;
 
-  private String API_BASE = "https://platform.pokitdok.com";
+  private String API_BASE = "http://localhost:5002";
 
   public PokitDok(String clientId, String clientSecret)
     throws IOException, ParseException {
@@ -56,6 +59,8 @@ public class PokitDok {
     this.apiVersion = apiVersion;
 
     parser = new JSONParser();
+    builder = HttpClientBuilder.create();
+    builder.useSystemProperties();
     connect();
   }
 
@@ -72,7 +77,7 @@ public class PokitDok {
     request.setHeader(HttpHeaders.AUTHORIZATION, authHeader);
     setDefaultHeaders(request);
 
-    CloseableHttpClient client = HttpClients.createDefault();
+    CloseableHttpClient client = builder.build();
     HttpResponse response = client.execute(request);
     Map<String, Object> parsedResponse = (JSONObject) parser.parse(
       EntityUtils.toString(response.getEntity()));
@@ -90,7 +95,7 @@ public class PokitDok {
   throws IOException {
     request.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + this.accessToken);
     setDefaultHeaders(request);
-    CloseableHttpClient client = HttpClients.createDefault();
+    CloseableHttpClient client = builder.build();
     HttpResponse response = client.execute(request);
 
     Map<String, Object> parsedResponse = null;
@@ -204,10 +209,20 @@ public class PokitDok {
     Uploads an EDI file to the files endpoint.
     
     @param trading_partner_id the trading partner to transmit to
-    
     @param filename the path to the file to transmit
   */
   public Map<String, Object> files(String tradingPartnerId, String filename)
+  throws IOException {
+    return files(tradingPartnerId, new File(filename));
+  }
+
+    /** 
+    Uploads an EDI file to the files endpoint.
+    
+    @param trading_partner_id the trading partner to transmit to
+    @param file the file to transmit
+  */
+  public Map<String, Object> files(String tradingPartnerId, File filename)
   throws IOException {
     return new HashMap();
   }

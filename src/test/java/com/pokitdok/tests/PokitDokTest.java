@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.HashMap;
 import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.*;
+
+
 import org.testng.annotations.*;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -37,7 +39,7 @@ public class PokitDokTest {
 
     Map<String, Object> response = pd.cashPrices(cashQuery);
     assertDataAndMeta(response);
-    assertSomeData(response);
+    assertHasData(response);
   }
 
   @Test
@@ -48,7 +50,7 @@ public class PokitDokTest {
 
     Map<String, Object> response = pd.insurancePrices(insuranceQuery);
     assertDataAndMeta(response);
-    assertSomeData(response);
+    assertHasData(response);
   }
 
   @Test
@@ -58,7 +60,7 @@ public class PokitDokTest {
 
     Map response = pd.providers(query);
     assertDataAndMeta(response);
-    assertSomeData(response);
+    assertHasData(response);
   }
 
   @Test
@@ -69,7 +71,7 @@ public class PokitDokTest {
     Map<String, Object> response = pd.eligibility(eligibilityQuery);
 
     assertDataAndMeta(response);
-    assertSomeData(response);
+    assertHasData(response);
   }
 
   @Test
@@ -80,7 +82,7 @@ public class PokitDokTest {
     Map<String, Object> response = pd.eligibility(claimQuery);
 
     assertDataAndMeta(response);
-    assertSomeData(response);
+    assertHasData(response);
   }
 
   @Test
@@ -91,7 +93,7 @@ public class PokitDokTest {
     Map<String, Object> response = pd.eligibility(claimStatusQuery);
 
     assertDataAndMeta(response);
-    assertSomeData(response);
+    assertHasData(response);
   }
 
   @Test
@@ -111,19 +113,17 @@ public class PokitDokTest {
     assertDataAndMeta(response);
   }
 
-
   /****************************************************************************
     Beyond lie utility methods for testing purposes. Nothing to see here.
   ****************************************************************************/
 
   private void assertDataAndMeta(Map response) {
-    assertNotNull(response);
-    assert(response.containsKey("meta"));
-    assert(response.containsKey("data"));
+    assertTrue((response != null) && response.containsKey("meta") && response.containsKey("data"));
   }
 
-  private void assertSomeData(Map response) {
-    assert(((Map) response.get("data")).size() > 0);
+  private void assertHasData(Map response) {
+    Map data = (Map) response.get("data");
+    assertTrue((data != null) && (data.size() > 0));
   }
 
   /** Utility method for loading up JSON scaffolds. Don't do this. */

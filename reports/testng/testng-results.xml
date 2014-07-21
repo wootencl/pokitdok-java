@@ -1,53 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="10" passed="10">
+<testng-results skipped="0" failed="1" total="10" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="pokitdok-java" duration-ms="4164" started-at="2014-07-19T02:58:10Z" finished-at="2014-07-19T02:58:14Z">
+  <suite name="pokitdok-java" duration-ms="911" started-at="2014-07-21T16:25:03Z" finished-at="2014-07-21T16:25:04Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="4164" started-at="2014-07-19T02:58:10Z" finished-at="2014-07-19T02:58:14Z">
+    <test name="Command line test" duration-ms="911" started-at="2014-07-21T16:25:03Z" finished-at="2014-07-21T16:25:04Z">
       <class name="com.pokitdok.tests.PokitDokTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="setup" is-config="true" duration-ms="1162" started-at="2014-07-18T22:58:09Z" finished-at="2014-07-18T22:58:10Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="setup" is-config="true" duration-ms="269" started-at="2014-07-21T12:25:03Z" finished-at="2014-07-21T12:25:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="activitiesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="activitiesTest" duration-ms="614" started-at="2014-07-18T22:58:10Z" finished-at="2014-07-18T22:58:10Z">
+        <test-method status="PASS" signature="activitiesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="activitiesTest" duration-ms="198" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- activitiesTest -->
-        <test-method status="PASS" signature="cashPricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="cashPricesTest" duration-ms="452" started-at="2014-07-18T22:58:10Z" finished-at="2014-07-18T22:58:11Z">
+        <test-method status="PASS" signature="cashPricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="cashPricesTest" duration-ms="32" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cashPricesTest -->
-        <test-method status="PASS" signature="claimsStatusTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsStatusTest" duration-ms="471" started-at="2014-07-18T22:58:11Z" finished-at="2014-07-18T22:58:11Z">
+        <test-method status="PASS" signature="claimsStatusTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="claimsStatusTest" duration-ms="21" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- claimsStatusTest -->
-        <test-method status="PASS" signature="claimsTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="claimsTest" duration-ms="482" started-at="2014-07-18T22:58:11Z" finished-at="2014-07-18T22:58:12Z">
+        <test-method status="PASS" signature="claimsTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="claimsTest" duration-ms="29" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- claimsTest -->
-        <test-method status="PASS" signature="eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="eligibilityTest" duration-ms="475" started-at="2014-07-18T22:58:12Z" finished-at="2014-07-18T22:58:12Z">
+        <test-method status="PASS" signature="eligibilityTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="eligibilityTest" duration-ms="461" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- eligibilityTest -->
-        <test-method status="PASS" signature="filesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="filesTest" duration-ms="0" started-at="2014-07-18T22:58:12Z" finished-at="2014-07-18T22:58:12Z">
+        <test-method status="PASS" signature="filesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="filesTest" duration-ms="0" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filesTest -->
-        <test-method status="PASS" signature="insurancePricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="insurancePricesTest" duration-ms="478" started-at="2014-07-18T22:58:12Z" finished-at="2014-07-18T22:58:13Z">
+        <test-method status="PASS" signature="insurancePricesTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="insurancePricesTest" duration-ms="40" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- insurancePricesTest -->
-        <test-method status="PASS" signature="payersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="payersTest" duration-ms="598" started-at="2014-07-18T22:58:13Z" finished-at="2014-07-18T22:58:13Z">
+        <test-method status="PASS" signature="payersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="payersTest" duration-ms="58" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- payersTest -->
-        <test-method status="PASS" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="providersTest" duration-ms="583" started-at="2014-07-18T22:58:13Z" finished-at="2014-07-18T22:58:14Z">
+        <test-method status="FAIL" signature="providersTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="providersTest" duration-ms="62" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
+          <exception class="java.lang.ClassCastException">
+            <message>
+              <![CDATA[org.json.simple.JSONArray cannot be cast to java.util.Map]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ClassCastException: org.json.simple.JSONArray cannot be cast to java.util.Map
+	at com.pokitdok.tests.PokitDokTest.assertHasData(PokitDokTest.java:125)
+	at com.pokitdok.tests.PokitDokTest.providersTest(PokitDokTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.TestNG.privateMain(TestNG.java:1364)
+	at org.testng.TestNG.main(TestNG.java:1333)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ClassCastException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- providersTest -->
-        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@38dda25b]" name="shouldCreateTest" duration-ms="0" started-at="2014-07-18T22:58:14Z" finished-at="2014-07-18T22:58:14Z">
+        <test-method status="PASS" signature="shouldCreateTest()[pri:0, instance:com.pokitdok.tests.PokitDokTest@5705b99f]" name="shouldCreateTest" duration-ms="0" started-at="2014-07-21T12:25:04Z" finished-at="2014-07-21T12:25:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldCreateTest -->
