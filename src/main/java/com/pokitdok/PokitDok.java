@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
@@ -21,13 +20,13 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
@@ -45,7 +44,7 @@ public class PokitDok {
   private HttpClientBuilder builder;
   private JSONParser        parser;
 
-  private String API_BASE = "https://platform.pokitdok.com";
+  private String API_BASE = "http://localhost:5002";
 
   public PokitDok(String clientId, String clientSecret)
     throws IOException, ParseException {
@@ -88,7 +87,7 @@ public class PokitDok {
   }
 
   private void setDefaultHeaders(HttpRequestBase request) {
-    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.1");
+    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.1" + System.getProperty("java.version"));
   }
 
   private Map<String, Object> executeAndParse(HttpRequestBase request)

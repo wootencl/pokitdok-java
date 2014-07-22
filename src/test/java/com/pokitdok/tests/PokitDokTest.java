@@ -25,7 +25,7 @@ public class PokitDokTest {
       For your own testing, you'll need to replace this client id and secret
       with your own.
     */
-    pd = new PokitDok("2MBlqahR2xiaBtVSS50n", "FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS");
+    pd = new PokitDok("fi5HZVH3gif94QvdIXeI", "Iu7YEVLQRzNPOcqEb4no4kNgvCov28bCguNFxiMl");
   }
 
   @Test
@@ -41,7 +41,6 @@ public class PokitDokTest {
 
     Map<String, Object> response = pd.cashPrices(cashQuery);
     assertDataAndMeta(response);
-    assertHasData(response);
   }
 
   @Test
@@ -52,7 +51,6 @@ public class PokitDokTest {
 
     Map<String, Object> response = pd.insurancePrices(insuranceQuery);
     assertDataAndMeta(response);
-    assertHasData(response);
   }
 
   @Test
@@ -62,7 +60,6 @@ public class PokitDokTest {
 
     Map response = pd.providers(query);
     assertDataAndMeta(response);
-    assertHasData(response);
   }
 
   @Test
@@ -120,12 +117,15 @@ public class PokitDokTest {
   ****************************************************************************/
 
   private void assertDataAndMeta(Map response) {
-    assertTrue((response != null) && response.containsKey("meta") && response.containsKey("data"));
+    assertNotNull(response);
+    assertTrue(response.containsKey("meta"));
+    assertTrue(response.containsKey("data"));
   }
 
   private void assertHasData(Map response) {
     Map data = (Map) response.get("data");
-    assertTrue((data != null) && (data.size() > 0));
+    assertNotNull(data);
+    assertTrue(data.size() > 0);
   }
 
   /** Utility method for loading up JSON scaffolds. Don't do this. */
