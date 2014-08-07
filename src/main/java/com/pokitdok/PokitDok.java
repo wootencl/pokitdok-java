@@ -1,4 +1,4 @@
-/**	
+/**
 	Client access library to the PokitDok APIs.
 */
 
@@ -70,7 +70,7 @@ public class PokitDok {
     HttpPost request = new HttpPost(API_BASE + "/oauth2/token");
     List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
     urlParameters.add(new BasicNameValuePair("grant_type", "client_credentials"));
-    request.setEntity(new UrlEncodedFormEntity(urlParameters)); 
+    request.setEntity(new UrlEncodedFormEntity(urlParameters));
 
     String auth = clientId + ":" + clientSecret;
     byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
@@ -85,7 +85,7 @@ public class PokitDok {
       EntityUtils.toString(response.getEntity()));
 
     accessToken = (String) parsedResponse.get("access_token");
-    
+
     client.close();
   }
 
@@ -121,7 +121,7 @@ public class PokitDok {
       System.out.println("Error while parsing response: " + pe.toString());
     }
     finally {
-      client.close();      
+      client.close();
     }
 
     return parsedResponse;
@@ -144,7 +144,7 @@ public class PokitDok {
         uri = null;
       }
     }
-    
+
     return uri;
   }
 
@@ -162,14 +162,14 @@ public class PokitDok {
   private Map<String, Object> post(String url, Map<String, Object> params)
   throws IOException, UnauthorizedException {
     HttpPost postRequest = new HttpPost(apiUrl(url));
-    
+
     String json = JSONValue.toJSONString(params);
     StringEntity entity = new StringEntity(json);
     entity.setContentEncoding(HTTP.UTF_8);
     entity.setContentType("application/json");
     postRequest.setEntity(entity);
 
-    return executeAndParse(postRequest); 
+    return executeAndParse(postRequest);
   }
 
   private boolean isUnauthorized(Map<String, Object> response, boolean throwOnUnauthorized) throws UnauthorizedException {
@@ -191,7 +191,7 @@ public class PokitDok {
 
   /** Invokes the activities endpoint, with a HashMap of parameters. */
   public Map<String, Object> activities(Map<String, Object> params)
-  throws IOException, UnauthorizedException { 
+  throws IOException, UnauthorizedException {
     return get("activities", params);
   }
 
@@ -204,10 +204,10 @@ public class PokitDok {
   throws IOException, UnauthorizedException {
     return get("prices/cash", params);
   }
-   
+
   /** Invokes the insurance prices endpoint, with a HashMap of parameters. */
   public Map<String, Object> insurancePrices(Map<String, Object> params)
-  throws IOException, UnauthorizedException { 
+  throws IOException, UnauthorizedException {
     return get("prices/insurance", params);
   }
 
@@ -231,13 +231,13 @@ public class PokitDok {
 
   /** Invokes the enrollment endpoint, with a HashMap of parameters. */
   public Map<String, Object> enrollment(Map<String, Object> params)
-  throws IOException, UnauthorizedException { 
+  throws IOException, UnauthorizedException {
     return post("enrollment", params);
   }
 
-  /** 
+  /**
     Uploads an EDI file to the files endpoint.
-    
+
     @param trading_partner_id the trading partner to transmit to
     @param filename the path to the file to transmit
   */
@@ -246,9 +246,9 @@ public class PokitDok {
     return files(tradingPartnerId, new File(filename));
   }
 
-    /** 
+    /**
     Uploads an EDI file to the files endpoint.
-    
+
     @param trading_partner_id the trading partner to transmit to
     @param file the file to transmit
   */
@@ -277,5 +277,17 @@ public class PokitDok {
   /** Invokes the providers endpoint, with no parameters. */
   public Map<String, Object> providers() throws IOException, UnauthorizedException {
     return providers(null);
+  }
+
+  /** Invokes the trading partners endpoint, with a HashMap of parameters. */
+  public Map<String, Object> tradingPartners(Map<String, Object> params)
+  throws IOException, UnauthorizedException {
+    if (params.containsKey("trading_partner_id")) {
+      String tradingPartnerId = (String) params.remove("trading_partner_id");
+      return get("tradingpartners/"+tradingPartnerId, params);
+    }
+    else {
+      return get("tradingpartners/", params);
+    }
   }
 }
