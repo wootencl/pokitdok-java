@@ -8,7 +8,7 @@
   </parent>
   <groupId>com.pokitdok</groupId>
   <artifactId>pokitdok-java</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.3-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>pokitdok-java</name>
   <description>pokitdok-java</description>

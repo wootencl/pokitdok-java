@@ -1,7 +1,7 @@
 require 'buildr/gpg'
 require 'buildr/custom_pom'
 
-VERSION_NUMBER = "0.2-SNAPSHOT"
+VERSION_NUMBER = "0.3-SNAPSHOT"
 
 repositories.remote += %w[ http://repo1.maven.org/maven2 http://mvnrepository.com ]
 
