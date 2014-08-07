@@ -1,5 +1,5 @@
 package com.pokitdok.tests;
- 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -105,11 +105,27 @@ public class PokitDokTest {
     Map<String, Object> response = pd.activities();
     assertDataAndMeta(response);
   }
-  
+
   @Test
   public void payersTest() throws Exception {
     Map<String, Object> response = pd.payers();
     assertDataAndMeta(response);
+  }
+
+  @Test
+  public void tradingPartnersIndexTest() throws Exception {
+    Map<String, Object> response = pd.tradingPartners(new HashMap<String, Object>());
+    assertDataAndMeta(response);
+    assertTrue(response.get("data") instanceof org.json.simple.JSONArray);
+  }
+
+  @Test
+  public void tradingPartnersGetTest() throws Exception {
+    Map query = new HashMap<String, String>();
+    query.put("trading_partner_id", "MOCKPAYER");
+    Map<String, Object> response = pd.tradingPartners(query);
+    assertDataAndMeta(response);
+    assertTrue(response.get("data") instanceof org.json.simple.JSONObject);
   }
 
   /****************************************************************************
