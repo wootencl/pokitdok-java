@@ -290,4 +290,10 @@ public class PokitDok {
       return get("tradingpartners/", params);
     }
   }
+
+  /** Invokes the plans endpoint, with a HashMap of parameters. */
+  public Map<String, Object> plans(Map<String, Object> params)
+  throws IOException, UnauthorizedException {
+    return get("plans/", params);
+  }
 }
