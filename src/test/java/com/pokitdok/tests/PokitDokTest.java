@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import com.pokitdok.PokitDok;
+import org.json.simple.JSONArray;
 
 public class PokitDokTest {
   private Recorder recorder;
@@ -128,6 +129,24 @@ public class PokitDokTest {
     assertTrue(response.get("data") instanceof org.json.simple.JSONObject);
   }
 
+  @Test
+  public void plansTestNoArgs() throws Exception {
+    Map query = new HashMap<String, String>();
+    Map<String, Object> response = pd.plans(query);
+    assertDataAndMeta(response);
+    assertHasDataArray(response);
+  }
+
+  @Test
+  public void plansTest() throws Exception {
+    Map query = new HashMap<String, String>();
+    query.put("state", "TX");
+    query.put("plan_type", "PPO");
+    Map<String, Object> response = pd.plans(query);
+    assertDataAndMeta(response);
+    assertHasDataArray(response);
+  }
+
   /****************************************************************************
     Beyond lie utility methods for testing purposes. Nothing to see here.
   ****************************************************************************/
@@ -140,6 +159,12 @@ public class PokitDokTest {
 
   private void assertHasData(Map response) {
     Map data = (Map) response.get("data");
+    assertNotNull(data);
+    assertTrue(data.size() > 0);
+  }
+
+  private void assertHasDataArray(Map response) {
+    JSONArray data = (JSONArray) response.get("data");
     assertNotNull(data);
     assertTrue(data.size() > 0);
   }
