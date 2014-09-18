@@ -1,9 +1,10 @@
 require 'buildr/gpg'
 require 'buildr/custom_pom'
 
-VERSION_NUMBER = "0.3-SNAPSHOT"
+VERSION_NUMBER = "0.5-SNAPSHOT"
 
 repositories.remote += %w[ http://repo1.maven.org/maven2 http://mvnrepository.com ]
+repositories.release_to = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
 
 HTTP_CLIENT = transitive('org.apache.httpcomponents:httpclient:jar:4.3.4')
 JSON_SIMPLE = 'com.googlecode.json-simple:json-simple:jar:1.1.1'
