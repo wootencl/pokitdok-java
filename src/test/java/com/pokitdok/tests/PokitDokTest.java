@@ -26,12 +26,21 @@ public class PokitDokTest {
       For your own testing, you'll need to replace this client id and secret
       with your own.
     */
-    pd = new PokitDok("fi5HZVH3gif94QvdIXeI", "Iu7YEVLQRzNPOcqEb4no4kNgvCov28bCguNFxiMl");
+    pd = new PokitDok("WbkhoNbwuJRWdz0w9Ehl", "OPA9HSOUMJLYyZrH4VRPZLoL51gGtm7U4OxuYiz6");
   }
 
   @Test
   public void shouldCreateTest() throws Exception {
     assertNotNull(pd);
+  }
+
+  @Test
+  public void authorizationsTest() throws Exception {
+    String authorizations = readEntireFile("src/test/scaffold/authorizations.json");
+    Map query = (JSONObject) JSONValue.parse(authorizations);
+    
+    Map<String, Object> response = pd.authorizations(query);
+    assertDataAndMeta(response);
   }
 
   @Test
@@ -110,6 +119,12 @@ public class PokitDokTest {
   @Test
   public void payersTest() throws Exception {
     Map<String, Object> response = pd.payers();
+    assertDataAndMeta(response);
+  }
+
+  @Test
+  public void plansTest() throws Exception {
+    Map<String, Object> response = pd.plans();
     assertDataAndMeta(response);
   }
 
