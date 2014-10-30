@@ -1,0 +1,95 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+group = "com.pokitdok"
+archivesBaseName = "pokitdok-java"
+version = "0.6-SNAPSHOT"
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+    compile {
+        transitive = true
+    }
+    runtime {
+        extendsFrom compile
+    }
+    test {
+    	extendsFrom compile	
+    }
+}
+
+dependencies {
+	compile gradleApi()
+	compile localGroovy()
+
+	compile 'org.apache.httpcomponents:httpclient:4.3.4', 'com.googlecode.json-simple:json-simple:1.1.1'
+	test 'co.freeside:betamax:1.1.2', 'org.codehaus.groovy:groovy:2.3.4'
+}
+
+// Sonatype Publishing Configurations
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = "javadoc"
+	from "build/docs/javadoc"
+}
+
+task sourcesJar(type: Jar) {
+	from sourceSets.main.allSource
+	classifier = "sources"
+}
+
+artifacts {
+	archives jar
+	archives javadocJar
+	archives sourcesJar
+}
+
+signing {
+	sign configurations.archives
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+				authentication(userName: sonatypeUsername, password: sonatypePassword)
+			}
+
+			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+				authentication(userName: sonatypeUsername, password: sonatypePassword)
+			}
+
+			pom.project {
+				name "pokitdok-java"
+				packaging "jar"
+				description "A Java client library for the PokitDok Platform APIs."
+				url "https://github.com/pokitdok/pokitdok-java"
+
+				scm {
+					url 'scm:git@github.com:pokitdok/pokitdok-java.git'
+					connection 'scm:git@github.com:pokitdok/pokitdok-java.git'
+					developerConnection 'scm:git@github.com:67726e/gradle-twirl.git'
+				}
+
+				licenses {
+					license {
+						name "The MIT License (MIT)"
+						url "http://opensource.org/licenses/MIT"
+					}
+				}
+
+				developers {
+					developer {
+						name "PokitDok, Inc."
+						email "platform@pokitdok.com"
+					}
+				}
+			}
+		}
+	}
+}
