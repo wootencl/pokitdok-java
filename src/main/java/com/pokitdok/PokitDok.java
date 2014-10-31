@@ -238,7 +238,7 @@ public class PokitDok {
   /**
     Uploads an EDI file to the files endpoint.
 
-    @param trading_partner_id the trading partner to transmit to
+    @param tradingPartnerId the trading partner to transmit to
     @param filename the path to the file to transmit
   */
   public Map<String, Object> files(String tradingPartnerId, String filename)
@@ -249,8 +249,8 @@ public class PokitDok {
     /**
     Uploads an EDI file to the files endpoint.
 
-    @param trading_partner_id the trading partner to transmit to
-    @param file the file to transmit
+    @param tradingPartnerId the trading partner to transmit to
+    @param filename the file to transmit
   */
   public Map<String, Object> files(String tradingPartnerId, File filename)
   throws IOException, UnauthorizedException {

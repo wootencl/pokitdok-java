@@ -15,10 +15,11 @@ configurations {
         transitive = true
     }
     runtime {
-        extendsFrom compile
+        extendsFrom compile, testCompile
     }
-    test {
-    	extendsFrom compile	
+    testCompile {
+    	extendsFrom compile
+    	transitive = true
     }
 }
 
@@ -27,7 +28,16 @@ dependencies {
 	compile localGroovy()
 
 	compile 'org.apache.httpcomponents:httpclient:4.3.4', 'com.googlecode.json-simple:json-simple:1.1.1'
-	test 'co.freeside:betamax:1.1.2', 'org.codehaus.groovy:groovy:2.3.4'
+	//testCompile 'co.freeside:betamax:1.1.2'
+}
+
+
+test {
+	useTestNG()
+
+    filter {
+        includeTestsMatching "com.pokitdok.tests.*"
+    }
 }
 
 // Sonatype Publishing Configurations
