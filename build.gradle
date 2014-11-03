@@ -32,9 +32,9 @@ dependencies {
 test {
 	useTestNG()
 
-//    filter {
-//        includeTestsMatching "com.pokitdok.tests.*"
-//    }
+    filter {
+        includeTestsMatching "com.pokitdok.tests.*"
+    }
 }
 
 // Sonatype Publishing Configurations
