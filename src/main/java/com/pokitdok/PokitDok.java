@@ -45,7 +45,7 @@ public class PokitDok {
   private JSONParser        parser;
   private boolean           failedOnceAlready;
 
-  private String API_BASE = "http://localhost:5002";
+  private String API_BASE = "https://platform.pokitdok.com";
 
   public PokitDok(String clientId, String clientSecret)
     throws IOException, ParseException {
