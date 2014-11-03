@@ -5,7 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
-//import co.freeside.betamax.Recorder;
+import co.freeside.betamax.Betamax;
+import co.freeside.betamax.Recorder;
 import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.*;
 import org.testng.annotations.*;
@@ -15,18 +16,18 @@ import com.pokitdok.PokitDok;
 import org.json.simple.JSONArray;
 
 public class PokitDokTest {
-  //private Recorder recorder;
+  private Recorder recorder;
   private PokitDok pd;
 
   @BeforeSuite
   public void setup() throws Exception {
-    //recorder = new Recorder();
+    recorder = new Recorder();
 
     /*
       For your own testing, you'll need to replace this client id and secret
       with your own.
     */
-    pd = new PokitDok("fi5HZVH3gif94QvdIXeI", "Iu7YEVLQRzNPOcqEb4no4kNgvCov28bCguNFxiMl");
+    pd = new PokitDok("n6pbYbNOI5YZdRXRPBBP", "0OsPyvxlgdjAWGY0hSrfTViQWukz4UNyuigNUz1v");
   }
 
   @Test
@@ -35,6 +36,7 @@ public class PokitDokTest {
   }
 
   @Test
+  @Betamax(tape="cashPrices")
   public void cashPricesTest() throws Exception {
     Map cashQuery = new HashMap<String, String>();
     cashQuery.put("cpt_code", "87799");

@@ -24,20 +24,17 @@ configurations {
 }
 
 dependencies {
-	compile gradleApi()
-	compile localGroovy()
-
 	compile 'org.apache.httpcomponents:httpclient:4.3.4', 'com.googlecode.json-simple:json-simple:1.1.1'
-	//testCompile 'co.freeside:betamax:1.1.2'
+	testCompile 'co.freeside:betamax:1.1.2', 'org.testng:testng:6.8.8', "org.codehaus.groovy:groovy:2.3.6"
 }
 
 
 test {
 	useTestNG()
 
-    filter {
-        includeTestsMatching "com.pokitdok.tests.*"
-    }
+//    filter {
+//        includeTestsMatching "com.pokitdok.tests.*"
+//    }
 }
 
 // Sonatype Publishing Configurations
