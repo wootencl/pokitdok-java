@@ -45,7 +45,7 @@ public class PokitDok {
   private JSONParser        parser;
   private boolean           failedOnceAlready;
 
-  private String API_BASE = "http://localhost:5002";
+  private String API_BASE = "https://platform.pokitdok.com";
 
   public PokitDok(String clientId, String clientSecret)
     throws IOException, ParseException {
@@ -90,7 +90,7 @@ public class PokitDok {
   }
 
   private void setDefaultHeaders(HttpRequestBase request) {
-    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6" + System.getProperty("java.version"));
+    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.1" + System.getProperty("java.version"));
   }
 
   private Map<String, Object> executeAndParse(HttpRequestBase request)
@@ -211,12 +211,6 @@ public class PokitDok {
     return get("prices/cash", params);
   }
 
-  /** Invokes the insurance prices endpoint, with a HashMap of parameters. */
-  public Map<String, Object> insurancePrices(Map<String, Object> params)
-  throws IOException, UnauthorizedException {
-    return get("prices/insurance", params);
-  }
-
   /** Invokes the claims endpoint, with a HashMap of parameters. */
   public Map<String, Object> claims(Map<String, Object> params)
   throws IOException, UnauthorizedException {
@@ -263,6 +257,12 @@ public class PokitDok {
     return new HashMap();
   }
 
+  /** Invokes the insurance prices endpoint, with a HashMap of parameters. */
+  public Map<String, Object> insurancePrices(Map<String, Object> params)
+  throws IOException, UnauthorizedException {
+    return get("prices/insurance", params);
+  }
+
   /** Invokes the payers endpoint, with a HashMap of parameters. */
   public Map<String, Object> payers(Map<String, Object> params)
   throws IOException, UnauthorizedException {
@@ -295,12 +295,17 @@ public class PokitDok {
     return providers(null);
   }
 
+  /** Invokes the referrals endpoint, with a HashMap of parameters. */
+  public Map<String, Object> referrals(Map<String, Object> params) throws IOException, UnauthorizedException {
+    return post("referrals/", params);
+  }
+
   /** Invokes the trading partners endpoint, with a HashMap of parameters. */
   public Map<String, Object> tradingPartners(Map<String, Object> params)
   throws IOException, UnauthorizedException {
     if (params.containsKey("trading_partner_id")) {
       String tradingPartnerId = (String) params.remove("trading_partner_id");
-      return get("tradingpartners/"+tradingPartnerId, params);
+      return get("tradingpartners/" + tradingPartnerId, params);
     }
     else {
       return get("tradingpartners/", params);

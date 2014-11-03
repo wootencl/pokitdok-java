@@ -157,6 +157,17 @@ public class PokitDokTest {
     assertHasDataArray(response);
   }
 
+  @Test
+  public void referralsTest() throws Exception {
+    String referrals = readEntireFile("src/test/scaffold/referrals.json");
+
+    Map referralsQuery = (JSONObject) JSONValue.parse(referrals);
+    Map<String, Object> response = pd.referrals(referralsQuery);
+    System.out.println(response.toString());
+    assertDataAndMeta(response);
+    assertHasData(response);
+  }
+
   /****************************************************************************
     Beyond lie utility methods for testing purposes. Nothing to see here.
   ****************************************************************************/
