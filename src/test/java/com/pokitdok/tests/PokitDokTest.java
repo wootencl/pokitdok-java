@@ -36,7 +36,15 @@ public class PokitDokTest {
   }
 
   @Test
-  @Betamax(tape="cashPrices")
+  public void authorizationsTest() throws Exception {
+    String authorizations = readEntireFile("src/test/scaffold/authorizations.json");
+    Map query = (JSONObject) JSONValue.parse(authorizations);
+    
+    Map<String, Object> response = pd.authorizations(query);
+    assertDataAndMeta(response);
+  }
+
+  @Test
   public void cashPricesTest() throws Exception {
     Map cashQuery = new HashMap<String, String>();
     cashQuery.put("cpt_code", "87799");

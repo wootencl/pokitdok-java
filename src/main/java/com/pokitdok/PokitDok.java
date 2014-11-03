@@ -45,7 +45,7 @@ public class PokitDok {
   private JSONParser        parser;
   private boolean           failedOnceAlready;
 
-  private String API_BASE = "https://platform.pokitdok.com";
+  private String API_BASE = "http://localhost:5002";
 
   public PokitDok(String clientId, String clientSecret)
     throws IOException, ParseException {
@@ -199,6 +199,12 @@ public class PokitDok {
     return activities(null);
   }
 
+  /** Invokes the authorizations endpoint, with a HashMap of parameters. */
+  public Map<String, Object> authorizations(Map<String, Object> params)
+  throws IOException, UnauthorizedException {
+    return post("authorizations/", params);
+  }
+
   /** Invokes the cash prices endpoint, with a HashMap of parameters. */
   public Map<String, Object> cashPrices(Map<String, Object> params)
   throws IOException, UnauthorizedException {
@@ -268,6 +274,16 @@ public class PokitDok {
     return payers(null);
   }
 
+  /** Invokes the plans endpoint, with no parameters. */
+  public Map<String, Object> plans() throws IOException, UnauthorizedException {
+    return get("plans", null);
+  }
+
+  /** Invokes the plans endpoint, with a HashMap of parameters. */
+  public Map<String, Object> plans(Map<String, Object> params) throws IOException, UnauthorizedException {
+    return get("plans", params);
+  }
+
   /** Invokes the providers endpoint, with a HashMap of parameters. */
   public Map<String, Object> providers(Map<String, Object> params)
   throws IOException, UnauthorizedException {
@@ -289,11 +305,5 @@ public class PokitDok {
     else {
       return get("tradingpartners/", params);
     }
-  }
-
-  /** Invokes the plans endpoint, with a HashMap of parameters. */
-  public Map<String, Object> plans(Map<String, Object> params)
-  throws IOException, UnauthorizedException {
-    return get("plans/", params);
   }
 }
