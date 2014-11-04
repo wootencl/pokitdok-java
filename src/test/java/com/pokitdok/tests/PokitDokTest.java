@@ -3,8 +3,9 @@ package com.pokitdok.tests;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 import co.freeside.betamax.Betamax;
 import co.freeside.betamax.Recorder;
 import org.json.simple.parser.ParseException;
@@ -21,7 +22,11 @@ public class PokitDokTest {
 
   @BeforeSuite
   public void setup() throws Exception {
-    recorder = new Recorder();
+    Properties p = new Properties();
+    p.setProperty("tapeRoot", "src/test/betamax");
+    p.setProperty("useProxy", "true");
+                              
+    recorder = new Recorder(p);
 
     /*
       For your own testing, you'll need to replace this client id and secret
@@ -35,6 +40,7 @@ public class PokitDokTest {
     assertNotNull(pd);
   }
 
+  @Betamax(tape="authorizations")
   @Test
   public void authorizationsTest() throws Exception {
     String authorizations = readEntireFile("src/test/scaffold/authorizations.json");
