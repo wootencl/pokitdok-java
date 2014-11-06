@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pokitdok.tests.PokitDokTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2014-11-04T00:09:57" hostname="chloe.local" time="1.272">
+  <properties/>
+  <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.171"/>
+  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.199"/>
+  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.057"/>
+  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokTest" time="0.041"/>
+  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.024"/>
+  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokTest" time="0.192"/>
+  <testcase name="filesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.0"/>
+  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.039"/>
+  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.074"/>
+  <testcase name="plansTest" classname="com.pokitdok.tests.PokitDokTest" time="0.09"/>
+  <testcase name="plansTestNoArgs" classname="com.pokitdok.tests.PokitDokTest" time="0.08"/>
+  <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.061"/>
+  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.146"/>
+  <testcase name="shouldCreateTest" classname="com.pokitdok.tests.PokitDokTest" time="0.0"/>
+  <testcase name="tradingPartnersGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.023"/>
+  <testcase name="tradingPartnersIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.071"/>
+  <system-out><![CDATA[{"data":{"async":false,"originating_company_id":"9012345678","provider":{"last_name":"BERTOLAMI","first_name":"CHRISTINA","tax_id":"1619131232"},"valid_request":true,"patient":{"last_name":"DOE","id":"1234567890","first_name":"JANE"},"trading_partner_id":"MOCKPAYER","correlation_id":"3bea8908-d897-4d4f-a2a6-b5865dca3300","event":{"delivery":{"quantity_qualifier":"visits","quantity":1},"provider":{"last_name":"FOSTER","first_name":"JOHN","tax_id":"1154387751"},"review":{"second_surgical_opinion_required":false,"certification_action":"certified_in_total","certification_number":"AUTH0001"},"certification_type":"initial","category":"specialty_care_review","type":"consultation","diagnoses":[{"date":"2005-04-30","code":"410.90"}],"place_of_service":"office"},"payer":{"organization_name":"MOCK PAYER INC","id":"MOCKPAYER"},"client_id":"n6pbYbNOI5YZdRXRPBBP"},"meta":{"processing_time":124,"credits_billed":1,"rate_limit_amount":110,"rate_limit_reset":1415062227,"activity_id":"5458195656c02c22e9e2966f","application_mode":"production","credits_remaining":11748,"rate_limit_cap":8434}}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
