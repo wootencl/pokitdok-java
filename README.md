@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/pokitdok/pokitdok-java.svg?branch=master)](https://travis-ci.org/pokitdok/pokitdok-java)
-[![Dependency Freshness](https://www.versioneye.com/user/projects/538e498b46c4739edd0000ee/badge.svg)](https://www.versioneye.com/user/projects/538e498b46c4739edd0000ee)
+[![Dependency Freshness](https://www.versioneye.com/user/projects/545bc23228766672b4000020/badge.svg)](https://www.versioneye.com/user/projects/545bc23228766672b4000020)
 
 
 pokitdok-java
@@ -18,15 +18,25 @@ PokitDok Platform API Client for Java
 
 ## Installation
 
+### Via Maven
+pokitdok-java is pushed to Maven Central via the Sonatype OSS repository.
+
+* Group ID: com.pokitdok
+* Artifact ID: pokitdok-java
+* Latest Version: 0.6.1
+
+So, for example, in Gradle, you could add the dependency
+```java
+compile "com.pokitdok:pokitdok-java:0.6.1"
+```
+
 ### Manual Install
-You can download pokitdok-java-0.1.jar from [this site](https://github.com/pokitdok/pokitdok-java/raw/master/target/pokitdok-java-0.1.jar) and include it on your classpath, like any other JAR.
+You can download pokitdok-java-0.6.1.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.6.1.jar) and include it on your classpath, like any other JAR.
 A few other JAR requirements need to be on your classpath as well. They are:
 * Apache HTTPCore and HTTPClient, available from [http://hc.apache.org/downloads.cgi](http://hc.apache.org/downloads.cgi)
 * Apache Commons Codec, available from [http://commons.apache.org/proper/commons-codec/download_codec.cgi](http://commons.apache.org/proper/commons-codec/download_codec.cgi)
 * Apache Commons Logging, available from [http://commons.apache.org/proper/commons-logging/download_logging.cgi](http://commons.apache.org/proper/commons-logging/download_logging.cgi)
 * json-simple, available from [https://code.google.com/p/json-simple/downloads/detail?name=json-simple-1.1.1.jar](https://code.google.com/p/json-simple/downloads/detail?name=json-simple-1.1.1.jar)
-
-Future versions will be deployed to the Maven central repository, to automate installation and the management of these dependencies.
 
 ## Quick Start
 ```java
