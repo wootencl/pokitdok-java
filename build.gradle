@@ -24,7 +24,7 @@ configurations {
 }
 
 dependencies {
-	compile "org.apache.httpcomponents:httpclient:4.3.4"
+	compile "org.apache.httpcomponents:httpclient:4.3.5"
 	compile "com.googlecode.json-simple:json-simple:1.1.1"
 
 	// We currently need to use Groovy 2.2.x due to a Betamax/Groovy bug
