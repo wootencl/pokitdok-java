@@ -34,66 +34,66 @@ dependencies {
 	testCompile "commons-io:commons-io:2.4"
 }
 
-// Sonatype Publishing Configurations
-task javadocJar(type: Jar, dependsOn: javadoc) {
-	classifier = "javadoc"
-	from "build/docs/javadoc"
-}
+if (hasProperty("sonatypeUsername") && hasProperty("sonatypePassword")) {
+	// Sonatype Publishing Configurations
+	task javadocJar(type: Jar, dependsOn: javadoc) {
+		classifier = "javadoc"
+		from "build/docs/javadoc"
+	}
 
-task sourcesJar(type: Jar) {
-	from sourceSets.main.allSource
-	classifier = "sources"
-}
+	task sourcesJar(type: Jar) {
+		from sourceSets.main.allSource
+		classifier = "sources"
+	}
 
-artifacts {
-	archives jar
-	archives javadocJar
-	archives sourcesJar
-}
+	artifacts {
+		archives jar
+		archives javadocJar
+		archives sourcesJar
+	}
 
-signing {
-	sign configurations.archives
-}
+	signing {
+		sign configurations.archives
+	}
 
-def username = hasProperty("sonatypeUsername") ? sonatypeUsername : System.getenv("sonatypeUsername")
-def password = hasProperty("sonatypePassword") ? sonatypePassword : System.getenv("sonatypePassword")
 
-uploadArchives {
-	repositories {
-		mavenDeployer {
-			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+	uploadArchives {
+		repositories {
+			mavenDeployer {
+				beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-				authentication(userName: username, password: password)
-			}
-
-			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-				authentication(userName: username, password: password)
-			}
-
-			pom.project {
-				name "pokitdok-java"
-				packaging "jar"
-				description "A Java client library for the PokitDok Platform APIs."
-				url "https://github.com/pokitdok/pokitdok-java"
-
-				scm {
-					url 'scm:git@github.com:pokitdok/pokitdok-java.git'
-					connection 'scm:git@github.com:pokitdok/pokitdok-java.git'
-					developerConnection 'scm:git@github.com:67726e/gradle-twirl.git'
+				repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+					authentication(userName: sonatypeUsername, password: sonatypePassword)
 				}
 
-				licenses {
-					license {
-						name "The MIT License (MIT)"
-						url "http://opensource.org/licenses/MIT"
+				snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+					authentication(userName: sonatypeUsername, password: sonatypePassword)
+				}
+
+				pom.project {
+					name "pokitdok-java"
+					packaging "jar"
+					description "A Java client library for the PokitDok Platform APIs."
+					url "https://github.com/pokitdok/pokitdok-java"
+
+					scm {
+						url 'scm:git@github.com:pokitdok/pokitdok-java.git'
+						connection 'scm:git@github.com:pokitdok/pokitdok-java.git'
+						developerConnection 'scm:git@github.com:67726e/gradle-twirl.git'
 					}
-				}
 
-				developers {
-					developer {
-						name "PokitDok, Inc."
-						email "platform@pokitdok.com"
+					licenses {
+						license {
+							name "The MIT License (MIT)"
+							url "http://opensource.org/licenses/MIT"
+						}
+					}
+
+					developers {
+						developer {
+							name "PokitDok, Inc."
+							email "platform@pokitdok.com"
+						}
 					}
 				}
 			}
