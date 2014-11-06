@@ -24,17 +24,14 @@ configurations {
 }
 
 dependencies {
-	compile 'org.apache.httpcomponents:httpclient:4.3.4', 'com.googlecode.json-simple:json-simple:1.1.1'
-	testCompile 'co.freeside:betamax:1.1.2', 'org.testng:testng:6.8.8', "org.codehaus.groovy:groovy:2.3.6"
-}
+	compile "org.apache.httpcomponents:httpclient:4.3.4"
+	compile "com.googlecode.json-simple:json-simple:1.1.1"
 
-
-test {
-	useTestNG()
-
-    filter {
-        includeTestsMatching "com.pokitdok.tests.*"
-    }
+	// We currently need to use Groovy 2.2.x due to a Betamax/Groovy bug
+	// See: https://github.com/robfletcher/betamax/issues/141
+	testCompile "org.codehaus.groovy:groovy-all:2.2.0"
+	testCompile "co.freeside:betamax:1.1.2"
+	testCompile "commons-io:commons-io:2.4"
 }
 
 // Sonatype Publishing Configurations

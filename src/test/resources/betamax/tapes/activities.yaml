@@ -1,0 +1,63 @@
+!tape
+name: activities
+interactions:
+- recorded: 2014-11-06T14:08:55.490Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/activities
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer zqNIlt5pPsl3xG5BIUv8UMKpnDGO7eiecybbCLtz
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.6.11.8.0_20
+  response:
+    status: 200
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Thu, 06 Nov 2014 14:08:55 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.3
+      charset: utf-8
+      mimetype: application/json
+    body: '{"meta": {"rate_limit_amount": 104, "rate_limit_reset": 1415284934, "application_mode": "test", "processing_time": 26, "rate_limit_cap": 1000, "result_count": 109, "activity_id": "545b80f756c02c70a62f413b", "next": "http://me.pokitdok.com:5002/api/v4/activities/?offset=20"},
+      "data": [{"units_of_work": 1, "_type": "PlatformActivityModel", "name": "cash_prices", "parameters": {"cpt_code": "87799", "zip_code": "75201"}, "_uuid": "a8d095bd-12da-4b88-b9da-1270f75249dd", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+      "PokitDok", "id": "545a977756c02c70a62f4064", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:32:39.821000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:32:39.826000", "name": "processing",
+      "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "activities", "_uuid": "dd872cea-ef62-4b73-ab31-a02a974f3616", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok",
+      "id": "545a977756c02c70a62f4061", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:32:39.758000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:32:39.775000", "name": "processing", "title": "Processing
+      transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "insurance_prices", "parameters": {"cpt_code": "87799", "zip_code": "29403"}, "_uuid": "e7e43bca-66fc-47fd-a165-e9006ca277e5", "state": {"name": "completed", "title": "Completed"},
+      "trading_partner_id": "PokitDok", "id": "545a977756c02c70a62f4069", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:32:39.882000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:32:39.886000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "tradingpartners", "_uuid": "e619d503-e082-4d0a-9ab0-ed4c17b3b89e", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+      "PokitDok", "id": "545a950d56c02c70a62f405f", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:22:21.815000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:22:21.823000", "name": "processing",
+      "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "tradingpartners", "parameters": {"id": "MOCKPAYER"}, "_uuid": "f9607683-3e5f-4bb1-9b89-0a58c1c1e083", "state": {"name": "completed", "title": "Completed"},
+      "trading_partner_id": "PokitDok", "id": "545a950d56c02c70a62f405d", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:22:21.791000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:22:21.795000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "providers", "parameters": {"npi": "1467560003"}, "_uuid": "16013a8d-ee8e-4afb-8ded-0be861a79343", "state": {"name": "completed",
+      "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a950d56c02c70a62f405a", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:22:21.756000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:22:21.760000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "tradingpartners", "parameters": {"id": "MOCKPAYER"}, "_uuid": "43c50865-ffc4-43ea-b709-18fef59f16b9", "state": {"name": "completed",
+      "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545b7bd056c02c70a62f40c4", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-06T13:46:56.495000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-06T13:46:56.501000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "payers", "_uuid": "cf1abf7e-4a75-4d8c-a0fb-e099d7da5ad2", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+      "PokitDok", "id": "545a950d56c02c70a62f4056", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:22:21.637000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:22:21.647000", "name": "processing",
+      "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "insurance_prices", "parameters": {"cpt_code": "87799", "zip_code": "29403"}, "_uuid": "2a012b89-79de-4d50-ba60-f4fedd59ff78", "state": {"name": "completed",
+      "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a950d56c02c70a62f4054", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:22:21.601000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:22:21.606000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "cash_prices", "parameters": {"cpt_code": "87799", "zip_code": "75201"}, "_uuid": "904f1d9c-60b8-468e-bf09-8bc662a5878d", "state":
+      {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a950d56c02c70a62f404f", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:22:21.519000", "name": "init", "title": "Initializing"},
+      {"record_dt": "2014-11-05T21:22:21.528000", "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "activities", "_uuid": "06137371-22e7-42c8-b5e6-cc4ba27f8dae", "state": {"name": "completed",
+      "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a950d56c02c70a62f404c", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:22:21.419000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:22:21.455000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "tradingpartners", "_uuid": "45623598-7299-4fa3-b5fd-c982bf601c65", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+      "PokitDok", "id": "545a919656c02c70a62f404a", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:07:34.658000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:07:34.664000", "name": "processing",
+      "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "tradingpartners", "parameters": {"id": "MOCKPAYER"}, "_uuid": "b6533729-0926-4f3a-bad1-0ae9c3599047", "state": {"name": "completed", "title": "Completed"},
+      "trading_partner_id": "PokitDok", "id": "545a919656c02c70a62f4048", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:07:34.623000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:07:34.632000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "providers", "parameters": {"npi": "1467560003"}, "_uuid": "ad20823b-f7e0-4270-abe2-8eadaebde779", "state": {"name": "completed",
+      "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a919656c02c70a62f4045", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:07:34.579000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:07:34.583000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "payers", "_uuid": "9f021537-89aa-4d82-9181-633c7623c634", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+      "PokitDok", "id": "545a919656c02c70a62f4041", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:07:34.504000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:07:34.511000", "name": "processing",
+      "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "insurance_prices", "parameters": {"cpt_code": "87799", "zip_code": "29403"}, "_uuid": "7c2ee2a4-4acb-40ae-a69c-eed9ab44824c", "state": {"name": "completed",
+      "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a919656c02c70a62f403f", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:07:34.471000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:07:34.476000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "cash_prices", "parameters": {"cpt_code": "87799", "zip_code": "75201"}, "_uuid": "0287c770-912f-4d88-a53a-02b9d440bea8", "state":
+      {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a919656c02c70a62f403a", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:07:34.395000", "name": "init", "title": "Initializing"},
+      {"record_dt": "2014-11-05T21:07:34.400000", "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "activities", "_uuid": "1750b2d9-83b5-4565-9491-bc4050917d7d", "state": {"name": "completed",
+      "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "545a919656c02c70a62f4037", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:07:34.321000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:07:34.342000",
+      "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "tradingpartners", "_uuid": "33d30e25-81e0-4a85-a698-3301ad0e13fb", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+      "PokitDok", "id": "545a910756c02c70a62f4035", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:05:11.553000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:05:11.561000", "name": "processing",
+      "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "tradingpartners", "parameters": {"id": "MOCKPAYER"}, "_uuid": "08e19355-4553-4044-82d6-99fbd070558a", "state": {"name": "completed", "title": "Completed"},
+      "trading_partner_id": "PokitDok", "id": "545a910756c02c70a62f4033", "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-11-05T21:05:11.529000", "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-05T21:05:11.535000",
+      "name": "processing", "title": "Processing transactions"}]}]}'

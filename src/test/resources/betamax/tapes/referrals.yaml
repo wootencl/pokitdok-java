@@ -1,0 +1,27 @@
+!tape
+name: referrals
+interactions:
+- recorded: 2014-11-06T14:08:58.773Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/api/v4/referrals/
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer zqNIlt5pPsl3xG5BIUv8UMKpnDGO7eiecybbCLtz
+      Content-Encoding: UTF-8
+      Content-Length: '537'
+      Content-Type: application/json
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.6.11.8.0_20
+    body: '{"provider":{"npi":"1619131232","last_name":"BERTOLAMI","first_name":"CHRISTINA"},"patient":{"birth_date":"1970-01-01","last_name":"DOE","id":"1234567890","first_name":"JANE"},"trading_partner_id":"MOCKPAYER","event":{"delivery":{"quantity_qualifier":"visits","quantity":1},"provider":{"phone":"8645822900","npi":"1154387751","last_name":"FOSTER","first_name":"JOHN"},"certification_type":"initial","category":"specialty_care_review","type":"consultation","diagnoses":[{"date":"2014-09-30","code":"384.20"}],"place_of_service":"office"}}'
+  response:
+    status: 400
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Thu, 06 Nov 2014 14:08:58 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.3
+      charset: utf-8
+      mimetype: application/json
+    body: '{"meta": {"processing_time": 2, "rate_limit_amount": 110, "rate_limit_reset": 1415284934, "application_mode": "test", "rate_limit_cap": 1000}, "data": {"errors": {"query": "Unable to find configuration for trading_partner_id: MOCKPAYER, transaction_set_name:
+      referrals"}}}'

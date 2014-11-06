@@ -4,6 +4,26 @@
 
 package com.pokitdok;
 
+import org.apache.commons.codec.binary.Base64;
+import org.apache.http.HttpHeaders;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -12,29 +32,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpHeaders;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.util.EntityUtils;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 public class PokitDok {
   private String            clientId;
@@ -79,14 +76,13 @@ public class PokitDok {
     request.setHeader(HttpHeaders.AUTHORIZATION, authHeader);
     setDefaultHeaders(request);
 
-    CloseableHttpClient client = builder.build();
-    HttpResponse response = client.execute(request);
-    Map<String, Object> parsedResponse = (JSONObject) parser.parse(
-      EntityUtils.toString(response.getEntity()));
+    try (CloseableHttpClient client = builder.build()) {
+      HttpResponse response = client.execute(request);
+      Map<String, Object> parsedResponse = (JSONObject) parser.parse(
+              EntityUtils.toString(response.getEntity()));
 
-    accessToken = (String) parsedResponse.get("access_token");
-
-    client.close();
+      accessToken = (String) parsedResponse.get("access_token");
+    }
   }
 
   private void setDefaultHeaders(HttpRequestBase request) {
@@ -176,7 +172,7 @@ public class PokitDok {
     boolean unauthorized = false;
     if (response != null) {
       if (response.containsKey("message")) {
-        if ("Unauthorized".equals(((String) response.get("message")))) {
+        if ("Unauthorized".equals(response.get("message"))) {
           unauthorized = true;
         }
       }

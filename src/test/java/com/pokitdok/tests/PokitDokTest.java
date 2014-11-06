@@ -1,216 +1,229 @@
 package com.pokitdok.tests;
 
-import java.io.File;
+import co.freeside.betamax.Betamax;
+import co.freeside.betamax.Recorder;
+import com.pokitdok.PokitDok;
+import org.apache.commons.io.IOUtils;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
-import co.freeside.betamax.Betamax;
-import co.freeside.betamax.Recorder;
-import org.json.simple.parser.ParseException;
-import static org.testng.AssertJUnit.*;
-import org.testng.annotations.*;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import com.pokitdok.PokitDok;
-import org.json.simple.JSONArray;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class PokitDokTest {
-  private Recorder recorder;
-  private PokitDok pd;
+	private static final String AUTHORIZATIONS_JSON = "src/test/resources/authorizations.json";
+	private static final String ELIGIBILITY_JSON = "src/test/resources/eligibility.json";
+	private static final String CLAIMS_JSON = "src/test/resources/claim.json";
+	private static final String CLAIMS_STATUS_JSON = "src/test/resources/claim_status.json";
+	private static final String REFERRALS_JSON = "src/test/resources/referrals.json";
+	private static PokitDok client;
 
-  @BeforeSuite
-  public void setup() throws Exception {
-    Properties p = new Properties();
-    p.setProperty("tapeRoot", "src/test/betamax");
-    p.setProperty("useProxy", "true");
-                              
-    recorder = new Recorder(p);
+	@Rule
+	public Recorder recorder = new Recorder();
 
-    /*
-      For your own testing, you'll need to replace this client id and secret
-      with your own.
-    */
-    pd = new PokitDok("n6pbYbNOI5YZdRXRPBBP", "0OsPyvxlgdjAWGY0hSrfTViQWukz4UNyuigNUz1v");
-  }
+	@BeforeClass
+	public static void setup() throws Exception {
+		// ACHTUNG: For your own testing, you'll need to replace the client ID and secret with your own
+		client = new PokitDok("fY4mRbR0Z1Jt4ncQxzoS", "v0rS5gimKU6j2IbWQL6hOM4IMdWqTtTfNMXfjzPH");
+	}
 
-  @Test
-  public void shouldCreateTest() throws Exception {
-    assertNotNull(pd);
-  }
+	@Test
+	public void shouldCreateTest() throws Exception {
+		assertNotNull(client);
+	}
 
-  @Betamax(tape="authorizations")
-  @Test
-  public void authorizationsTest() throws Exception {
-    String authorizations = readEntireFile("src/test/scaffold/authorizations.json");
-    Map query = (JSONObject) JSONValue.parse(authorizations);
-    
-    Map<String, Object> response = pd.authorizations(query);
-    assertDataAndMeta(response);
-  }
+	@Test
+	@Betamax(tape = "authorizations")
+	public void authorizationsTest() throws Exception {
+		String authorizations = readEntireFile(AUTHORIZATIONS_JSON);
+		Map query = (JSONObject) JSONValue.parse(authorizations);
 
-  @Test
-  public void cashPricesTest() throws Exception {
-    Map cashQuery = new HashMap<String, String>();
-    cashQuery.put("cpt_code", "87799");
-    cashQuery.put("zip_code", "75201");
+		Map<String, Object> response = client.authorizations(query);
+		assertDataAndMeta(response);
+	}
 
-    Map<String, Object> response = pd.cashPrices(cashQuery);
-    assertDataAndMeta(response);
-  }
+	@Test
+	@Betamax(tape = "cash_prices")
+	public void cashPricesTest() throws Exception {
+		Map<String, Object> cashQuery = new HashMap<>();
+		cashQuery.put("cpt_code", "87799");
+		cashQuery.put("zip_code", "75201");
 
-  @Test
-  public void insurancePricesTest() throws Exception {
-    Map insuranceQuery = new HashMap<String, String>();
-    insuranceQuery.put("cpt_code", "87799");
-    insuranceQuery.put("zip_code", "29403");
+		Map<String, Object> response = client.cashPrices(cashQuery);
+		assertDataAndMeta(response);
+	}
 
-    Map<String, Object> response = pd.insurancePrices(insuranceQuery);
-    assertDataAndMeta(response);
-  }
+	@Test
+	@Betamax(tape = "insurance_prices")
+	public void insurancePricesTest() throws Exception {
+		Map<String, Object> insuranceQuery = new HashMap<>();
+		insuranceQuery.put("cpt_code", "87799");
+		insuranceQuery.put("zip_code", "29403");
 
-  @Test
-  public void providersTest() throws Exception {
-    Map query = new HashMap<String, String>();
-    query.put("npi", "1467560003");
+		Map<String, Object> response = client.insurancePrices(insuranceQuery);
+		assertDataAndMeta(response);
+	}
 
-    Map response = pd.providers(query);
-    assertDataAndMeta(response);
-  }
+	@Test
+	@Betamax(tape = "providers")
+	public void providersTest() throws Exception {
+		Map<String, Object> query = new HashMap<>();
+		query.put("npi", "1467560003");
 
-  @Test
-  public void eligibilityTest() throws Exception {
-    String eligibility = readEntireFile("src/test/scaffold/eligibility.json");
+		Map response = client.providers(query);
+		assertDataAndMeta(response);
+	}
 
-    Map eligibilityQuery = (JSONObject) JSONValue.parse(eligibility);
-    Map<String, Object> response = pd.eligibility(eligibilityQuery);
+	@Test
+	@Betamax(tape = "eligibility")
+	public void eligibilityTest() throws Exception {
+		String eligibility = readEntireFile(ELIGIBILITY_JSON);
 
-    assertDataAndMeta(response);
-    assertHasData(response);
-  }
+		Map<String, Object> eligibilityQuery = (JSONObject) JSONValue.parse(eligibility);
+		Map<String, Object> response = client.eligibility(eligibilityQuery);
 
-  @Test
-  public void claimsTest() throws Exception {
-    String claim = readEntireFile("src/test/scaffold/claim.json");
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
 
-    Map claimQuery = (JSONObject) JSONValue.parse(claim);
-    Map<String, Object> response = pd.eligibility(claimQuery);
+	@Test
+	@Betamax(tape = "claims")
+	public void claimsTest() throws Exception {
+		String claim = readEntireFile(CLAIMS_JSON);
 
-    assertDataAndMeta(response);
-    assertHasData(response);
-  }
+		Map<String, Object> claimQuery = (JSONObject) JSONValue.parse(claim);
+		Map<String, Object> response = client.eligibility(claimQuery);
 
-  @Test
-  public void claimsStatusTest() throws Exception {
-    String claimStatus = readEntireFile("src/test/scaffold/claim_status.json");
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
 
-    Map claimStatusQuery = (JSONObject) JSONValue.parse(claimStatus);
-    Map<String, Object> response = pd.eligibility(claimStatusQuery);
+	@Test
+	@Betamax(tape = "claims_status")
+	public void claimsStatusTest() throws Exception {
+		String claimStatus = readEntireFile(CLAIMS_STATUS_JSON);
 
-    assertDataAndMeta(response);
-    assertHasData(response);
-  }
+		Map<String, Object> claimStatusQuery = (JSONObject) JSONValue.parse(claimStatus);
+		Map<String, Object> response = client.eligibility(claimStatusQuery);
 
-  @Test
-  public void filesTest() throws Exception {
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
 
-  }
+	@Test
+	public void filesTest() throws Exception {
+		// TODO: Add a test for the /files API endpoint
+	}
 
-  @Test
-  public void activitiesTest() throws Exception {
-    Map<String, Object> response = pd.activities();
-    assertDataAndMeta(response);
-  }
+	@Test
+	@Betamax(tape = "activities")
+	public void activitiesTest() throws Exception {
+		Map<String, Object> response = client.activities();
+		assertDataAndMeta(response);
+	}
 
-  @Test
-  public void payersTest() throws Exception {
-    Map<String, Object> response = pd.payers();
-    assertDataAndMeta(response);
-  }
+	@Test
+	@Betamax(tape = "payers")
+	public void payersTest() throws Exception {
+		Map<String, Object> response = client.payers();
+		assertDataAndMeta(response);
+	}
 
-  @Test
-  public void tradingPartnersIndexTest() throws Exception {
-    Map<String, Object> response = pd.tradingPartners(new HashMap<String, Object>());
-    assertDataAndMeta(response);
-    assertTrue(response.get("data") instanceof org.json.simple.JSONArray);
-  }
+	@Test
+	@Betamax(tape = "trading_partners_index")
+	public void tradingPartnersIndexTest() throws Exception {
+		Map<String, Object> response = client.tradingPartners(new HashMap<String, Object>());
+		assertDataAndMeta(response);
+		assertTrue(response.get("data") instanceof org.json.simple.JSONArray);
+	}
 
-  @Test
-  public void tradingPartnersGetTest() throws Exception {
-    Map query = new HashMap<String, String>();
-    query.put("trading_partner_id", "MOCKPAYER");
-    Map<String, Object> response = pd.tradingPartners(query);
-    assertDataAndMeta(response);
-    assertTrue(response.get("data") instanceof org.json.simple.JSONObject);
-  }
+	@Test
+	@Betamax(tape = "trading_partners_get")
+	public void tradingPartnersGetTest() throws Exception {
+		Map<String, Object> query = new HashMap<>();
+		query.put("trading_partner_id", "MOCKPAYER");
 
-  @Test
-  public void plansTestNoArgs() throws Exception {
-    Map query = new HashMap<String, String>();
-    Map<String, Object> response = pd.plans(query);
-    assertDataAndMeta(response);
-    assertHasDataArray(response);
-  }
+		Map<String, Object> response = client.tradingPartners(query);
+		assertDataAndMeta(response);
+		assertTrue(response.get("data") instanceof org.json.simple.JSONObject);
+	}
 
-  @Test
-  public void plansTest() throws Exception {
-    Map query = new HashMap<String, String>();
-    query.put("state", "TX");
-    query.put("plan_type", "PPO");
-    Map<String, Object> response = pd.plans(query);
-    assertDataAndMeta(response);
-    assertHasDataArray(response);
-  }
+	@Test
+	@Betamax(tape = "plans_index")
+	public void plansIndexTest() throws Exception {
+		Map<String, Object> query = new HashMap<>();
+		Map<String, Object> response = client.plans(query);
 
-  @Test
-  public void referralsTest() throws Exception {
-    String referrals = readEntireFile("src/test/scaffold/referrals.json");
+		assertDataAndMeta(response);
+		assertHasDataArray(response);
+	}
 
-    Map referralsQuery = (JSONObject) JSONValue.parse(referrals);
-    Map<String, Object> response = pd.referrals(referralsQuery);
-    System.out.println(response.toString());
-    assertDataAndMeta(response);
-    assertHasData(response);
-  }
+	@Test
+	@Betamax(tape = "plans_get")
+	public void plansGetTest() throws Exception {
+		Map<String, Object> query = new HashMap<>();
+		query.put("state", "TX");
+		query.put("plan_type", "PPO");
 
-  /****************************************************************************
-    Beyond lie utility methods for testing purposes. Nothing to see here.
-  ****************************************************************************/
+		Map<String, Object> response = client.plans(query);
+		assertDataAndMeta(response);
+		assertHasDataArray(response);
+	}
 
-  private void assertDataAndMeta(Map response) {
-    assertNotNull(response);
-    assertTrue(response.containsKey("meta"));
-    assertTrue(response.containsKey("data"));
-  }
+	@Test
+	@Betamax(tape = "referrals")
+	public void referralsTest() throws Exception {
+		String referrals = readEntireFile(REFERRALS_JSON);
 
-  private void assertHasData(Map response) {
-    Map data = (Map) response.get("data");
-    assertNotNull(data);
-    assertTrue(data.size() > 0);
-  }
+		Map<String, Object> referralsQuery = (JSONObject) JSONValue.parse(referrals);
+		Map<String, Object> response = client.referrals(referralsQuery);
 
-  private void assertHasDataArray(Map response) {
-    JSONArray data = (JSONArray) response.get("data");
-    assertNotNull(data);
-    assertTrue(data.size() > 0);
-  }
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
 
-  /** Utility method for loading up JSON scaffolds. Don't do this. */
-  private String readEntireFile(String filename) {
-    String retval = null;
+	/**
+	 * *************************************************************************
+	 * Beyond lie utility methods for testing purposes. Nothing to see here.
+	 * **************************************************************************
+	 */
 
-    try {
-      File file = new File(filename);
-      FileInputStream fis = new FileInputStream(file);
-      byte[] data = new byte[(int)file.length()];
-      fis.read(data);
-      fis.close();
+	private void assertDataAndMeta(Map response) {
+		assertNotNull(response);
+		assertTrue(response.containsKey("meta"));
+		assertTrue(response.containsKey("data"));
+	}
 
-      retval = new String(data, "UTF-8");
-    }
-    catch (IOException ie) {}
+	private void assertHasData(Map response) {
+		Map data = (Map) response.get("data");
+		assertNotNull(data);
+		assertTrue(data.size() > 0);
+	}
 
-    return retval;
-  }
+	private void assertHasDataArray(Map response) {
+		JSONArray data = (JSONArray) response.get("data");
+		assertNotNull(data);
+		assertTrue(data.size() > 0);
+	}
+
+	/**
+	 * Utility method for loading up JSON scaffolds. Don't do this.
+	 */
+	private String readEntireFile(String filename) throws IOException {
+		try (FileInputStream inputStream = new FileInputStream(filename)) {
+			return IOUtils.toString(inputStream);
+		} catch (FileNotFoundException e) {
+			throw new IllegalStateException(e);
+		}
+	}
 }
