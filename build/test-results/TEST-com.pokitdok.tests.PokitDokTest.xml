@@ -1,23 +1,328 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pokitdok.tests.PokitDokTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2014-11-04T00:09:57" hostname="chloe.local" time="1.272">
+<testsuite name="com.pokitdok.tests.PokitDokTest" tests="16" skipped="0" failures="2" errors="0" timestamp="2014-11-10T19:42:41" hostname="chloe" time="7.616">
   <properties/>
-  <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.171"/>
-  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.199"/>
-  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.057"/>
-  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokTest" time="0.041"/>
-  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.024"/>
-  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokTest" time="0.192"/>
-  <testcase name="filesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.0"/>
-  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.039"/>
-  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.074"/>
-  <testcase name="plansTest" classname="com.pokitdok.tests.PokitDokTest" time="0.09"/>
-  <testcase name="plansTestNoArgs" classname="com.pokitdok.tests.PokitDokTest" time="0.08"/>
-  <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.061"/>
-  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.146"/>
   <testcase name="shouldCreateTest" classname="com.pokitdok.tests.PokitDokTest" time="0.0"/>
-  <testcase name="tradingPartnersGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.023"/>
-  <testcase name="tradingPartnersIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.071"/>
-  <system-out><![CDATA[{"data":{"async":false,"originating_company_id":"9012345678","provider":{"last_name":"BERTOLAMI","first_name":"CHRISTINA","tax_id":"1619131232"},"valid_request":true,"patient":{"last_name":"DOE","id":"1234567890","first_name":"JANE"},"trading_partner_id":"MOCKPAYER","correlation_id":"3bea8908-d897-4d4f-a2a6-b5865dca3300","event":{"delivery":{"quantity_qualifier":"visits","quantity":1},"provider":{"last_name":"FOSTER","first_name":"JOHN","tax_id":"1154387751"},"review":{"second_surgical_opinion_required":false,"certification_action":"certified_in_total","certification_number":"AUTH0001"},"certification_type":"initial","category":"specialty_care_review","type":"consultation","diagnoses":[{"date":"2005-04-30","code":"410.90"}],"place_of_service":"office"},"payer":{"organization_name":"MOCK PAYER INC","id":"MOCKPAYER"},"client_id":"n6pbYbNOI5YZdRXRPBBP"},"meta":{"processing_time":124,"credits_billed":1,"rate_limit_amount":110,"rate_limit_reset":1415062227,"activity_id":"5458195656c02c22e9e2966f","application_mode":"production","credits_remaining":11748,"rate_limit_cap":8434}}
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.828"/>
+  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.515"/>
+  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.517"/>
+  <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.52"/>
+  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokTest" time="0.518"/>
+  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
+  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokTest" time="0.517"/>
+  <testcase name="filesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.0"/>
+  <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
+  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
+  <testcase name="tradingPartnersIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.52"/>
+  <testcase name="tradingPartnersGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.517"/>
+  <testcase name="plansIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.525">
+    <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:92)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertTrue(Assert.java:54)
+	at com.pokitdok.tests.PokitDokTest.assertDataAndMeta(PokitDokTest.java:207)
+	at com.pokitdok.tests.PokitDokTest.plansIndexTest(PokitDokTest.java:171)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.InvokeMethod$evaluate.call(Unknown Source)
+	at co.freeside.betamax.Recorder$_1_evaluate_closure1.doCall(Recorder.groovy:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:272)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at co.freeside.betamax.Recorder$_1_evaluate_closure1.doCall(Recorder.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:272)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:39)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:112)
+	at co.freeside.betamax.Recorder.withTape(Recorder.groovy:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnCurrentN(ScriptBytecodeAdapter.java:78)
+	at co.freeside.betamax.Recorder.this$dist$invoke$2(Recorder.groovy)
+	at co.freeside.betamax.Recorder$1.methodMissing(Recorder.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaClassImpl.invokeMissingMethod(MetaClassImpl.java:837)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1134)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1087)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at co.freeside.betamax.Recorder$1.evaluate(Recorder.groovy:185)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:69)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:355)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="plansGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.516">
+    <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:92)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertTrue(Assert.java:54)
+	at com.pokitdok.tests.PokitDokTest.assertDataAndMeta(PokitDokTest.java:207)
+	at com.pokitdok.tests.PokitDokTest.plansGetTest(PokitDokTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.InvokeMethod$evaluate.call(Unknown Source)
+	at co.freeside.betamax.Recorder$_1_evaluate_closure1.doCall(Recorder.groovy:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:272)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at co.freeside.betamax.Recorder$_1_evaluate_closure1.doCall(Recorder.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:272)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:39)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:112)
+	at co.freeside.betamax.Recorder.withTape(Recorder.groovy:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnCurrentN(ScriptBytecodeAdapter.java:78)
+	at co.freeside.betamax.Recorder.this$dist$invoke$2(Recorder.groovy)
+	at co.freeside.betamax.Recorder$1.methodMissing(Recorder.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaClassImpl.invokeMissingMethod(MetaClassImpl.java:837)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1134)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1087)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at co.freeside.betamax.Recorder$1.evaluate(Recorder.groovy:185)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:69)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:355)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.515"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[2014-11-10 14:42:41.896:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:41.984:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:41.995:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file authorizations.yaml...
+Nov 10, 2014 2:42:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'authorizations'
+2014-11-10 14:42:42.572:WARN::1 threads could not be stopped
+2014-11-10 14:42:42.579:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:42.580:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:42.582:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file cash_prices.yaml...
+Nov 10, 2014 2:42:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'cash_prices'
+2014-11-10 14:42:43.091:WARN::1 threads could not be stopped
+2014-11-10 14:42:43.095:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:43.096:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:43.099:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file insurance_prices.yaml...
+Nov 10, 2014 2:42:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'insurance_prices'
+2014-11-10 14:42:43.610:WARN::1 threads could not be stopped
+2014-11-10 14:42:43.614:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:43.615:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:43.617:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file providers.yaml...
+Nov 10, 2014 2:42:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'providers'
+2014-11-10 14:42:44.130:WARN::1 threads could not be stopped
+2014-11-10 14:42:44.134:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:44.135:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:44.138:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file eligibility.yaml...
+Nov 10, 2014 2:42:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'eligibility'
+2014-11-10 14:42:44.650:WARN::1 threads could not be stopped
+2014-11-10 14:42:44.654:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:44.655:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:44.658:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file claims.yaml...
+Nov 10, 2014 2:42:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'claims'
+2014-11-10 14:42:45.172:WARN::1 threads could not be stopped
+2014-11-10 14:42:45.179:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:45.181:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:45.184:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file claims_status.yaml...
+Nov 10, 2014 2:42:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'claims_status'
+2014-11-10 14:42:45.692:WARN::1 threads could not be stopped
+2014-11-10 14:42:45.699:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:45.700:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:45.702:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file activities.yaml...
+Nov 10, 2014 2:42:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'activities'
+2014-11-10 14:42:46.216:WARN::1 threads could not be stopped
+2014-11-10 14:42:46.222:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:46.223:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:46.225:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file payers.yaml...
+Nov 10, 2014 2:42:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'payers'
+2014-11-10 14:42:46.741:WARN::1 threads could not be stopped
+2014-11-10 14:42:46.746:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:46.747:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:46.749:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file trading_partners_index.yaml...
+Nov 10, 2014 2:42:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'trading_partners_index'
+2014-11-10 14:42:47.264:WARN::1 threads could not be stopped
+2014-11-10 14:42:47.268:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:47.269:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:47.271:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file trading_partners_get.yaml...
+Nov 10, 2014 2:42:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'trading_partners_get'
+2014-11-10 14:42:47.783:WARN::1 threads could not be stopped
+2014-11-10 14:42:47.787:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:47.788:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:47.790:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file plans_index.yaml...
+Nov 10, 2014 2:42:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'plans_index'
+2014-11-10 14:42:48.307:WARN::1 threads could not be stopped
+2014-11-10 14:42:48.313:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:48.314:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:48.316:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file plans_get.yaml...
+Nov 10, 2014 2:42:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'plans_get'
+2014-11-10 14:42:48.825:WARN::1 threads could not be stopped
+2014-11-10 14:42:48.832:INFO::jetty-7.3.1.v20110307
+2014-11-10 14:42:48.833:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-10 14:42:48.834:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 10, 2014 2:42:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file referrals.yaml...
+Nov 10, 2014 2:42:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'referrals'
+2014-11-10 14:42:49.343:WARN::1 threads could not be stopped
+]]></system-err>
 </testsuite>

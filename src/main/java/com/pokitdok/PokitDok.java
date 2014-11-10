@@ -42,8 +42,6 @@ public class PokitDok {
   private JSONParser        parser;
   private boolean           failedOnceAlready;
 
-  private String API_BASE = "https://platform.pokitdok.com";
-
   public PokitDok(String clientId, String clientSecret)
     throws IOException, ParseException {
     this(clientId, clientSecret, "v4");
@@ -64,7 +62,7 @@ public class PokitDok {
   }
 
   private void connect() throws IOException, ParseException {
-    HttpPost request = new HttpPost(API_BASE + "/oauth2/token");
+    HttpPost request = new HttpPost(apiBase() + "/oauth2/token");
     List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
     urlParameters.add(new BasicNameValuePair("grant_type", "client_credentials"));
     request.setEntity(new UrlEncodedFormEntity(urlParameters));
@@ -86,7 +84,7 @@ public class PokitDok {
   }
 
   private void setDefaultHeaders(HttpRequestBase request) {
-    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.1" + System.getProperty("java.version"));
+    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.1 jvm version " + System.getProperty("java.version"));
   }
 
   private Map<String, Object> executeAndParse(HttpRequestBase request)
@@ -123,8 +121,12 @@ public class PokitDok {
     return parsedResponse;
   }
 
+  public String apiBase() {
+    return "https://platform.pokitdok.com";
+  }
+
   private String apiUrl(String endpoint, Map<String, Object> params) {
-    String uri = API_BASE + "/api/" + apiVersion + "/" + endpoint;
+    String uri = apiBase() + "/api/" + apiVersion + "/" + endpoint;
 
     if ((params != null) && (!params.isEmpty())) {
       try {

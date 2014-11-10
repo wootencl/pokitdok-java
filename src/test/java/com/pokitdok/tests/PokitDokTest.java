@@ -19,6 +19,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.*;
 
 public class PokitDokTest {
 	private static final String AUTHORIZATIONS_JSON = "src/test/resources/authorizations.json";
@@ -35,6 +36,9 @@ public class PokitDokTest {
 	public static void setup() throws Exception {
 		// ACHTUNG: For your own testing, you'll need to replace the client ID and secret with your own
 		client = new PokitDok("fY4mRbR0Z1Jt4ncQxzoS", "v0rS5gimKU6j2IbWQL6hOM4IMdWqTtTfNMXfjzPH");
+		PokitDok spy = spy(client);
+		when(spy.apiBase()).thenReturn("http://me.pokitdok.com:5002");
+		client = spy;
 	}
 
 	@Test
