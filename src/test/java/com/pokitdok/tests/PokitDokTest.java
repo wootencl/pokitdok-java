@@ -43,6 +43,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Betamax(tape = "authentication")
 	public void shouldCreateTest() throws Exception {
 		assertNotNull(connect());
 	}
