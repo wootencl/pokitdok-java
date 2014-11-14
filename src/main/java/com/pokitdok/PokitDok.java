@@ -83,7 +83,7 @@ public class PokitDok {
   }
 
   private void setDefaultHeaders(HttpRequestBase request) {
-    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.1 jvm version " + System.getProperty("java.version"));
+    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.2 jvm version " + System.getProperty("java.version"));
   }
 
   private Map<String, Object> executeAndParse(HttpRequestBase request)
