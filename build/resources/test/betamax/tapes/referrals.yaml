@@ -1,0 +1,52 @@
+!tape
+name: referrals
+interactions:
+- recorded: 2014-11-14T16:48:23.946Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/oauth2/token
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic a2NpcVhhUDFnSGQ3Q3BCa2FJcEQ6NVc0WW1tZVFrelJld3U2NGNZSE5reEZ1a0FZZXdGM2lab01nY29XMg==
+      Content-Length: '29'
+      Content-Type: application/x-www-form-urlencoded
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.6.1 jvm version 1.8.0_25
+    body: grant_type=client_credentials
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-store
+      Content-Type: application/json;charset=UTF-8
+      Date: Fri, 14 Nov 2014 16:48:23 GMT
+      Pragma: no-cache
+      Server: Werkzeug/0.9.4 Python/2.7.3
+    body: '{"access_token": "PmPUrzWXrzywjvf5FI3QS2QqFoQj8b7Q0P2LWZeS", "token_type": "bearer", "expires": 1415987304, "expires_in": 3600}'
+- recorded: 2014-11-14T16:48:24.088Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/api/v4/referrals/
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer PmPUrzWXrzywjvf5FI3QS2QqFoQj8b7Q0P2LWZeS
+      Content-Encoding: UTF-8
+      Content-Length: '537'
+      Content-Type: application/json
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.6.1 jvm version 1.8.0_25
+    body: '{"provider":{"npi":"1619131232","last_name":"BERTOLAMI","first_name":"CHRISTINA"},"patient":{"birth_date":"1970-01-01","last_name":"DOE","id":"1234567890","first_name":"JANE"},"trading_partner_id":"MOCKPAYER","event":{"delivery":{"quantity_qualifier":"visits","quantity":1},"provider":{"phone":"8645822900","npi":"1154387751","last_name":"FOSTER","first_name":"JOHN"},"certification_type":"initial","category":"specialty_care_review","type":"consultation","diagnoses":[{"date":"2014-09-30","code":"384.20"}],"place_of_service":"office"}}'
+  response:
+    status: 200
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Fri, 14 Nov 2014 16:48:24 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.3
+      charset: utf-8
+      mimetype: application/json
+    body: '{"meta": {"rate_limit_amount": 28, "rate_limit_reset": 1415986686, "application_mode": "test", "processing_time": 126, "rate_limit_cap": 1000, "credits_remaining": 13411, "activity_id": "5466325756c02c264d8ca855", "credits_billed": 1}, "data": {"patient":
+      {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id": "fb02252b-92de-41ca-8012-a8fa3f632282",
+      "client_id": "kciqXaP1gHd7CpBkaIpD", "provider": {"first_name": "CHRISTINA", "last_name": "BERTOLAMI", "tax_id": "1619131232"}, "async": false, "event": {"category": "specialty_care_review", "diagnoses": [{"date": "2005-04-30", "code": "410.90"}], "place_of_service":
+      "office", "review": {"certification_number": "AUTH0001", "second_surgical_opinion_required": false, "certification_action": "certified_in_total"}, "delivery": {"quantity_qualifier": "visits", "quantity": 1}, "provider": {"first_name": "JOHN", "last_name":
+      "FOSTER", "tax_id": "1154387751"}, "certification_type": "initial", "type": "consultation"}, "valid_request": true}}'

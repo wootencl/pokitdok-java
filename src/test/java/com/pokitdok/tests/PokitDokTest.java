@@ -56,7 +56,6 @@ public class PokitDokTest {
 		PokitDok client = connect();
 		Map<String, Object> response = client.authorizations(query);
 
-		System.out.println(response);
 		assertDataAndMeta(response);
 	}
 

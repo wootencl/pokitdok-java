@@ -1,173 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pokitdok.tests.PokitDokTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2014-11-14T17:29:41" hostname="chloe" time="9.467">
+<testsuite name="com.pokitdok.tests.PokitDokTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2014-11-14T17:36:13" hostname="chloe" time="9.433">
   <properties/>
-  <testcase name="shouldCreateTest" classname="com.pokitdok.tests.PokitDokTest" time="2.085"/>
-  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.551"/>
-  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.533"/>
-  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
-  <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
-  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
-  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
-  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokTest" time="0.525"/>
+  <testcase name="shouldCreateTest" classname="com.pokitdok.tests.PokitDokTest" time="2.061"/>
+  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.543"/>
+  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.537"/>
+  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.529"/>
+  <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
+  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
+  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
+  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokTest" time="0.529"/>
   <testcase name="filesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.0"/>
-  <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.527"/>
-  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.548"/>
+  <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
+  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
   <testcase name="tradingPartnersIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
-  <testcase name="tradingPartnersGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.516"/>
-  <testcase name="plansIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
-  <testcase name="plansGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.518"/>
-  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
-  <system-out><![CDATA[{"data":{"async":false,"originating_company_id":"9012345678","provider":{"last_name":"AYA-AY","first_name":"JEROME","tax_id":"1467560003"},"valid_request":true,"patient":{"last_name":"DOE","id":"1234567890","first_name":"JANE"},"trading_partner_id":"MOCKPAYER","correlation_id":"851db045-2a29-4a3b-9830-3feaf0a38f23","event":{"delivery":{"quantity_qualifier":"visits","quantity":1},"provider":{"organization_name":"KELLY ULTRASOUND CENTER, LLC","tax_id":"1760779011"},"review":{"second_surgical_opinion_required":false,"certification_action":"certified_in_total","certification_number":"AUTH0001"},"certification_type":"initial","category":"health_services_review","type":"diagnostic_medical","diagnoses":[{"date":"2005-04-30","code":"410.90"}],"place_of_service":"office"},"payer":{"organization_name":"MOCK PAYER INC","id":"MOCKPAYER"},"client_id":"kciqXaP1gHd7CpBkaIpD"},"meta":{"processing_time":127,"credits_billed":1,"rate_limit_amount":15,"rate_limit_reset":1415986686,"activity_id":"5466324f56c02c26118ca855","application_mode":"test","credits_remaining":13415,"rate_limit_cap":1000}}
-]]></system-out>
-  <system-err><![CDATA[2014-11-14 12:29:42.041:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:42.109:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:42.370:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
-INFO: Recording to 'authentication'
-2014-11-14 12:29:43.366:WARN::1 threads could not be stopped
-Nov 14, 2014 12:29:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
-INFO: writing tape Tape[authentication] to file authentication.yaml...
-2014-11-14 12:29:43.556:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:43.563:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:43.576:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+  <testcase name="tradingPartnersGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
+  <testcase name="plansIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
+  <testcase name="plansGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
+  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[2014-11-14 12:36:14.045:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:14.099:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:14.341:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:14 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: loaded tape with 1 recorded interactions from file authentication.yaml...
+Nov 14, 2014 12:36:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'authentication'
+2014-11-14 12:36:15.525:WARN::1 threads could not be stopped
+2014-11-14 12:36:15.548:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:15.550:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:15.554:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file authorizations.yaml...
-Nov 14, 2014 12:29:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'authorizations'
-Nov 14, 2014 12:29:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'authorizations'
-2014-11-14 12:29:44.100:WARN::1 threads could not be stopped
-2014-11-14 12:29:44.105:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:44.106:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:44.111:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:16.076:WARN::1 threads could not be stopped
+2014-11-14 12:36:16.084:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:16.087:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:16.097:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file cash_prices.yaml...
-Nov 14, 2014 12:29:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'cash_prices'
-Nov 14, 2014 12:29:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'cash_prices'
-Nov 14, 2014 12:29:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'cash_prices'
-2014-11-14 12:29:44.632:WARN::1 threads could not be stopped
-2014-11-14 12:29:44.639:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:44.640:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:44.644:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:16.615:WARN::1 threads could not be stopped
+2014-11-14 12:36:16.619:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:16.620:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:16.623:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file insurance_prices.yaml...
-Nov 14, 2014 12:29:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'insurance_prices'
-Nov 14, 2014 12:29:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'insurance_prices'
-2014-11-14 12:29:45.157:WARN::1 threads could not be stopped
-2014-11-14 12:29:45.162:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:45.163:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:45.166:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:17.144:WARN::1 threads could not be stopped
+2014-11-14 12:36:17.148:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:17.149:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:17.152:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file providers.yaml...
-Nov 14, 2014 12:29:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'providers'
-Nov 14, 2014 12:29:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'providers'
-2014-11-14 12:29:45.680:WARN::1 threads could not be stopped
-2014-11-14 12:29:45.685:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:45.686:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:45.690:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:17.668:WARN::1 threads could not be stopped
+2014-11-14 12:36:17.672:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:17.673:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:17.676:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file eligibility.yaml...
-Nov 14, 2014 12:29:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'eligibility'
-Nov 14, 2014 12:29:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'eligibility'
-2014-11-14 12:29:46.205:WARN::1 threads could not be stopped
-2014-11-14 12:29:46.209:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:46.210:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:46.212:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:18.192:WARN::1 threads could not be stopped
+2014-11-14 12:36:18.195:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:18.196:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:18.198:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file claims.yaml...
-Nov 14, 2014 12:29:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims'
-Nov 14, 2014 12:29:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims'
-2014-11-14 12:29:46.726:WARN::1 threads could not be stopped
-2014-11-14 12:29:46.731:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:46.732:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:46.734:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:18.714:WARN::1 threads could not be stopped
+2014-11-14 12:36:18.719:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:18.719:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:18.722:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file claims_status.yaml...
-Nov 14, 2014 12:29:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims_status'
-Nov 14, 2014 12:29:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims_status'
-2014-11-14 12:29:47.251:WARN::1 threads could not be stopped
-2014-11-14 12:29:47.256:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:47.257:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:47.259:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:19.240:WARN::1 threads could not be stopped
+2014-11-14 12:36:19.247:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:19.248:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:19.249:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file activities.yaml...
-Nov 14, 2014 12:29:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'activities'
-Nov 14, 2014 12:29:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'activities'
-2014-11-14 12:29:47.780:WARN::1 threads could not be stopped
-2014-11-14 12:29:47.783:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:47.784:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:47.786:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:19.767:WARN::1 threads could not be stopped
+2014-11-14 12:36:19.771:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:19.772:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:19.773:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file payers.yaml...
-Nov 14, 2014 12:29:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'payers'
-Nov 14, 2014 12:29:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'payers'
-2014-11-14 12:29:48.327:WARN::1 threads could not be stopped
-2014-11-14 12:29:48.333:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:48.335:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:48.337:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:20.291:WARN::1 threads could not be stopped
+2014-11-14 12:36:20.296:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:20.297:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:20.299:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file trading_partners_index.yaml...
-Nov 14, 2014 12:29:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_index'
-Nov 14, 2014 12:29:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_index'
-2014-11-14 12:29:48.852:WARN::1 threads could not be stopped
-2014-11-14 12:29:48.855:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:48.856:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:48.859:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:20.815:WARN::1 threads could not be stopped
+2014-11-14 12:36:20.819:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:20.820:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:20.822:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file trading_partners_get.yaml...
-Nov 14, 2014 12:29:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_get'
-Nov 14, 2014 12:29:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_get'
-2014-11-14 12:29:49.369:WARN::1 threads could not be stopped
-2014-11-14 12:29:49.373:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:49.374:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:49.376:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:21.339:WARN::1 threads could not be stopped
+2014-11-14 12:36:21.342:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:21.344:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:21.346:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file plans_index.yaml...
-Nov 14, 2014 12:29:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_index'
-Nov 14, 2014 12:29:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_index'
-2014-11-14 12:29:49.889:WARN::1 threads could not be stopped
-2014-11-14 12:29:49.893:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:49.894:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:49.895:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:21.860:WARN::1 threads could not be stopped
+2014-11-14 12:36:21.864:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:21.865:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:21.867:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file plans_get.yaml...
-Nov 14, 2014 12:29:50 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:22 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_get'
-Nov 14, 2014 12:29:50 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:22 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_get'
-2014-11-14 12:29:50.408:WARN::1 threads could not be stopped
-2014-11-14 12:29:50.414:INFO::jetty-7.3.1.v20110307
-2014-11-14 12:29:50.415:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2014-11-14 12:29:50.417:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Nov 14, 2014 12:29:50 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2014-11-14 12:36:22.384:WARN::1 threads could not be stopped
+2014-11-14 12:36:22.388:INFO::jetty-7.3.1.v20110307
+2014-11-14 12:36:22.389:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2014-11-14 12:36:22.390:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Nov 14, 2014 12:36:22 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file referrals.yaml...
-Nov 14, 2014 12:29:50 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:22 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'referrals'
-Nov 14, 2014 12:29:50 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Nov 14, 2014 12:36:22 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'referrals'
-2014-11-14 12:29:50.929:WARN::1 threads could not be stopped
+2014-11-14 12:36:22.906:WARN::1 threads could not be stopped
 ]]></system-err>
 </testsuite>
