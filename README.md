@@ -31,7 +31,7 @@ compile "com.pokitdok:pokitdok-java:0.6.2"
 ```
 
 ### Manual Install
-You can download pokitdok-java-0.6.2.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.6.1.jar) and include it on your classpath, like any other JAR.
+You can download pokitdok-java-0.6.2.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.6.2.jar) and include it on your classpath, like any other JAR.
 A few other JAR requirements need to be on your classpath as well. They are:
 * Apache HTTPCore and HTTPClient, available from [http://hc.apache.org/downloads.cgi](http://hc.apache.org/downloads.cgi)
 * Apache Commons Codec, available from [http://commons.apache.org/proper/commons-codec/download_codec.cgi](http://commons.apache.org/proper/commons-codec/download_codec.cgi)
