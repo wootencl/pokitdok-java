@@ -55,13 +55,12 @@ public class PokitDok {
 
     parser = new JSONParser();
     failedOnceAlready = false;
-
-    builder = HttpClientBuilder.create();
-    builder.useSystemProperties();
-    connect();
   }
 
-  private void connect() throws IOException, ParseException {
+  public void connect() throws IOException, ParseException {
+    builder = HttpClientBuilder.create();
+    builder.useSystemProperties();
+    
     HttpPost request = new HttpPost(apiBase() + "/oauth2/token");
     List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
     urlParameters.add(new BasicNameValuePair("grant_type", "client_credentials"));

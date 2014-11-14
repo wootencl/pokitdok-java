@@ -7,6 +7,7 @@ import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,23 +28,23 @@ public class PokitDokTest {
 	private static final String CLAIMS_JSON = "src/test/resources/claim.json";
 	private static final String CLAIMS_STATUS_JSON = "src/test/resources/claim_status.json";
 	private static final String REFERRALS_JSON = "src/test/resources/referrals.json";
-	private static PokitDok client;
 
 	@Rule
-	public Recorder recorder = new Recorder();
+	public static Recorder recorder = new Recorder();
 
-	@BeforeClass
-	public static void setup() throws Exception {
+	private PokitDok connect() throws Exception {
 		// ACHTUNG: For your own testing, you'll need to replace the client ID and secret with your own
-		client = new PokitDok("fY4mRbR0Z1Jt4ncQxzoS", "v0rS5gimKU6j2IbWQL6hOM4IMdWqTtTfNMXfjzPH");
+		PokitDok client = new PokitDok("kciqXaP1gHd7CpBkaIpD", "5W4YmmeQkzRewu64cYHNkxFukAYewF3iZoMgcoW2");
 		PokitDok spy = spy(client);
 		when(spy.apiBase()).thenReturn("http://me.pokitdok.com:5002");
-		client = spy;
+		spy.connect();
+
+		return spy;
 	}
 
 	@Test
 	public void shouldCreateTest() throws Exception {
-		assertNotNull(client);
+		assertNotNull(connect());
 	}
 
 	@Test
@@ -51,8 +52,10 @@ public class PokitDokTest {
 	public void authorizationsTest() throws Exception {
 		String authorizations = readEntireFile(AUTHORIZATIONS_JSON);
 		Map query = (JSONObject) JSONValue.parse(authorizations);
-
+		PokitDok client = connect();
 		Map<String, Object> response = client.authorizations(query);
+
+		System.out.println(response);
 		assertDataAndMeta(response);
 	}
 
@@ -63,7 +66,8 @@ public class PokitDokTest {
 		cashQuery.put("cpt_code", "87799");
 		cashQuery.put("zip_code", "75201");
 
-		Map<String, Object> response = client.cashPrices(cashQuery);
+		PokitDok client = connect();
+		Map<String, Object> response = connect().cashPrices(cashQuery);
 		assertDataAndMeta(response);
 	}
 
@@ -74,7 +78,7 @@ public class PokitDokTest {
 		insuranceQuery.put("cpt_code", "87799");
 		insuranceQuery.put("zip_code", "29403");
 
-		Map<String, Object> response = client.insurancePrices(insuranceQuery);
+		Map<String, Object> response = connect().insurancePrices(insuranceQuery);
 		assertDataAndMeta(response);
 	}
 
@@ -84,7 +88,7 @@ public class PokitDokTest {
 		Map<String, Object> query = new HashMap<>();
 		query.put("npi", "1467560003");
 
-		Map response = client.providers(query);
+		Map response = connect().providers(query);
 		assertDataAndMeta(response);
 	}
 
@@ -94,7 +98,7 @@ public class PokitDokTest {
 		String eligibility = readEntireFile(ELIGIBILITY_JSON);
 
 		Map<String, Object> eligibilityQuery = (JSONObject) JSONValue.parse(eligibility);
-		Map<String, Object> response = client.eligibility(eligibilityQuery);
+		Map<String, Object> response = connect().eligibility(eligibilityQuery);
 
 		assertDataAndMeta(response);
 		assertHasData(response);
@@ -106,7 +110,7 @@ public class PokitDokTest {
 		String claim = readEntireFile(CLAIMS_JSON);
 
 		Map<String, Object> claimQuery = (JSONObject) JSONValue.parse(claim);
-		Map<String, Object> response = client.eligibility(claimQuery);
+		Map<String, Object> response = connect().eligibility(claimQuery);
 
 		assertDataAndMeta(response);
 		assertHasData(response);
@@ -118,7 +122,7 @@ public class PokitDokTest {
 		String claimStatus = readEntireFile(CLAIMS_STATUS_JSON);
 
 		Map<String, Object> claimStatusQuery = (JSONObject) JSONValue.parse(claimStatus);
-		Map<String, Object> response = client.eligibility(claimStatusQuery);
+		Map<String, Object> response = connect().eligibility(claimStatusQuery);
 
 		assertDataAndMeta(response);
 		assertHasData(response);
@@ -132,21 +136,21 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "activities")
 	public void activitiesTest() throws Exception {
-		Map<String, Object> response = client.activities();
+		Map<String, Object> response = connect().activities();
 		assertDataAndMeta(response);
 	}
 
 	@Test
 	@Betamax(tape = "payers")
 	public void payersTest() throws Exception {
-		Map<String, Object> response = client.payers();
+		Map<String, Object> response = connect().payers();
 		assertDataAndMeta(response);
 	}
 
 	@Test
 	@Betamax(tape = "trading_partners_index")
 	public void tradingPartnersIndexTest() throws Exception {
-		Map<String, Object> response = client.tradingPartners(new HashMap<String, Object>());
+		Map<String, Object> response = connect().tradingPartners(new HashMap<String, Object>());
 		assertDataAndMeta(response);
 		assertTrue(response.get("data") instanceof org.json.simple.JSONArray);
 	}
@@ -157,7 +161,7 @@ public class PokitDokTest {
 		Map<String, Object> query = new HashMap<>();
 		query.put("trading_partner_id", "MOCKPAYER");
 
-		Map<String, Object> response = client.tradingPartners(query);
+		Map<String, Object> response = connect().tradingPartners(query);
 		assertDataAndMeta(response);
 		assertTrue(response.get("data") instanceof org.json.simple.JSONObject);
 	}
@@ -165,8 +169,8 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "plans_index")
 	public void plansIndexTest() throws Exception {
-		Map<String, Object> query = new HashMap<>();
-		Map<String, Object> response = client.plans(query);
+
+		Map<String, Object> response = connect().plans();
 
 		assertDataAndMeta(response);
 		assertHasDataArray(response);
@@ -179,7 +183,7 @@ public class PokitDokTest {
 		query.put("state", "TX");
 		query.put("plan_type", "PPO");
 
-		Map<String, Object> response = client.plans(query);
+		Map<String, Object> response = connect().plans(query);
 		assertDataAndMeta(response);
 		assertHasDataArray(response);
 	}
@@ -190,7 +194,7 @@ public class PokitDokTest {
 		String referrals = readEntireFile(REFERRALS_JSON);
 
 		Map<String, Object> referralsQuery = (JSONObject) JSONValue.parse(referrals);
-		Map<String, Object> response = client.referrals(referralsQuery);
+		Map<String, Object> response = connect().referrals(referralsQuery);
 
 		assertDataAndMeta(response);
 		assertHasData(response);
