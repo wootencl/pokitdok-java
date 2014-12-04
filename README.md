@@ -249,13 +249,13 @@ To work around this error, you may use the replacement security provider from Bo
 the JDK 1.5 - 1.7 security provider JAR from [http://www.bouncycastle.org/latest_releases.html](http://www.bouncycastle.org/latest_releases.html) (the filename will be _bcprov-jdk15on-VERSION.jar_) and put
 it on your CLASSPATH. In your code, import the Java security class, and the new BouncyCastle provider:
 
-```
+```java
 import java.security.Security;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 ```
 
 Then, before instantiating the PokitDok class, do the following:
-```
+```java
 /* This line enables the replacement security provider. */
 Security.addProvider(new BouncyCastleProvider());
 ```
