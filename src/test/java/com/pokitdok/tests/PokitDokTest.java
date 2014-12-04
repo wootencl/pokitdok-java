@@ -62,7 +62,7 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "cash_prices")
 	public void cashPricesTest() throws Exception {
-		Map<String, Object> cashQuery = new HashMap<>();
+		Map<String, Object> cashQuery = new HashMap<String, Object>();
 		cashQuery.put("cpt_code", "87799");
 		cashQuery.put("zip_code", "75201");
 
@@ -74,7 +74,7 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "insurance_prices")
 	public void insurancePricesTest() throws Exception {
-		Map<String, Object> insuranceQuery = new HashMap<>();
+		Map<String, Object> insuranceQuery = new HashMap<String, Object>();
 		insuranceQuery.put("cpt_code", "87799");
 		insuranceQuery.put("zip_code", "29403");
 
@@ -85,7 +85,7 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "providers")
 	public void providersTest() throws Exception {
-		Map<String, Object> query = new HashMap<>();
+		Map<String, Object> query = new HashMap<String, Object>();
 		query.put("npi", "1467560003");
 
 		Map response = connect().providers(query);
@@ -158,7 +158,7 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "trading_partners_get")
 	public void tradingPartnersGetTest() throws Exception {
-		Map<String, Object> query = new HashMap<>();
+		Map<String, Object> query = new HashMap<String, Object>();
 		query.put("trading_partner_id", "MOCKPAYER");
 
 		Map<String, Object> response = connect().tradingPartners(query);
@@ -179,7 +179,7 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "plans_get")
 	public void plansGetTest() throws Exception {
-		Map<String, Object> query = new HashMap<>();
+		Map<String, Object> query = new HashMap<String, Object>();
 		query.put("state", "TX");
 		query.put("plan_type", "PPO");
 
@@ -228,10 +228,15 @@ public class PokitDokTest {
 	 * Utility method for loading up JSON scaffolds. Don't do this.
 	 */
 	private String readEntireFile(String filename) throws IOException {
-		try (FileInputStream inputStream = new FileInputStream(filename)) {
+		FileInputStream inputStream = new FileInputStream(filename);
+		try {
 			return IOUtils.toString(inputStream);
-		} catch (FileNotFoundException e) {
+		}
+		catch (FileNotFoundException e) {
 			throw new IllegalStateException(e);
+		}
+		finally {
+			if (inputStream != null) inputStream.close();
 		}
 	}
 }

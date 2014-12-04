@@ -72,18 +72,22 @@ public class PokitDok {
 
     request.setHeader(HttpHeaders.AUTHORIZATION, authHeader);
     setDefaultHeaders(request);
-
-    try (CloseableHttpClient client = builder.build()) {
+  
+    CloseableHttpClient client = builder.build();
+    try {
       HttpResponse response = client.execute(request);
       Map<String, Object> parsedResponse = (JSONObject) parser.parse(
               EntityUtils.toString(response.getEntity()));
 
       accessToken = (String) parsedResponse.get("access_token");
     }
+    finally {
+      if (client != null) client.close();
+    }
   }
 
   private void setDefaultHeaders(HttpRequestBase request) {
-    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.2 jvm version " + System.getProperty("java.version"));
+    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.3 jvm version " + System.getProperty("java.version"));
   }
 
   private Map<String, Object> executeAndParse(HttpRequestBase request)
