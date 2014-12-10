@@ -27,15 +27,15 @@ configurations {
 }
 
 dependencies {
-	compile "org.apache.httpcomponents:httpclient:4.3.+"
-	compile "com.googlecode.json-simple:json-simple:1.1.+"
+	compile "org.apache.httpcomponents:httpclient:4.3.6"
+	compile "com.googlecode.json-simple:json-simple:1.1.1"
 
 	// We currently need to use Groovy 2.2.x due to a Betamax/Groovy bug
 	// See: https://github.com/robfletcher/betamax/issues/141
 	testCompile "org.codehaus.groovy:groovy-all:2.2.0"
-	testCompile "co.freeside:betamax:1.1.+"
-	testCompile "commons-io:commons-io:2.+"
-	testCompile "org.mockito:mockito-core:1.+"
+	testCompile "co.freeside:betamax:1.1.2"
+	testCompile "commons-io:commons-io:2.4"
+	testCompile "org.mockito:mockito-core:1.9.5"
 }
 
 if (hasProperty("sonatypeUsername") && hasProperty("sonatypePassword")) {
