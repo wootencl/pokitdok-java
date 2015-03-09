@@ -28,12 +28,15 @@ public class PokitDokTest {
 	private static final String CLAIMS_JSON = "src/test/resources/claim.json";
 	private static final String CLAIMS_STATUS_JSON = "src/test/resources/claim_status.json";
 	private static final String REFERRALS_JSON = "src/test/resources/referrals.json";
+	private static final String BOOK_APPOINTMENT_JSON = "src/test/resources/book_appointment.json";
+	private static final String OPEN_SLOTS_JSON = "src/test/resources/open_slots.json";
+	private static final String UPDATE_APPOINTMENT_JSON = "src/test/resources/update_appointment.json";
 
 	@Rule
 	public static Recorder recorder = new Recorder();
 
 	private PokitDok connect() throws Exception {
-		// ACHTUNG: For your own testing, you'll need to replace the client ID and secret with your own
+		// For your own testing, you'll need to replace the client ID and secret with your own
 		PokitDok client = new PokitDok("kciqXaP1gHd7CpBkaIpD", "5W4YmmeQkzRewu64cYHNkxFukAYewF3iZoMgcoW2");
 		PokitDok spy = spy(client);
 		when(spy.apiBase()).thenReturn("http://me.pokitdok.com:5002");
@@ -200,11 +203,106 @@ public class PokitDokTest {
 		assertHasData(response);
 	}
 
-	/**
-	 * *************************************************************************
+	/*******************
+	 * Scheduling tests.
+	 *******************/
+	@Test
+	@Betamax(tape = "scheduling")
+	public void listSchedulersTest() throws Exception {
+		Map<String, Object> query = new HashMap<String, Object>();
+		Map<String, Object> response = connect().schedulers(query);
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void showSchedulerTest() throws Exception {
+		Map<String, Object> query = new HashMap<String, Object>();
+		Map<String, Object> response = connect().scheduler(query);
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void listAppointmentTypesTest() throws Exception {
+		Map<String, Object> query = new HashMap<String, Object>();
+		Map<String, Object> response = connect().appointmentTypes(query);
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void showAppointmentTypeTest() throws Exception {
+		Map<String, Object> response =
+			connect().appointmentType(new HashMap<String, Object>());
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void openAppointmentSlotsTest() throws Exception {
+		String openSlotsQuery = readEntireFile(OPEN_SLOTS_JSON);
+
+		Map<String, Object> query = (JSONObject) JSONValue.parse(openSlotsQuery);
+		Map<String, Object> response = connect().slots(query);
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void bookAppointmentTest() throws Exception {
+		String bookAppointmentJSON = readEntireFile(BOOK_APPOINTMENT_JSON);
+
+		Map<String, Object> query = (JSONObject) JSONValue.parse(bookAppointmentJSON);
+		Map<String, Object> response = connect().bookAppointment(query);
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void updateAppointmentTest() throws Exception {
+		String queryJSON = readEntireFile(UPDATE_APPOINTMENT_JSON);
+		String id = "";
+
+		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
+		Map<String, Object> response = connect().updateAppointment(id, query);
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void cancelAppointmentTest() throws Exception {
+		String id = "";
+
+		Map<String, Object> response =
+			connect().cancelAppointment(id, new HashMap<String, Object>());
+
+		assertDataAndMeta(response);
+		assertHasData(response);
+	}
+
+	@Test
+	@Betamax(tape = "scheduling")
+	public void failWithoutScopeCodeTest() throws Exception {
+	}	
+
+	/***********************************************************************
 	 * Beyond lie utility methods for testing purposes. Nothing to see here.
-	 * **************************************************************************
-	 */
+	 ***********************************************************************/
 
 	private void assertDataAndMeta(Map response) {
 		assertNotNull(response);

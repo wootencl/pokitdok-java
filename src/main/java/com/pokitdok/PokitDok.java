@@ -9,8 +9,10 @@ import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
@@ -34,13 +36,14 @@ import java.util.List;
 import java.util.Map;
 
 public class PokitDok {
-  private String            clientId;
-  private String            clientSecret;
-  private String            apiVersion;
-  private String            accessToken;
-  private HttpClientBuilder builder;
-  private JSONParser        parser;
-  private boolean           failedOnceAlready;
+  private String              clientId;
+  private String              clientSecret;
+  private String              apiVersion;
+  private String              accessToken;
+  private HttpClientBuilder   builder;
+  private JSONParser          parser;
+  private boolean             failedOnceAlready;
+  private Map<String, String> scopeCodes;
 
   public PokitDok(String clientId, String clientSecret)
     throws IOException, ParseException {
@@ -55,6 +58,7 @@ public class PokitDok {
 
     parser = new JSONParser();
     failedOnceAlready = false;
+    scopeCodes = new HashMap<String, String>();
   }
 
   public void connect() throws IOException, ParseException {
@@ -87,7 +91,7 @@ public class PokitDok {
   }
 
   private void setDefaultHeaders(HttpRequestBase request) {
-    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.6.3 jvm version " + System.getProperty("java.version"));
+    request.setHeader(HttpHeaders.USER_AGENT, "pokitdok-java 0.7 jvm version " + System.getProperty("java.version"));
   }
 
   private Map<String, Object> executeAndParse(HttpRequestBase request)
@@ -155,12 +159,22 @@ public class PokitDok {
 
   private Map<String, Object> get(String url, Map<String, Object> params)
   throws IOException, UnauthorizedException {
+    return get(url, params, "default");
+  }
+
+  private Map<String, Object> get(String url, Map<String, Object> params, String scope)
+  throws IOException, UnauthorizedException {
     HttpGet getRequest = new HttpGet(apiUrl(url, params));
 
     return executeAndParse(getRequest);
   }
 
   private Map<String, Object> post(String url, Map<String, Object> params)
+  throws IOException, UnauthorizedException {
+    return post(url, params, "default");
+  }
+
+  private Map<String, Object> post(String url, Map<String, Object> params, String scope)
   throws IOException, UnauthorizedException {
     HttpPost postRequest = new HttpPost(apiUrl(url));
 
@@ -172,6 +186,26 @@ public class PokitDok {
 
     return executeAndParse(postRequest);
   }
+
+  private Map<String, Object> put(String url, Map<String, Object> params)
+  throws IOException, UnauthorizedException {
+    return put(url, params, "default");
+  }
+
+  private Map<String, Object> put(String url, Map<String, Object> params, String scope)
+  throws IOException, UnauthorizedException {
+    return null;
+  }
+
+  private Map<String, Object> delete(String url, Map<String, Object> params)
+  throws IOException, UnauthorizedException {
+    return delete(url, params, "default");
+  }
+
+  private Map<String, Object> delete(String url, Map<String, Object> params, String scope)
+  throws IOException, UnauthorizedException {
+    return null;
+  }  
 
   private boolean isUnauthorized(Map<String, Object> response, boolean throwOnUnauthorized) throws UnauthorizedException {
     boolean unauthorized = false;
@@ -311,5 +345,76 @@ public class PokitDok {
     else {
       return get("tradingpartners/", params);
     }
+  }
+
+  /* Scheduling endpoints */
+
+  /** Invokes the appointments endpoint, for a singular appointment,
+      with a HashMap of parameters. */
+  public Map<String, Object> appointment(String appointmentId, Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;
+  }
+
+  /** Invokes the appointments endpoint, with a HashMap of parameters. */
+  public Map<String, Object> appointments(Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;
+  }
+
+  /** Invokes the appointment types endpoint, for a singular appointment
+      type, with a HashMap of parameters. */
+  public Map<String, Object> appointmentType(Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;  
+  }
+
+  /** Invokes the appointment types endpoint with a HashMap of parameters. */
+  public Map<String, Object> appointmentTypes(Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;  
+  }
+
+  /** Invokes the appointments endpoint to book a new appointment 
+      with a HashMap of parameters. */
+  public Map<String, Object> bookAppointment(Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;  
+  }
+
+  /** Invokes the appointments endpoint to cancel a new appointment 
+      with a HashMap of parameters. */
+  public Map<String, Object> cancelAppointment(String id, Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;
+  }
+
+  /** Invokes the schedulers endpoint, for a singular scheduler,
+      with a HashMap of parameters. */
+  public Map<String, Object> scheduler(Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;  
+  }
+
+  /** Invokes the schedulers endpoint with a HashMap of parameters. */
+  public Map<String, Object> schedulers(Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;  
+  }
+
+  /* Scheduling endpoints */
+  public Map<String, Object> slots(Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;  
+  }
+
+  /* Scheduling endpoints */
+  public Map<String, Object> updateAppointment(String appointmentId, Map <String, Object> params)
+  throws IOException, UnauthorizedException {
+    return null;  
+  }
+
+  public void addScopeCode(String scopeName, String scopeCode) {
+    this.scopeCodes.put(scopeName, scopeCode);
   }
 }
