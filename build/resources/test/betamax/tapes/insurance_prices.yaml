@@ -22,6 +22,7 @@ interactions:
       Date: Fri, 14 Nov 2014 16:48:17 GMT
       Pragma: no-cache
       Server: Werkzeug/0.9.4 Python/2.7.3
+      X-Betamax: !!org.codehaus.groovy.runtime.GStringImpl {}
     body: '{"access_token": "rm0hc8gpXxDAlmZeROBu6kZpCKwxtXL4oUpoJZ3h", "token_type": "bearer", "expires": 1415987297, "expires_in": 3600}'
 - recorded: 2014-11-14T16:48:17.370Z
   request:
@@ -44,3 +45,24 @@ interactions:
     body: '{"meta": {"rate_limit_amount": 17, "rate_limit_reset": 1415986686, "application_mode": "test", "processing_time": 10, "rate_limit_cap": 1000, "credits_remaining": 9982, "activity_id": "5466325156c02c261a8ca855", "credits_billed": 1}, "data": {"amounts":
       [{"high_price": 23.43, "standard_deviation": 2.95, "average_price": 18.43, "payer_type": "insurance", "payment_type": "allowed", "low_price": 15.42, "median_price": 19.27}, {"high_price": 54.85, "standard_deviation": 8.42, "average_price": 30.9, "payer_type":
       "insurance", "payment_type": "submitted", "low_price": 24.65, "median_price": 29.74}], "cpt_code": "87799", "geo_zip_area": "294"}}'
+- recorded: 2015-03-09T21:39:55.361Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/prices/insurance?zip_code=29403&cpt_code=87799
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer rm0hc8gpXxDAlmZeROBu6kZpCKwxtXL4oUpoJZ3h
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 401
+    headers:
+      Content-Type: application/json
+      Date: Mon, 09 Mar 2015 21:39:55 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+      X-Betamax: PLAY
+    body: |-
+      {
+        "message": "Unauthorized"
+      }

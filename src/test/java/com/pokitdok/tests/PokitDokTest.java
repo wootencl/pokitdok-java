@@ -38,11 +38,10 @@ public class PokitDokTest {
 	private PokitDok connect() throws Exception {
 		// For your own testing, you'll need to replace the client ID and secret with your own
 		PokitDok client = new PokitDok("kciqXaP1gHd7CpBkaIpD", "5W4YmmeQkzRewu64cYHNkxFukAYewF3iZoMgcoW2");
-		PokitDok spy = spy(client);
-		when(spy.apiBase()).thenReturn("http://me.pokitdok.com:5002");
-		spy.connect();
+		client.setAPIBase("http://me.pokitdok.com:5002");
+		client.connect();
 
-		return spy;
+		return client;
 	}
 
 	@Test
@@ -219,8 +218,10 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "scheduling")
 	public void showSchedulerTest() throws Exception {
+		String id = "";
+
 		Map<String, Object> query = new HashMap<String, Object>();
-		Map<String, Object> response = connect().scheduler(query);
+		Map<String, Object> response = connect().scheduler(id, query);
 
 		assertDataAndMeta(response);
 		assertHasData(response);
@@ -239,20 +240,10 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "scheduling")
 	public void showAppointmentTypeTest() throws Exception {
+		String id = "";
+
 		Map<String, Object> response =
-			connect().appointmentType(new HashMap<String, Object>());
-
-		assertDataAndMeta(response);
-		assertHasData(response);
-	}
-
-	@Test
-	@Betamax(tape = "scheduling")
-	public void openAppointmentSlotsTest() throws Exception {
-		String openSlotsQuery = readEntireFile(OPEN_SLOTS_JSON);
-
-		Map<String, Object> query = (JSONObject) JSONValue.parse(openSlotsQuery);
-		Map<String, Object> response = connect().slots(query);
+			connect().appointmentType(id, new HashMap<String, Object>());
 
 		assertDataAndMeta(response);
 		assertHasData(response);
@@ -261,10 +252,12 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "scheduling")
 	public void bookAppointmentTest() throws Exception {
+		String id = "";
+
 		String bookAppointmentJSON = readEntireFile(BOOK_APPOINTMENT_JSON);
 
 		Map<String, Object> query = (JSONObject) JSONValue.parse(bookAppointmentJSON);
-		Map<String, Object> response = connect().bookAppointment(query);
+		Map<String, Object> response = connect().bookAppointment(id, query);
 
 		assertDataAndMeta(response);
 		assertHasData(response);

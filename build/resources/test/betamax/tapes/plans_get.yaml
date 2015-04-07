@@ -22,6 +22,7 @@ interactions:
       Date: Fri, 14 Nov 2014 16:48:23 GMT
       Pragma: no-cache
       Server: Werkzeug/0.9.4 Python/2.7.3
+      X-Betamax: !!org.codehaus.groovy.runtime.GStringImpl {}
     body: '{"access_token": "0EEkaZKP6Zblh59HnlSqeUUCRQhhoEejeNAHUquU", "token_type": "bearer", "expires": 1415987303, "expires_in": 3600}'
 - recorded: 2014-11-14T16:48:23.402Z
   request:
@@ -71,3 +72,24 @@ interactions:
       1}, {"age": 50, "cost": 1311.3, "adults": 2, "children": 1}, {"age": 21, "cost": 1057.55, "adults": 2, "children": 1}, {"age": 30, "cost": 1130.67, "adults": 2, "children": 1}, {"age": 40, "cost": 1208.11, "adults": 2, "children": 1}, {"age": 50, "cost":
       1483.27, "adults": 2, "children": 1}], "plan_id": "26065SC0380001", "trading_partner_id": "blue_cross_blue_shield_sc", "state": "SC", "metallic_level": "gold", "customer_service_phone": "1-800-550-6322", "plan_name": "BlueEssentials Gold 1", "plan_type":
       "EPO", "benefits_summary_url": "https://www.southcarolinablues.com/links/metallic/SBC"}]}'
+- recorded: 2015-03-09T21:40:00.701Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/plans?state=TX&plan_type=PPO
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer 0EEkaZKP6Zblh59HnlSqeUUCRQhhoEejeNAHUquU
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 401
+    headers:
+      Content-Type: application/json
+      Date: Mon, 09 Mar 2015 21:40:00 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+      X-Betamax: PLAY
+    body: |-
+      {
+        "message": "Unauthorized"
+      }

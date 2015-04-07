@@ -9,7 +9,8 @@ hs_err_pid*
 reports/
 
 .gradle/
-
+build/ivy.xml
+build/poms/
 
 # Created by https://www.gitignore.io
 
