@@ -150,7 +150,7 @@ public class PokitDok {
   }
 
   public String getAPIBase() {
-    return "https://platform.pokitdok.com";
+    return this.apiBase;
   }
 
   public void setAPIBase(String apiBase) {

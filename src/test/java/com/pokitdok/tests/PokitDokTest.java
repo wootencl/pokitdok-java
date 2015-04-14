@@ -20,7 +20,6 @@ import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.*;
 
 public class PokitDokTest {
 	private static final String AUTHORIZATIONS_JSON = "src/test/resources/authorizations.json";
@@ -37,7 +36,7 @@ public class PokitDokTest {
 
 	private PokitDok connect() throws Exception {
 		// For your own testing, you'll need to replace the client ID and secret with your own
-		PokitDok client = new PokitDok("kciqXaP1gHd7CpBkaIpD", "5W4YmmeQkzRewu64cYHNkxFukAYewF3iZoMgcoW2");
+		PokitDok client = new PokitDok("EY9GpOXS42EUIBQCd1Ft", "OQcdiZNjOHmS2L2mAUXm7xwX5dQBeJBk9mwwcTaF");
 		client.setAPIBase("http://me.pokitdok.com:5002");
 		client.connect();
 
@@ -291,6 +290,27 @@ public class PokitDokTest {
 	@Test
 	@Betamax(tape = "scheduling")
 	public void failWithoutScopeCodeTest() throws Exception {
+	}
+
+	@Test
+	@Betamax(tape = "mpc")
+	public void mpcTest() throws Exception {
+		Map<String, Object> response =
+			connect().mpc(new HashMap<String, Object>());
+
+		assertDataAndMeta(response);
+		assertHasDataArray(response);
+	}
+
+	@Test
+	@Betamax(tape = "mpc")
+	public void singleMPCTest() throws Exception {
+		String mpc = "99213";
+		Map<String, Object> response =
+			connect().mpc(mpc, new HashMap<String, Object>());
+
+		assertDataAndMeta(response);
+		assertHasData(response);
 	}	
 
 	/***********************************************************************
