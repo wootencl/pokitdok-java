@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pokitdok.tests.PokitDokTest" tests="26" skipped="0" failures="8" errors="0" timestamp="2015-04-14T19:07:11" hostname="chloe" time="10.776">
+<testsuite name="com.pokitdok.tests.PokitDokTest" tests="26" skipped="0" failures="8" errors="0" timestamp="2015-04-15T03:57:38" hostname="chloe" time="10.565">
   <properties/>
-  <testcase name="shouldCreateTest" classname="com.pokitdok.tests.PokitDokTest" time="1.069"/>
-  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.528"/>
-  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.529"/>
-  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
-  <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.525"/>
-  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
-  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
-  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokTest" time="0.528"/>
+  <testcase name="shouldCreateTest" classname="com.pokitdok.tests.PokitDokTest" time="1.195"/>
+  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.526"/>
+  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.53"/>
+  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
+  <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
+  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
+  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
+  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
   <testcase name="filesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.0"/>
-  <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
-  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
-  <testcase name="tradingPartnersIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.523"/>
-  <testcase name="tradingPartnersGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
-  <testcase name="plansIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.526"/>
-  <testcase name="plansGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
-  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
-  <testcase name="listSchedulersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.137">
+  <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.525"/>
+  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
+  <testcase name="tradingPartnersIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.525"/>
+  <testcase name="tradingPartnersGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.522"/>
+  <testcase name="plansIndexTest" classname="com.pokitdok.tests.PokitDokTest" time="0.524"/>
+  <testcase name="plansGetTest" classname="com.pokitdok.tests.PokitDokTest" time="0.53"/>
+  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokTest" time="0.519"/>
+  <testcase name="listSchedulersTest" classname="com.pokitdok.tests.PokitDokTest" time="0.134">
     <failure message="co.freeside.betamax.tape.TapeLoadException: Invalid tape" type="co.freeside.betamax.tape.TapeLoadException">co.freeside.betamax.tape.TapeLoadException: Invalid tape
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
@@ -112,7 +112,7 @@
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@349909e4; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6ca8a7af; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@6054b57; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@417d4040; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -126,12 +126,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 83 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@349909e4; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6ca8a7af; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@6054b57; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@417d4040; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 90 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@349909e4; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6ca8a7af; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@6054b57; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@417d4040; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -141,7 +141,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 92 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6ca8a7af; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@417d4040; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -263,7 +263,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@2880770d; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@18bbe3dd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@36c945c3; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@598b083a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -277,12 +277,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 80 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@2880770d; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@18bbe3dd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@36c945c3; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@598b083a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 87 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@2880770d; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@18bbe3dd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@36c945c3; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@598b083a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -292,7 +292,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 89 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@18bbe3dd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@598b083a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -324,7 +324,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	... 108 more
 </failure>
   </testcase>
-  <testcase name="listAppointmentTypesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.12">
+  <testcase name="listAppointmentTypesTest" classname="com.pokitdok.tests.PokitDokTest" time="0.122">
     <failure message="co.freeside.betamax.tape.TapeLoadException: Invalid tape" type="co.freeside.betamax.tape.TapeLoadException">co.freeside.betamax.tape.TapeLoadException: Invalid tape
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
@@ -414,7 +414,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@7148820c; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@5e595ecd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@49480586; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@48acdc2a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -428,12 +428,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 80 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@7148820c; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@5e595ecd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@49480586; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@48acdc2a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 87 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@7148820c; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@5e595ecd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@49480586; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@48acdc2a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -443,7 +443,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 89 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@5e595ecd; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@48acdc2a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -475,7 +475,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	... 108 more
 </failure>
   </testcase>
-  <testcase name="showAppointmentTypeTest" classname="com.pokitdok.tests.PokitDokTest" time="0.12">
+  <testcase name="showAppointmentTypeTest" classname="com.pokitdok.tests.PokitDokTest" time="0.121">
     <failure message="co.freeside.betamax.tape.TapeLoadException: Invalid tape" type="co.freeside.betamax.tape.TapeLoadException">co.freeside.betamax.tape.TapeLoadException: Invalid tape
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
@@ -565,7 +565,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@37b98284; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@7dee8a4b; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@158654b4; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@38080131; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -579,12 +579,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 80 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@37b98284; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@7dee8a4b; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@158654b4; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@38080131; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 87 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@37b98284; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@7dee8a4b; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@158654b4; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@38080131; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -594,7 +594,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 89 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@7dee8a4b; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@38080131; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -626,7 +626,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	... 108 more
 </failure>
   </testcase>
-  <testcase name="bookAppointmentTest" classname="com.pokitdok.tests.PokitDokTest" time="0.12">
+  <testcase name="bookAppointmentTest" classname="com.pokitdok.tests.PokitDokTest" time="0.119">
     <failure message="co.freeside.betamax.tape.TapeLoadException: Invalid tape" type="co.freeside.betamax.tape.TapeLoadException">co.freeside.betamax.tape.TapeLoadException: Invalid tape
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
@@ -716,7 +716,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@6bac124; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@66d9e68; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@16aed816; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6a1ef618; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -730,12 +730,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 80 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@6bac124; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@66d9e68; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@16aed816; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6a1ef618; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 87 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@6bac124; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@66d9e68; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@16aed816; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6a1ef618; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -745,7 +745,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 89 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@66d9e68; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6a1ef618; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -777,7 +777,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	... 108 more
 </failure>
   </testcase>
-  <testcase name="updateAppointmentTest" classname="com.pokitdok.tests.PokitDokTest" time="0.12">
+  <testcase name="updateAppointmentTest" classname="com.pokitdok.tests.PokitDokTest" time="0.118">
     <failure message="co.freeside.betamax.tape.TapeLoadException: Invalid tape" type="co.freeside.betamax.tape.TapeLoadException">co.freeside.betamax.tape.TapeLoadException: Invalid tape
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
@@ -867,7 +867,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@44e356; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@45636429; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@70ecceab; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6df5044a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -881,12 +881,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 80 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@44e356; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@45636429; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@70ecceab; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6df5044a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 87 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@44e356; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@45636429; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@70ecceab; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6df5044a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -896,7 +896,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 89 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@45636429; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@6df5044a; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -928,7 +928,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	... 108 more
 </failure>
   </testcase>
-  <testcase name="cancelAppointmentTest" classname="com.pokitdok.tests.PokitDokTest" time="0.12">
+  <testcase name="cancelAppointmentTest" classname="com.pokitdok.tests.PokitDokTest" time="0.122">
     <failure message="co.freeside.betamax.tape.TapeLoadException: Invalid tape" type="co.freeside.betamax.tape.TapeLoadException">co.freeside.betamax.tape.TapeLoadException: Invalid tape
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
@@ -1018,7 +1018,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@4ff41ba0; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@32bde0d6; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@636130e; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1365e36d; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -1032,12 +1032,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 80 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@4ff41ba0; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@32bde0d6; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@636130e; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1365e36d; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 87 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@4ff41ba0; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@32bde0d6; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@636130e; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1365e36d; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -1047,7 +1047,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 89 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@32bde0d6; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1365e36d; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -1079,7 +1079,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	... 108 more
 </failure>
   </testcase>
-  <testcase name="failWithoutScopeCodeTest" classname="com.pokitdok.tests.PokitDokTest" time="0.12">
+  <testcase name="failWithoutScopeCodeTest" classname="com.pokitdok.tests.PokitDokTest" time="0.122">
     <failure message="co.freeside.betamax.tape.TapeLoadException: Invalid tape" type="co.freeside.betamax.tape.TapeLoadException">co.freeside.betamax.tape.TapeLoadException: Invalid tape
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
@@ -1169,7 +1169,7 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
-Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@3e821555; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@79c23a4e; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betamax.tape.yaml.YamlTape; exception=Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@7a75d1b8; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1dd4bfb4; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
  in &quot;&lt;reader&gt;&quot;, line 1, column 1:
     !tape
     ^
@@ -1183,12 +1183,12 @@ Caused by: Can't construct a java object for tag:yaml.org,2002:co.freeside.betam
 	at org.yaml.snakeyaml.Yaml$loadAs.call(Unknown Source)
 	at co.freeside.betamax.tape.yaml.YamlTape.readFrom(YamlTape.groovy:41)
 	... 80 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@3e821555; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@79c23a4e; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=interactions for JavaBean=Tape[scheduling]; Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@7a75d1b8; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1dd4bfb4; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject.construct(Constructor.java:331)
 	... 87 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@3e821555; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@79c23a4e; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=response for JavaBean=co.freeside.betamax.tape.RecordedInteraction@7a75d1b8; Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1dd4bfb4; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -1198,7 +1198,7 @@ Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=respon
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:296)
 	... 89 more
-Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@79c23a4e; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
+Caused by: org.yaml.snakeyaml.error.YAMLException: Cannot create property=headers for JavaBean=co.freeside.betamax.message.tape.RecordedResponse@1dd4bfb4; null; Can't construct a java object for tag:yaml.org,2002:org.codehaus.groovy.runtime.GStringImpl; exception=java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringImpl.&lt;init&gt;()
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.constructJavaBean2ndStep(Constructor.java:299)
 	at org.yaml.snakeyaml.constructor.Constructor$ConstructMapping.construct(Constructor.java:189)
 	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:182)
@@ -1230,212 +1230,210 @@ Caused by: java.lang.NoSuchMethodException: org.codehaus.groovy.runtime.GStringI
 	... 108 more
 </failure>
   </testcase>
-  <testcase name="mpcTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
-  <testcase name="singleMPCTest" classname="com.pokitdok.tests.PokitDokTest" time="0.858"/>
+  <testcase name="mpcTest" classname="com.pokitdok.tests.PokitDokTest" time="0.519"/>
+  <testcase name="singleMPCTest" classname="com.pokitdok.tests.PokitDokTest" time="0.521"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[2015-04-14 15:07:11.368:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:11.405:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:11.554:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:11 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+  <system-err><![CDATA[2015-04-14 23:57:39.290:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:39.338:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:39.497:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:39 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 1 recorded interactions from file authentication.yaml...
-Apr 14, 2015 3:07:11 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:39 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'authentication'
-2015-04-14 15:07:12.074:WARN::1 threads could not be stopped
-2015-04-14 15:07:12.082:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:12.083:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:12.086:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:12 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:39.980:WARN::1 threads could not be stopped
+2015-04-14 23:57:39.988:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:39.989:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:39.992:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:40 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file authorizations.yaml...
-Apr 14, 2015 3:07:12 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:40 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'authorizations'
-Apr 14, 2015 3:07:12 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:40 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'authorizations'
-2015-04-14 15:07:12.606:WARN::1 threads could not be stopped
-2015-04-14 15:07:12.611:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:12.612:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:12.615:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:12 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:40.509:WARN::1 threads could not be stopped
+2015-04-14 23:57:40.514:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:40.515:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:40.518:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:40 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file cash_prices.yaml...
-Apr 14, 2015 3:07:13 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:40 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'cash_prices'
-Apr 14, 2015 3:07:13 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:40 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'cash_prices'
-Apr 14, 2015 3:07:13 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:40 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'cash_prices'
-2015-04-14 15:07:13.137:WARN::1 threads could not be stopped
-2015-04-14 15:07:13.141:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:13.142:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:13.144:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:13 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:41.039:WARN::1 threads could not be stopped
+2015-04-14 23:57:41.045:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:41.046:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:41.049:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:41 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file insurance_prices.yaml...
-Apr 14, 2015 3:07:13 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:41 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'insurance_prices'
-Apr 14, 2015 3:07:13 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:41 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'insurance_prices'
-2015-04-14 15:07:13.660:WARN::1 threads could not be stopped
-2015-04-14 15:07:13.666:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:13.667:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:13.670:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:13 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:41.563:WARN::1 threads could not be stopped
+2015-04-14 23:57:41.567:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:41.568:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:41.571:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:41 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file providers.yaml...
-Apr 14, 2015 3:07:14 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:41 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'providers'
-Apr 14, 2015 3:07:14 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:41 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'providers'
-2015-04-14 15:07:14.186:WARN::1 threads could not be stopped
-2015-04-14 15:07:14.191:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:14.192:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:14.195:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:14 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:42.087:WARN::1 threads could not be stopped
+2015-04-14 23:57:42.093:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:42.094:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:42.097:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file eligibility.yaml...
-Apr 14, 2015 3:07:14 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'eligibility'
-Apr 14, 2015 3:07:14 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'eligibility'
-2015-04-14 15:07:14.707:WARN::1 threads could not be stopped
-2015-04-14 15:07:14.712:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:14.713:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:14.716:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:14 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:42.612:WARN::1 threads could not be stopped
+2015-04-14 23:57:42.616:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:42.617:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:42.620:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:42 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file claims.yaml...
-Apr 14, 2015 3:07:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims'
-Apr 14, 2015 3:07:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims'
-2015-04-14 15:07:15.229:WARN::1 threads could not be stopped
-2015-04-14 15:07:15.235:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:15.237:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:15.240:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:43.135:WARN::1 threads could not be stopped
+2015-04-14 23:57:43.140:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:43.141:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:43.144:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file claims_status.yaml...
-Apr 14, 2015 3:07:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims_status'
-Apr 14, 2015 3:07:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'claims_status'
-2015-04-14 15:07:15.757:WARN::1 threads could not be stopped
-2015-04-14 15:07:15.763:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:15.764:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:15.766:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:15 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:43.658:WARN::1 threads could not be stopped
+2015-04-14 23:57:43.664:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:43.665:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:43.667:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:43 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file activities.yaml...
-Apr 14, 2015 3:07:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'activities'
-Apr 14, 2015 3:07:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'activities'
-2015-04-14 15:07:16.281:WARN::1 threads could not be stopped
-2015-04-14 15:07:16.287:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:16.288:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:16.290:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:44.183:WARN::1 threads could not be stopped
+2015-04-14 23:57:44.189:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:44.190:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:44.193:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file payers.yaml...
-Apr 14, 2015 3:07:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'payers'
-Apr 14, 2015 3:07:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'payers'
-2015-04-14 15:07:16.806:WARN::1 threads could not be stopped
-2015-04-14 15:07:16.811:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:16.812:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:16.814:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:16 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:44.706:WARN::1 threads could not be stopped
+2015-04-14 23:57:44.711:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:44.712:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:44.715:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:44 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file trading_partners_index.yaml...
-Apr 14, 2015 3:07:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_index'
-Apr 14, 2015 3:07:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_index'
-2015-04-14 15:07:17.328:WARN::1 threads could not be stopped
-2015-04-14 15:07:17.335:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:17.336:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:17.338:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:45.232:WARN::1 threads could not be stopped
+2015-04-14 23:57:45.237:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:45.237:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:45.240:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file trading_partners_get.yaml...
-Apr 14, 2015 3:07:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_get'
-Apr 14, 2015 3:07:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'trading_partners_get'
-2015-04-14 15:07:17.851:WARN::1 threads could not be stopped
-2015-04-14 15:07:17.855:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:17.856:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:17.858:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:17 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:45.754:WARN::1 threads could not be stopped
+2015-04-14 23:57:45.759:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:45.760:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:45.763:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:45 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file plans_index.yaml...
-Apr 14, 2015 3:07:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_index'
-Apr 14, 2015 3:07:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_index'
-2015-04-14 15:07:18.377:WARN::1 threads could not be stopped
-2015-04-14 15:07:18.381:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:18.382:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:18.384:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:46.279:WARN::1 threads could not be stopped
+2015-04-14 23:57:46.284:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:46.294:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:46.298:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file plans_get.yaml...
-Apr 14, 2015 3:07:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_get'
-Apr 14, 2015 3:07:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'plans_get'
-2015-04-14 15:07:18.899:WARN::1 threads could not be stopped
-2015-04-14 15:07:18.905:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:18.905:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:18.908:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:18 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:46.811:WARN::1 threads could not be stopped
+2015-04-14 23:57:46.815:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:46.816:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:46.818:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:46 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 2 recorded interactions from file referrals.yaml...
-Apr 14, 2015 3:07:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'referrals'
-Apr 14, 2015 3:07:19 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:47 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'referrals'
-2015-04-14 15:07:19.421:WARN::1 threads could not be stopped
-2015-04-14 15:07:19.431:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:19.432:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:19.435:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:19.558:WARN::1 threads could not be stopped
-2015-04-14 15:07:19.563:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:19.564:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:19.566:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:19.679:WARN::1 threads could not be stopped
-2015-04-14 15:07:19.684:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:19.685:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:19.688:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:19.801:WARN::1 threads could not be stopped
-2015-04-14 15:07:19.804:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:19.805:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:19.808:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:19.921:WARN::1 threads could not be stopped
-2015-04-14 15:07:19.926:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:19.927:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:19.930:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:20.042:WARN::1 threads could not be stopped
-2015-04-14 15:07:20.047:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:20.048:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:20.051:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:20.163:WARN::1 threads could not be stopped
-2015-04-14 15:07:20.168:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:20.169:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:20.172:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:20.284:WARN::1 threads could not be stopped
-2015-04-14 15:07:20.289:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:20.290:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:20.293:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-2015-04-14 15:07:20.405:WARN::1 threads could not be stopped
-2015-04-14 15:07:20.409:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:20.410:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:20.413:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:47.330:WARN::1 threads could not be stopped
+2015-04-14 23:57:47.338:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:47.339:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:47.341:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:47.465:WARN::1 threads could not be stopped
+2015-04-14 23:57:47.470:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:47.471:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:47.474:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:47.587:WARN::1 threads could not be stopped
+2015-04-14 23:57:47.592:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:47.594:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:47.597:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:47.709:WARN::1 threads could not be stopped
+2015-04-14 23:57:47.713:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:47.715:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:47.717:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:47.831:WARN::1 threads could not be stopped
+2015-04-14 23:57:47.835:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:47.836:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:47.839:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:47.951:WARN::1 threads could not be stopped
+2015-04-14 23:57:47.955:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:47.957:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:47.959:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:48.070:WARN::1 threads could not be stopped
+2015-04-14 23:57:48.074:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:48.076:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:48.078:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:48.191:WARN::1 threads could not be stopped
+2015-04-14 23:57:48.195:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:48.197:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:48.199:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+2015-04-14 23:57:48.312:WARN::1 threads could not be stopped
+2015-04-14 23:57:48.317:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:48.318:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:48.321:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 3 recorded interactions from file mpc.yaml...
-Apr 14, 2015 3:07:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'mpc'
-Apr 14, 2015 3:07:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'mpc'
-2015-04-14 15:07:20.925:WARN::1 threads could not be stopped
-2015-04-14 15:07:20.930:INFO::jetty-7.3.1.v20110307
-2015-04-14 15:07:20.931:INFO::Started SelectChannelConnector@0.0.0.0:5555
-2015-04-14 15:07:20.933:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
-Apr 14, 2015 3:07:20 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+2015-04-14 23:57:48.833:WARN::1 threads could not be stopped
+2015-04-14 23:57:48.836:INFO::jetty-7.3.1.v20110307
+2015-04-14 23:57:48.837:INFO::Started SelectChannelConnector@0.0.0.0:5555
+2015-04-14 23:57:48.839:INFO::Started SslSelectChannelConnector@0.0.0.0:5556
+Apr 14, 2015 11:57:48 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: loaded tape with 3 recorded interactions from file mpc.yaml...
-Apr 14, 2015 3:07:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+Apr 14, 2015 11:57:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
 INFO: Playing back from 'mpc'
-Apr 14, 2015 3:07:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
-INFO: Recording to 'mpc'
-2015-04-14 15:07:21.731:WARN::1 threads could not be stopped
-Apr 14, 2015 3:07:21 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
-INFO: writing tape Tape[mpc] to file mpc.yaml...
+Apr 14, 2015 11:57:49 PM org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrap invoke
+INFO: Playing back from 'mpc'
+2015-04-14 23:57:49.353:WARN::1 threads could not be stopped
 ]]></system-err>
 </testsuite>
