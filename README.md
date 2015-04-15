@@ -23,15 +23,15 @@ pokitdok-java is pushed to Maven Central via the Sonatype OSS repository.
 
 * Group ID: com.pokitdok
 * Artifact ID: pokitdok-java
-* Latest Version: 0.6.3
+* Latest Version: 0.7
 
 So, for example, in Gradle, you could add the dependency
 ```java
-compile "com.pokitdok:pokitdok-java:0.6.3"
+compile "com.pokitdok:pokitdok-java:0.7"
 ```
 
 ### Manual Install
-You can download pokitdok-java-0.6.3.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.6.3.jar) and include it on your classpath, like any other JAR.
+You can download pokitdok-java-0.7.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.7.jar) and include it on your classpath, like any other JAR.
 A few other JAR requirements need to be on your classpath as well. They are:
 * Apache HTTPCore and HTTPClient, available from [http://hc.apache.org/downloads.cgi](http://hc.apache.org/downloads.cgi)
 * Apache Commons Codec, available from [http://commons.apache.org/proper/commons-codec/download_codec.cgi](http://commons.apache.org/proper/commons-codec/download_codec.cgi)
