@@ -11,6 +11,8 @@ reports/
 .gradle/
 build/ivy.xml
 build/poms/
+build/test_results
+example/
 
 # Created by https://www.gitignore.io
 
