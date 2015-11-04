@@ -4,7 +4,7 @@ apply plugin: 'signing'
 
 group = "com.pokitdok"
 archivesBaseName = "pokitdok-java"
-version = "0.7"
+version = "0.8"
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
@@ -27,14 +27,9 @@ configurations {
 }
 
 dependencies {
-	compile "org.apache.httpcomponents:httpclient:4.3.6"
-	compile "com.googlecode.json-simple:json-simple:1.1.1"
-
-	// We currently need to use Groovy 2.2.x due to a Betamax/Groovy bug
-	// See: https://github.com/robfletcher/betamax/issues/141
-	testCompile "org.codehaus.groovy:groovy-all:2.2.0"
-	testCompile "co.freeside:betamax:1.1.2"
-	testCompile "commons-io:commons-io:2.4"
+	compile "org.apache.httpcomponents:httpclient:4.5.+"
+	compile "com.googlecode.json-simple:json-simple:1.1.+"
+	testCompile "commons-io:commons-io:2.4+"
 }
 
 if (hasProperty("sonatypeUsername") && hasProperty("sonatypePassword")) {
