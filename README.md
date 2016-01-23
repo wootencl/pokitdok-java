@@ -23,11 +23,11 @@ pokitdok-java is pushed to Maven Central via the Sonatype OSS repository.
 
 * Group ID: com.pokitdok
 * Artifact ID: pokitdok-java
-* Latest Version: 0.7
+* Latest Version: 0.8
 
 So, for example, in Gradle, you could add the dependency
 ```java
-compile "com.pokitdok:pokitdok-java:0.7"
+compile "com.pokitdok:pokitdok-java:0.8"
 ```
 
 ### Manual Install
@@ -47,7 +47,7 @@ public class PokitDokTest {
   public static void main(String args[]) {
     PokitDok pd = new PokitDok("your_client_id", "your_client_secret");
     pd.connect();
-    
+
     /* Retrieve provider information by NPI */
     Map npiQuery = new HashMap<String, String>();
     npiQuery.put("npi", "1467560003");
@@ -151,7 +151,7 @@ public class PokitDokTest {
 
     /*
       Check the status of a Claim. The JSON looks like this:
-      
+
       {
           "patient": {
               "birth_date": "1970-01-01",
@@ -201,7 +201,7 @@ public class PokitDokTest {
     pd.insurancePrices(insuranceQuery);
   }
 }
-    
+
 ```
 
 This version of pokitdok-java supports, and defaults to using, the new
