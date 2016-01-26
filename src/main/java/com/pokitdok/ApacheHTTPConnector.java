@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
@@ -44,6 +43,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.defaultHeaders = defaultHeaders;
+        this.scopeTokens = new HashMap<String, String>();
     }
 
     public void connect(String scopeName) throws IOException, ParseException {

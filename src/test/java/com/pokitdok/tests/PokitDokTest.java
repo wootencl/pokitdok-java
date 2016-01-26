@@ -1,6 +1,11 @@
 package com.pokitdok.tests;
 
-import com.pokitdok.PokitDok;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import com.pokitdok.*;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -9,130 +14,222 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.*;
 
 public class PokitDokTest {
-	private static final String AUTHORIZATIONS_JSON = "src/test/resources/authorizations.json";
-	private static final String ELIGIBILITY_JSON = "src/test/resources/eligibility.json";
-	private static final String CLAIMS_JSON = "src/test/resources/claim.json";
-	private static final String CLAIMS_STATUS_JSON = "src/test/resources/claim_status.json";
-	private static final String REFERRALS_JSON = "src/test/resources/referrals.json";
-	private static final String BOOK_APPOINTMENT_JSON = "src/test/resources/book_appointment.json";
-	private static final String OPEN_SLOTS_JSON = "src/test/resources/open_slots.json";
+	private static final String AUTHORIZATIONS_JSON 	= "src/test/resources/authorizations.json";
+	private static final String ELIGIBILITY_JSON 		= "src/test/resources/eligibility.json";
+	private static final String CLAIMS_JSON 			= "src/test/resources/claim.json";
+	private static final String CLAIMS_STATUS_JSON 		= "src/test/resources/claim_status.json";
+	private static final String REFERRALS_JSON 			= "src/test/resources/referrals.json";
+	private static final String BOOK_APPOINTMENT_JSON 	= "src/test/resources/book_appointment.json";
+	private static final String OPEN_SLOTS_JSON 		= "src/test/resources/open_slots.json";
 	private static final String UPDATE_APPOINTMENT_JSON = "src/test/resources/update_appointment.json";
 
+	private static final String BLANK_JSON = "{ \"foo\": \"bar\"}";
+
 	private PokitDok client;
+	private PokitDokHTTPConnector mockConnector;
 
 	@Before
 	public void connect() throws Exception {
-		System.out.println("Connect");
-		client = new PokitDok("client_id", "client_secret");
+		mockConnector = mock(PokitDokHTTPConnector.class);
+		when(mockConnector.get(anyString(), anyMap(), anyMap())).thenReturn(BLANK_JSON);
+		when(mockConnector.post(anyString(), anyMap(), anyMap())).thenReturn(BLANK_JSON);
+
+		client = new PokitDok("client_id", "client_secret", mockConnector);
 	}
 
+	/* The basics. */
+
 	@Test
-	public void shouldCreateTest() throws Exception {
+	public void shouldInstantiateTest() throws Exception {
 		assertNotNull(client);
 	}
 
+	/* Utility API tests. */
+
+	@Test
+	public void activitiesTest() throws Exception {
+		Map<String, Object> response = client.activities();
+
+		verify(mockConnector).get("activities", null, null);
+		assertNotNull(response);
+	}
+
+	@Test
+	public void activitiesTestWithParams() throws Exception {
+		Map<String, Object> params = new HashMap();
+		params.put("param1", "value1");
+		Map<String, Object> response = client.activities(params);
+
+		verify(mockConnector).get(eq("activities"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void payersTest() throws Exception {
+		Map<String, Object> response = client.payers();
+
+		verify(mockConnector).get("payers", null, null);
+	}
+
+	@Test
+	public void payersTestWithParams() throws Exception {
+		Map<String, Object> response = client.payers();
+		Map<String, Object> params = new HashMap();
+		params.put("param1", "value1");
+		response = client.payers(params);
+
+		verify(mockConnector).get(eq("payers"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void tradingPartnerTest() throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("trading_partner_id", "MOCKPAYER");
+		Map<String, Object> response = client.tradingPartners(params);
+
+		verify(mockConnector).get("tradingpartners/MOCKPAYER", null, null);
+		assertNotNull(response);
+	}
+
+	@Test
+	public void tradingPartnersTest() throws Exception {
+		Map<String, Object> response = client.tradingPartners();
+
+		verify(mockConnector).get("tradingpartners/", null, null);
+		assertNotNull(response);
+	}
+
+	@Test
+	public void planTest() throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("state", "TX");
+		params.put("plan_type", "PPO");
+		Map<String, Object> response = client.plans(params);
+
+		verify(mockConnector).get(eq("plans"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void plansTest() throws Exception {
+		Map<String, Object> response = client.plans();
+
+		verify(mockConnector).get("plans", null, null);
+		assertNotNull(response);
+	}
+
+	/* X12/clearinghouse tests. */
+
+	@Test
 	public void authorizationsTest() throws Exception {
 		String authorizations = readEntireFile(AUTHORIZATIONS_JSON);
 		Map query = (JSONObject) JSONValue.parse(authorizations);
 		Map<String, Object> response = client.authorizations(query);
-	}
 
-	public void cashPricesTest() throws Exception {
-		Map<String, Object> cashQuery = new HashMap<String, Object>();
-		cashQuery.put("cpt_code", "87799");
-		cashQuery.put("zip_code", "75201");
-
-		Map<String, Object> response = client.cashPrices(cashQuery);
-	}
-
-	public void insurancePricesTest() throws Exception {
-		Map<String, Object> insuranceQuery = new HashMap<String, Object>();
-		insuranceQuery.put("cpt_code", "87799");
-		insuranceQuery.put("zip_code", "29403");
-
-		Map<String, Object> response = client.insurancePrices(insuranceQuery);
-	}
-
-	public void providersTest() throws Exception {
-		Map<String, Object> query = new HashMap<String, Object>();
-		query.put("npi", "1467560003");
-
-		Map response = client.providers(query);
-	}
-
-	public void eligibilityTest() throws Exception {
-		String eligibility = readEntireFile(ELIGIBILITY_JSON);
-
-		Map<String, Object> eligibilityQuery = (JSONObject) JSONValue.parse(eligibility);
-		Map<String, Object> response = client.eligibility(eligibilityQuery);
-	}
-
-	public void claimsTest() throws Exception {
-		String claim = readEntireFile(CLAIMS_JSON);
-
-		Map<String, Object> claimQuery = (JSONObject) JSONValue.parse(claim);
-		Map<String, Object> response = client.eligibility(claimQuery);
-	}
-
-	public void claimsStatusTest() throws Exception {
-		String claimStatus = readEntireFile(CLAIMS_STATUS_JSON);
-
-		Map<String, Object> claimStatusQuery = (JSONObject) JSONValue.parse(claimStatus);
-		Map<String, Object> response = client.eligibility(claimStatusQuery);
+		verify(mockConnector).post(eq("authorizations/"), eq(query), anyMap());
+		assertNotNull(response);
 	}
 
 	@Test
+	public void eligibilityTest() throws Exception {
+		String queryJSON = readEntireFile(ELIGIBILITY_JSON);
+		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
+		Map<String, Object> response = client.eligibility(query);
+
+		verify(mockConnector).post(eq("eligibility/"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void claimsTest() throws Exception {
+		String queryJSON = readEntireFile(CLAIMS_JSON);
+		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
+		Map<String, Object> response = client.claims(query);
+
+		verify(mockConnector).post(eq("claims/"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void claimsStatusTest() throws Exception {
+		String queryJSON = readEntireFile(CLAIMS_STATUS_JSON);
+		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
+		Map<String, Object> response = client.claimsStatus(query);
+
+		verify(mockConnector).post(eq("claims/status"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
 	public void filesTest() throws Exception {
-		// TODO: Add a test for the /files API endpoint
 	}
 
-	public void activitiesTest() throws Exception {
-		Map<String, Object> response = client.activities();
-	}
-
-	public void payersTest() throws Exception {
-		Map<String, Object> response = client.payers();
-	}
-
-	public void tradingPartnersIndexTest() throws Exception {
-		Map<String, Object> response = client.tradingPartners(new HashMap<String, Object>());
-	}
-
-	public void tradingPartnersGetTest() throws Exception {
-		Map<String, Object> query = new HashMap<String, Object>();
-		query.put("trading_partner_id", "MOCKPAYER");
-
-		Map<String, Object> response = client.tradingPartners(query);
-	}
-
-	public void plansIndexTest() throws Exception {
-		Map<String, Object> response = client.plans();
-	}
-
-	public void plansGetTest() throws Exception {
-		Map<String, Object> query = new HashMap<String, Object>();
-		query.put("state", "TX");
-		query.put("plan_type", "PPO");
-
-		Map<String, Object> response = client.plans(query);
-	}
-
+	@Test
 	public void referralsTest() throws Exception {
-		String referrals = readEntireFile(REFERRALS_JSON);
+		String queryJSON = readEntireFile(REFERRALS_JSON);
+		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
+		Map<String, Object> response = client.referrals(query);
 
-		Map<String, Object> referralsQuery = (JSONObject) JSONValue.parse(referrals);
-		Map<String, Object> response = client.referrals(referralsQuery);
+		verify(mockConnector).post(eq("referrals/"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
+	/* Data tests. */
+
+	@Test
+	public void cashPricesTest() throws Exception {
+		Map<String, Object> query = new HashMap<String, Object>();
+		query.put("cpt_code", "87799");
+		query.put("zip_code", "75201");
+		Map<String, Object> response = client.cashPrices(query);
+
+		verify(mockConnector).get(eq("prices/cash"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void insurancePricesTest() throws Exception {
+		Map<String, Object> query = new HashMap<String, Object>();
+		query.put("cpt_code", "87799");
+		query.put("zip_code", "29403");
+		Map<String, Object> response = client.insurancePrices(query);
+
+		verify(mockConnector).get(eq("prices/insurance"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void mpcTest() throws Exception {
+		Map<String, Object> query = new HashMap<String, Object>();
+		query.put("name", "surgery");
+		Map<String, Object> response = client.mpc(query);
+
+		verify(mockConnector).get(eq("mpc/"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void mpcsTest() throws Exception {
+		String mpc = "99213";
+		Map<String, Object> response = client.mpc(mpc, new HashMap<String, Object>());
+
+		verify(mockConnector).get(eq("mpc/" + mpc), anyMap(), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	public void providersTest() throws Exception {
+		Map<String, Object> query = new HashMap<String, Object>();
+		query.put("npi", "1467560003");
+		Map response = client.providers(query);
+
+		verify(mockConnector).get(eq("providers"), eq(query), anyMap());
+		assertNotNull(response);
 	}
 
 	/*******************
@@ -187,17 +284,6 @@ public class PokitDokTest {
 	}
 
 	public void failWithoutScopeCodeTest() throws Exception {
-	}
-
-	public void mpcTest() throws Exception {
-		Map<String, Object> response =
-			client.mpc(new HashMap<String, Object>());
-	}
-
-	public void singleMPCTest() throws Exception {
-		String mpc = "99213";
-		Map<String, Object> response =
-			client.mpc(mpc, new HashMap<String, Object>());
 	}
 
 	/***********************************************************************

@@ -4,13 +4,6 @@ Client access library to the PokitDok APIs.
 
 package com.pokitdok;
 
-import org.apache.http.client.utils.URIBuilder;
-
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -19,9 +12,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.http.client.utils.URIBuilder;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class PokitDok {
-    public static final String VERSION = "0.7";
+    public static final String VERSION = "0.8";
     public static final String API_VERSION = "v4";
     public static final String DEFAULT_API_BASE = "https://platform.pokitdok.com";
     public static final String DEFAULT_SCOPE = "default";
@@ -109,8 +107,8 @@ public class PokitDok {
         return (JSONObject) parser.parse(results);
     }
 
-    /** Invokes the claim status endpoint, with a HashMap of parameters. */
-    public Map<String, Object> claimStatus(Map<String, Object> params)
+    /** Invokes the claims status endpoint, with a HashMap of parameters. */
+    public Map<String, Object> claimsStatus(Map<String, Object> params)
     throws IOException, ParseException, UnauthorizedException {
         String results = connector.post("claims/status", params, defaultHeaders);
         return (JSONObject) parser.parse(results);
@@ -207,15 +205,23 @@ public class PokitDok {
     public Map<String, Object> tradingPartners(Map<String, Object> params)
     throws IOException, ParseException, UnauthorizedException {
         String results = "";
-        if (params.containsKey("trading_partner_id")) {
-            String tradingPartnerId = (String) params.remove("trading_partner_id");
-            results = connector.get("tradingpartners/" + tradingPartnerId, params, defaultHeaders);
-        }
-        else {
+        if (params == null) {
             results = connector.get("tradingpartners/", params, defaultHeaders);
+        }
+        else if (params.containsKey("trading_partner_id")) {
+            String tradingPartnerId = (String) params.remove("trading_partner_id");
+            if (params.isEmpty()) {
+                params = null;
+            }
+            results = connector.get("tradingpartners/" + tradingPartnerId, params, defaultHeaders);
         }
 
         return (JSONObject) parser.parse(results);
+    }
+
+    /** Invokes the trading partners endpoint, with no parameters. */
+    public Map<String, Object> tradingPartners() throws IOException, ParseException, UnauthorizedException {
+        return tradingPartners(null);
     }
 
     /* Scheduling endpoints */

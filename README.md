@@ -31,7 +31,7 @@ compile "com.pokitdok:pokitdok-java:0.8"
 ```
 
 ### Manual Install
-You can download pokitdok-java-0.7.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.7.jar) and include it on your classpath, like any other JAR.
+You can download pokitdok-java-0.8.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.8.jar) and include it on your classpath, like any other JAR.
 A few other JAR requirements need to be on your classpath as well. They are:
 * Apache HTTPCore and HTTPClient, available from [http://hc.apache.org/downloads.cgi](http://hc.apache.org/downloads.cgi)
 * Apache Commons Codec, available from [http://commons.apache.org/proper/commons-codec/download_codec.cgi](http://commons.apache.org/proper/commons-codec/download_codec.cgi)
@@ -202,14 +202,6 @@ public class PokitDokTest {
   }
 }
 
-```
-
-This version of pokitdok-java supports, and defaults to using, the new
-PokitDok v4 API. If you"d like to continue using the previous v3 API,
-instantiate the PokitDok object like this:
-
-```
-PokitDok pd = new PokitDok("my_client_id", "my_client_secret", "v3")
 ```
 
 ## Supported Java versions
