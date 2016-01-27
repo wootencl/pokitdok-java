@@ -17,25 +17,14 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class PokitDokUnitTests {
-	private static final String AUTHORIZATIONS_JSON 	= "src/test/resources/authorizations.json";
-	private static final String ELIGIBILITY_JSON 		= "src/test/resources/eligibility.json";
-	private static final String CLAIMS_JSON 			= "src/test/resources/claim.json";
-	private static final String CLAIMS_STATUS_JSON 		= "src/test/resources/claim_status.json";
-	private static final String REFERRALS_JSON 			= "src/test/resources/referrals.json";
-	private static final String BOOK_APPOINTMENT_JSON 	= "src/test/resources/book_appointment.json";
-	private static final String OPEN_SLOTS_JSON 		= "src/test/resources/open_slots.json";
-	private static final String UPDATE_APPOINTMENT_JSON = "src/test/resources/update_appointment.json";
-
-	private static final String BLANK_JSON = "{ \"foo\": \"bar\"}";
-
 	private PokitDok client;
 	private PokitDokHTTPConnector mockConnector;
 
 	@Before
 	public void connect() throws Exception {
 		mockConnector = mock(PokitDokHTTPConnector.class);
-		when(mockConnector.get(anyString(), anyMap(), anyMap())).thenReturn(BLANK_JSON);
-		when(mockConnector.post(anyString(), anyMap(), anyMap())).thenReturn(BLANK_JSON);
+		when(mockConnector.get(anyString(), anyMap(), anyMap())).thenReturn(Constants.BLANK_JSON);
+		when(mockConnector.post(anyString(), anyMap(), anyMap())).thenReturn(Constants.BLANK_JSON);
 
 		client = new PokitDok("client_id", "client_secret", mockConnector);
 	}
@@ -136,7 +125,7 @@ public class PokitDokUnitTests {
 	@Test
 	@Category(UnitTests.class)
 	public void authorizationsTest() throws Exception {
-		String authorizations = readEntireFile(AUTHORIZATIONS_JSON);
+		String authorizations = readEntireFile(Constants.AUTHORIZATIONS_JSON);
 		Map query = (JSONObject) JSONValue.parse(authorizations);
 		Map<String, Object> response = client.authorizations(query);
 
@@ -147,7 +136,7 @@ public class PokitDokUnitTests {
 	@Test
 	@Category(UnitTests.class)
 	public void eligibilityTest() throws Exception {
-		String queryJSON = readEntireFile(ELIGIBILITY_JSON);
+		String queryJSON = readEntireFile(Constants.ELIGIBILITY_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
 		Map<String, Object> response = client.eligibility(query);
 
@@ -158,7 +147,7 @@ public class PokitDokUnitTests {
 	@Test
 	@Category(UnitTests.class)
 	public void claimsTest() throws Exception {
-		String queryJSON = readEntireFile(CLAIMS_JSON);
+		String queryJSON = readEntireFile(Constants.CLAIMS_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
 		Map<String, Object> response = client.claims(query);
 
@@ -169,7 +158,7 @@ public class PokitDokUnitTests {
 	@Test
 	@Category(UnitTests.class)
 	public void claimsStatusTest() throws Exception {
-		String queryJSON = readEntireFile(CLAIMS_STATUS_JSON);
+		String queryJSON = readEntireFile(Constants.CLAIMS_STATUS_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
 		Map<String, Object> response = client.claimsStatus(query);
 
@@ -183,7 +172,7 @@ public class PokitDokUnitTests {
 	@Test
 	@Category(UnitTests.class)
 	public void referralsTest() throws Exception {
-		String queryJSON = readEntireFile(REFERRALS_JSON);
+		String queryJSON = readEntireFile(Constants.REFERRALS_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
 		Map<String, Object> response = client.referrals(query);
 
@@ -279,14 +268,14 @@ public class PokitDokUnitTests {
 	public void bookAppointmentTest() throws Exception {
 		String id = "";
 
-		String bookAppointmentJSON = readEntireFile(BOOK_APPOINTMENT_JSON);
+		String bookAppointmentJSON = readEntireFile(Constants.BOOK_APPOINTMENT_JSON);
 
 		Map<String, Object> query = (JSONObject) JSONValue.parse(bookAppointmentJSON);
 		Map<String, Object> response = client.bookAppointment(id, query);
 	}
 
 	public void updateAppointmentTest() throws Exception {
-		String queryJSON = readEntireFile(UPDATE_APPOINTMENT_JSON);
+		String queryJSON = readEntireFile(Constants.UPDATE_APPOINTMENT_JSON);
 		String id = "";
 
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
