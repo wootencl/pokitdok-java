@@ -15,17 +15,38 @@ repositories {
 	jcenter()
 }
 
+sourceSets {
+    integrationTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/test/java')
+        }
+        resources.srcDir file('src/test/resources')
+    }
+}
+
 configurations {
     compile {
         transitive = true
     }
-    runtime {
+
+	runtime {
         extendsFrom compile, testCompile
     }
-    testCompile {
+
+	testCompile {
     	extendsFrom compile
     	transitive = true
     }
+
+	integrationTestCompile {
+		extendsFrom testCompile
+	}
+
+	integrationTestRuntime {
+		extendsFrom testRuntime
+	}
 }
 
 dependencies {
@@ -33,6 +54,24 @@ dependencies {
 	compile "com.googlecode.json-simple:json-simple:1.1.+"
 	testCompile "commons-io:commons-io:2.4+"
 	testCompile "org.mockito:mockito-core:1.+"
+}
+
+test {
+	useJUnit {
+		includeCategories 'com.pokitdok.tests.categories.UnitTests'
+	}
+}
+
+task integrationTest(type: Test) {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+integrationTest {
+	useJUnit {
+		includeCategories "com.pokitdok.tests.categories.IntegrationTests"
+	}
+	reports.html.destination = file("${reporting.baseDir}/${name}")
 }
 
 if (hasProperty("sonatypeUsername") && hasProperty("sonatypePassword")) {

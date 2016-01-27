@@ -1,24 +1,22 @@
 package com.pokitdok.tests;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 import com.pokitdok.*;
+import com.pokitdok.tests.*;
+import com.pokitdok.tests.categories.*;
 import org.apache.commons.io.IOUtils;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
+import org.json.simple.*;
+import org.junit.*;
+import org.junit.experimental.categories.*;
+import org.junit.runner.*;
+import org.junit.runners.Suite;
+import org.junit.experimental.categories.Category;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
-public class PokitDokTest {
+public class PokitDokUnitTests {
 	private static final String AUTHORIZATIONS_JSON 	= "src/test/resources/authorizations.json";
 	private static final String ELIGIBILITY_JSON 		= "src/test/resources/eligibility.json";
 	private static final String CLAIMS_JSON 			= "src/test/resources/claim.json";
@@ -45,6 +43,7 @@ public class PokitDokTest {
 	/* The basics. */
 
 	@Test
+	@Category(UnitTests.class)
 	public void shouldInstantiateTest() throws Exception {
 		assertNotNull(client);
 	}
@@ -52,6 +51,7 @@ public class PokitDokTest {
 	/* Utility API tests. */
 
 	@Test
+	@Category(UnitTests.class)
 	public void activitiesTest() throws Exception {
 		Map<String, Object> response = client.activities();
 
@@ -60,6 +60,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void activitiesTestWithParams() throws Exception {
 		Map<String, Object> params = new HashMap();
 		params.put("param1", "value1");
@@ -70,6 +71,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void payersTest() throws Exception {
 		Map<String, Object> response = client.payers();
 
@@ -77,6 +79,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void payersTestWithParams() throws Exception {
 		Map<String, Object> response = client.payers();
 		Map<String, Object> params = new HashMap();
@@ -88,6 +91,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void tradingPartnerTest() throws Exception {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("trading_partner_id", "MOCKPAYER");
@@ -98,6 +102,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void tradingPartnersTest() throws Exception {
 		Map<String, Object> response = client.tradingPartners();
 
@@ -106,6 +111,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void planTest() throws Exception {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("state", "TX");
@@ -117,6 +123,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void plansTest() throws Exception {
 		Map<String, Object> response = client.plans();
 
@@ -127,6 +134,7 @@ public class PokitDokTest {
 	/* X12/clearinghouse tests. */
 
 	@Test
+	@Category(UnitTests.class)
 	public void authorizationsTest() throws Exception {
 		String authorizations = readEntireFile(AUTHORIZATIONS_JSON);
 		Map query = (JSONObject) JSONValue.parse(authorizations);
@@ -137,6 +145,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void eligibilityTest() throws Exception {
 		String queryJSON = readEntireFile(ELIGIBILITY_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
@@ -147,6 +156,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void claimsTest() throws Exception {
 		String queryJSON = readEntireFile(CLAIMS_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
@@ -157,6 +167,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void claimsStatusTest() throws Exception {
 		String queryJSON = readEntireFile(CLAIMS_STATUS_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
@@ -170,6 +181,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void referralsTest() throws Exception {
 		String queryJSON = readEntireFile(REFERRALS_JSON);
 		Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
@@ -182,6 +194,7 @@ public class PokitDokTest {
 	/* Data tests. */
 
 	@Test
+	@Category(UnitTests.class)
 	public void cashPricesTest() throws Exception {
 		Map<String, Object> query = new HashMap<String, Object>();
 		query.put("cpt_code", "87799");
@@ -193,6 +206,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void insurancePricesTest() throws Exception {
 		Map<String, Object> query = new HashMap<String, Object>();
 		query.put("cpt_code", "87799");
@@ -204,6 +218,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void mpcTest() throws Exception {
 		Map<String, Object> query = new HashMap<String, Object>();
 		query.put("name", "surgery");
@@ -214,6 +229,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void mpcsTest() throws Exception {
 		String mpc = "99213";
 		Map<String, Object> response = client.mpc(mpc, new HashMap<String, Object>());
@@ -223,6 +239,7 @@ public class PokitDokTest {
 	}
 
 	@Test
+	@Category(UnitTests.class)
 	public void providersTest() throws Exception {
 		Map<String, Object> query = new HashMap<String, Object>();
 		query.put("npi", "1467560003");
@@ -285,6 +302,12 @@ public class PokitDokTest {
 
 	public void failWithoutScopeCodeTest() throws Exception {
 	}
+
+    /** Test suite to assemble all unit tests */
+    @RunWith(Categories.class)
+    @Suite.SuiteClasses(PokitDokUnitTests.class)
+    @Categories.IncludeCategory(UnitTests.class)
+    public class PokitDokUnitTestSuite {}
 
 	/***********************************************************************
 	 * Beyond lie utility methods for testing purposes. Nothing to see here.
