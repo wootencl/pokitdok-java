@@ -25,6 +25,7 @@ public class PokitDokUnitTests {
 		mockConnector = mock(PokitDokHTTPConnector.class);
 		when(mockConnector.get(anyString(), anyMap(), anyMap())).thenReturn(Constants.BLANK_JSON);
 		when(mockConnector.post(anyString(), anyMap(), anyMap())).thenReturn(Constants.BLANK_JSON);
+		when(mockConnector.put(anyString(), anyMap(), anyMap())).thenReturn(Constants.BLANK_JSON);
 
 		client = new PokitDok("client_id", "client_secret", mockConnector);
 	}
@@ -235,6 +236,56 @@ public class PokitDokUnitTests {
 		Map response = client.providers(query);
 
 		verify(mockConnector).get(eq("providers"), eq(query), anyMap());
+		assertNotNull(response);
+	}
+
+
+	/* Identity tests. */
+
+	// test post
+	@Test
+	@Category(UnitTests.class)
+	public void createIdentityTest() throws Exception {
+		String postJSON = readEntireFile(Constants.CREATE_IDENTITY_JSON);
+		Map<String, Object> post = (JSONObject) JSONValue.parse(postJSON);
+		Map<String, Object> response = client.createIdentity(post);
+
+		verify(mockConnector).post(eq("identity/"), eq(post), anyMap());
+		assertNotNull(response);
+	}
+
+	//test update
+	@Test
+	@Category(UnitTests.class)
+	public void updateIdentityTest() throws Exception {
+		String updateJSON = readEntireFile(Constants.UPDATE_IDENTITY_JSON);
+		Map<String, Object> update = (JSONObject) JSONValue.parse(updateJSON);
+		Map<String, Object> response = client.updateIdentity("881bc095-2068-43cb-9783-cce630364122", update);
+
+		verify(mockConnector).put(eq("identity/881bc095-2068-43cb-9783-cce630364122"), eq(update), anyMap());
+		assertNotNull(response);
+	}
+
+	//test get uuid
+	@Test
+	@Category(UnitTests.class)
+	public void getIdentityUuidTest() throws Exception {
+		Map<String, Object> response = client.identity("881bc095-2068-43cb-9783-cce630364122", new HashMap<String, Object>());
+
+		verify(mockConnector).get(eq("identity/881bc095-2068-43cb-9783-cce630364122"), eq(new HashMap<String, Object>()), anyMap());
+		assertNotNull(response);
+	}
+
+	//test get params
+	@Test
+	@Category(UnitTests.class)
+	public void getIdentityParamsTest() throws Exception {
+		String getJSON = readEntireFile(Constants.GET_IDENTITY_JSON);
+		Map<String, Object> get = (JSONObject) JSONValue.parse(getJSON);
+
+		Map<String, Object> response = client.identity("", get);
+
+		verify(mockConnector).get(eq("identity"), eq(get), anyMap());
 		assertNotNull(response);
 	}
 

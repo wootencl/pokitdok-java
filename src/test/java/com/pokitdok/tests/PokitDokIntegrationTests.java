@@ -16,18 +16,27 @@ import static org.mockito.Mockito.*;
 public class PokitDokIntegrationTests {
     private static String CLIENT_ID;
     private static String CLIENT_SECRET;
+    private static String API_BASE;
     private static PokitDok pd;
 
     @BeforeClass
     public static void setup() throws Exception {
         Map<String, String> env = System.getenv();
-        CLIENT_ID = env.get("PD_CLIENT_ID");
-        CLIENT_SECRET = env.get("PD_CLIENT_SECRET");
+        CLIENT_ID = null != CLIENT_ID ? CLIENT_ID : env.get("PD_CLIENT_ID");
+        CLIENT_SECRET = null != CLIENT_SECRET ? CLIENT_SECRET : env.get("PD_CLIENT_SECRET");
         if ((CLIENT_ID == null) || (CLIENT_SECRET == null)) {
             fail("Please provide a PokitDok client ID and secret in the environment variables PD_CLIENT_ID and PD_CLIENT_SECRET.");
         }
 
-        pd = new PokitDok(CLIENT_ID, CLIENT_SECRET);
+        API_BASE = env.get("PD_API_BASE");
+
+        if (null == API_BASE) {
+            pd = new PokitDok(CLIENT_ID, CLIENT_SECRET);
+        } else {
+            pd = new PokitDok(CLIENT_ID, CLIENT_SECRET, API_BASE);
+        }
+
+
     }
 
     @Test
@@ -134,6 +143,52 @@ public class PokitDokIntegrationTests {
         String queryJSON = readEntireFile(Constants.REFERRALS_JSON);
         Map<String, Object> query = (JSONObject) JSONValue.parse(queryJSON);
         Map<String, Object> response = pd.referrals(query);
+
+        assertNotNull(response);
+    }
+
+
+    /* Identity tests. */
+
+    // test post
+    @Test
+    @Category(IntegrationTests.class)
+    public void createIdentityTest() throws Exception {
+        String postJSON = readEntireFile(Constants.CREATE_IDENTITY_JSON);
+        Map<String, Object> post = (JSONObject) JSONValue.parse(postJSON);
+        Map<String, Object> response = pd.createIdentity(post);
+
+        assertNotNull(response);
+    }
+
+    //test update
+    @Test
+    @Category(IntegrationTests.class)
+    public void updateIdentityTest() throws Exception {
+        String updateJSON = readEntireFile(Constants.UPDATE_IDENTITY_JSON);
+        Map<String, Object> update = (JSONObject) JSONValue.parse(updateJSON);
+        Map<String, Object> response = pd.updateIdentity("881bc095-2068-43cb-9783-cce630364122", update);
+
+        assertNotNull(response);
+    }
+
+    //test get uuid
+    @Test
+    @Category(IntegrationTests.class)
+    public void getIdentityUuidTest() throws Exception {
+        Map<String, Object> response = pd.identity("881bc095-2068-43cb-9783-cce630364122");
+
+        assertNotNull(response);
+    }
+
+    //test get params
+    @Test
+    @Category(IntegrationTests.class)
+    public void getIdentityParamsTest() throws Exception {
+        String getJSON = readEntireFile(Constants.GET_IDENTITY_JSON);
+        Map<String, Object> get = (JSONObject) JSONValue.parse(getJSON);
+
+        Map<String, Object> response = pd.identity(get);
 
         assertNotNull(response);
     }

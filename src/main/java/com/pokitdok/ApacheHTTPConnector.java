@@ -1,6 +1,7 @@
 package com.pokitdok;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +18,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -33,7 +33,6 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
     private HttpClientBuilder     builder;
     private JSONParser            parser;
     private boolean               failedOnceAlready;
-    private String                apiBase;
     private Map<String, String>   defaultHeaders;
     private String                clientId;
     private String                clientSecret;
@@ -54,7 +53,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
         builder = HttpClientBuilder.create();
         builder.useSystemProperties();
 
-        HttpPost request = new HttpPost(PokitDok.DEFAULT_API_BASE + "/oauth2/token");
+        HttpPost request = new HttpPost(PokitDok.getApiBase() + "/oauth2/token");
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
         urlParameters.add(new BasicNameValuePair("grant_type", "client_credentials"));
         request.setEntity(new UrlEncodedFormEntity(urlParameters));
@@ -145,7 +144,17 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
 
     public String put(String url, Map<String, Object> params, Map<String, String> headers, String scope)
     throws IOException, ParseException, UnauthorizedException {
-      HttpPut putRequest = new HttpPut(PokitDok.apiUrl(url, params));
+
+        HttpPut putRequest = new HttpPut(PokitDok.apiUrl(url, null));
+        putRequest.addHeader("Content-Type", "application/json");
+        putRequest.addHeader("Accept", "application/json");
+        StringEntity input = null;
+        try {
+            input = new StringEntity(params.toString());
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        putRequest.setEntity(input);
 
       return execute(putRequest, scope, headers);
     }
