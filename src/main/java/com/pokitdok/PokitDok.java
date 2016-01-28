@@ -29,8 +29,18 @@ public class PokitDok {
     private String                clientId;
     private String                clientSecret;
     private String                apiVersion;
+    private static String         apiBase = DEFAULT_API_BASE;
     public static Map<String, String> defaultHeaders;
     private JSONParser            parser;
+
+    public static String getApiBase() {
+        return apiBase == null ? DEFAULT_API_BASE : apiBase;
+    }
+
+    public PokitDok(String clientId, String clientSecret, String apiBase) throws IOException, ParseException {
+        this(clientId, clientSecret, new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders()));
+        this.apiBase = apiBase;
+    }
 
     public PokitDok(String clientId, String clientSecret) throws IOException, ParseException {
         this(clientId, clientSecret, new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders()));
@@ -55,7 +65,11 @@ public class PokitDok {
     }
 
     public static String apiUrl(String endpoint, Map<String, Object> params) {
-      String uri = DEFAULT_API_BASE + "/api/" + API_VERSION + "/" + endpoint;
+      String uri = getApiBase() + "/api/" + API_VERSION + "/" + endpoint;
+
+      if (null == params) {
+          return uri;
+      }
 
       if ((params != null) && (!params.isEmpty())) {
         try {
@@ -304,6 +318,40 @@ public class PokitDok {
     public Map<String, Object> mpc(String code, Map <String, Object> params)
     throws IOException, ParseException, UnauthorizedException {
         String results = results = connector.get("mpc/" + code, params, defaultHeaders);
+        return (JSONObject) parser.parse(results);
+    }
+
+    /* Identity Endpoints */
+    public Map<String, Object> createIdentity(Map <String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        String results = connector.post("identity/", params, defaultHeaders);
+        return (JSONObject) parser.parse(results);
+    }
+
+    public Map<String, Object> updateIdentity(String uuid, Map <String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        String results = connector.put("identity/" + uuid, params, defaultHeaders);
+        return (JSONObject) parser.parse(results);
+    }
+
+    public Map<String, Object> identity(String uuid)
+            throws IOException, ParseException, UnauthorizedException {
+        return identity(uuid, null);
+    }
+
+    public Map<String, Object> identity(Map <String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        return identity(null, params);
+    }
+
+    /* get particular if uuid. otherwise search */
+    public Map<String, Object> identity(String uuid, Map <String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        String urlString = "identity";
+        if (null != uuid && !uuid.isEmpty()) {
+            urlString += "/" + uuid;
+        }
+        String results = connector.get(urlString, params, defaultHeaders);
         return (JSONObject) parser.parse(results);
     }
 }
