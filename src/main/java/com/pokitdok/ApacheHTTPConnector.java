@@ -116,7 +116,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
 
     public String get(String url, Map<String, Object> params, Map<String, String> headers, String scope)
     throws IOException, ParseException, UnauthorizedException {
-      HttpGet getRequest = new HttpGet(PokitDok.apiUrl(url, params));
+	HttpGet getRequest = new HttpGet(PokitDok.apiUrl(apiBase, url, params));
 
       return execute(getRequest, scope, headers);
     }
@@ -128,7 +128,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
 
     public String post(String url, Map<String, Object> params, Map<String, String> headers, String scope)
     throws IOException, ParseException, UnauthorizedException {
-      HttpPost postRequest = new HttpPost(PokitDok.apiUrl(url, null));
+	HttpPost postRequest = new HttpPost(PokitDok.apiUrl(apiBase, url, null));
 
       String json = JSONValue.toJSONString(params);
       StringEntity entity = new StringEntity(json);
@@ -147,7 +147,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
     public String put(String url, Map<String, Object> params, Map<String, String> headers, String scope)
     throws IOException, ParseException, UnauthorizedException {
 
-        HttpPut putRequest = new HttpPut(PokitDok.apiUrl(url, null));
+        HttpPut putRequest = new HttpPut(PokitDok.apiUrl(apiBase, url, null));
 	String json = JSONValue.toJSONString(params);
 	StringEntity entity = new StringEntity(json);
         entity.setContentEncoding(HTTP.UTF_8);
@@ -165,7 +165,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
 
     public String delete(String url, Map<String, Object> params, Map<String, String> headers, String scope)
     throws IOException, ParseException, UnauthorizedException {
-      HttpDelete deleteRequest = new HttpDelete(PokitDok.apiUrl(url, params));
+	HttpDelete deleteRequest = new HttpDelete(PokitDok.apiUrl(apiBase,url, params));
 
       return execute(deleteRequest, scope, headers);
     }

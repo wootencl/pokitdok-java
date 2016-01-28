@@ -20,8 +20,8 @@ public class PokitDokIntegrationTests {
     @BeforeClass
     public static void setup() throws Exception {
 
-        clientId = env.get("PD_CLIENT_ID");
-        clientSecret = env.get("PD_CLIENT_SECRET");
+        String clientId = env.get("PD_CLIENT_ID");
+        String clientSecret = env.get("PD_CLIENT_SECRET");
         if ((clientId == null) || (clientSecret == null)) {
             fail("Please provide a PokitDok client ID and secret in the environment variables PD_CLIENT_ID and PD_CLIENT_SECRET.");
         }

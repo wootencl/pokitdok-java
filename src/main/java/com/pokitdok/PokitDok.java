@@ -46,9 +46,9 @@ public class PokitDok {
         throws IOException {
         this.clientId     = clientId;
         this.clientSecret = clientSecret;
-        this.connector    = connector != null ? connector
-	                          : new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders());
 	this.apiBase      = apiBase != null ? apiBase : DEFAULT_API_BASE;
+        this.connector    = connector != null ? connector
+	    : new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders(), this.apiBase);
         this.parser       = new JSONParser();
     }
 
@@ -62,7 +62,7 @@ public class PokitDok {
         return defaultHeaders;
     }
 
-    public static String apiUrl(String endpoint, Map<String, Object> params) {
+    public static String apiUrl(String apiBase, String endpoint, Map<String, Object> params) {
       String uri = apiBase + "/api/" + API_VERSION + "/" + endpoint;
 
       if ((params != null) && (!params.isEmpty())) {
