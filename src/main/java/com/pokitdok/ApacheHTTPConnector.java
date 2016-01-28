@@ -33,15 +33,17 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
     private HttpClientBuilder     builder;
     private JSONParser            parser;
     private boolean               failedOnceAlready;
+    private final String          apiBase;
     private Map<String, String>   defaultHeaders;
     private String                clientId;
     private String                clientSecret;
     private Map<String, String>   scopeTokens;
 
-    public ApacheHTTPConnector(String clientId, String clientSecret, Map<String, String> defaultHeaders) {
+    public ApacheHTTPConnector(String clientId, String clientSecret, Map<String, String> defaultHeaders, String apiBase) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.defaultHeaders = defaultHeaders;
+        this.apiBase = apiBase;
         this.scopeTokens = new HashMap<String, String>();
     }
 
@@ -53,7 +55,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
         builder = HttpClientBuilder.create();
         builder.useSystemProperties();
 
-        HttpPost request = new HttpPost(PokitDok.getApiBase() + "/oauth2/token");
+        HttpPost request = new HttpPost(apiBase + "/oauth2/token");
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
         urlParameters.add(new BasicNameValuePair("grant_type", "client_credentials"));
         request.setEntity(new UrlEncodedFormEntity(urlParameters));
@@ -146,15 +148,12 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
     throws IOException, ParseException, UnauthorizedException {
 
         HttpPut putRequest = new HttpPut(PokitDok.apiUrl(url, null));
-        putRequest.addHeader("Content-Type", "application/json");
-        putRequest.addHeader("Accept", "application/json");
-        StringEntity input = null;
-        try {
-            input = new StringEntity(params.toString());
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        putRequest.setEntity(input);
+	String json = JSONValue.toJSONString(params);
+	StringEntity entity = new StringEntity(json);
+        entity.setContentEncoding(HTTP.UTF_8);
+        entity.setContentType("application/json");
+
+        putRequest.setEntity(entity);
 
       return execute(putRequest, scope, headers);
     }

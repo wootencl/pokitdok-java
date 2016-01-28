@@ -29,28 +29,26 @@ public class PokitDok {
     private String                clientId;
     private String                clientSecret;
     private String                apiVersion;
-    private static String         apiBase = DEFAULT_API_BASE;
+    private final String          apiBase;
     public static Map<String, String> defaultHeaders;
     private JSONParser            parser;
 
-    public static String getApiBase() {
-        return apiBase == null ? DEFAULT_API_BASE : apiBase;
-    }
-
-    public PokitDok(String clientId, String clientSecret, String apiBase) throws IOException, ParseException {
-        this(clientId, clientSecret, new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders()));
-        this.apiBase = apiBase;
-    }
-
     public PokitDok(String clientId, String clientSecret) throws IOException, ParseException {
-        this(clientId, clientSecret, new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders()));
+        this(clientId, clientSecret, null, null);
     }
 
     public PokitDok(String clientId, String clientSecret, PokitDokHTTPConnector connector)
         throws IOException {
+	this(clientId, clientSecret, connector, null);
+    }
+
+    public PokitDok(String clientId, String clientSecret, PokitDokHTTPConnector connector, String apiBase)
+        throws IOException {
         this.clientId     = clientId;
         this.clientSecret = clientSecret;
-        this.connector    = connector;
+        this.connector    = connector != null ? connector
+	                          : new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders());
+	this.apiBase      = apiBase != null ? apiBase : DEFAULT_API_BASE;
         this.parser       = new JSONParser();
     }
 
@@ -65,11 +63,7 @@ public class PokitDok {
     }
 
     public static String apiUrl(String endpoint, Map<String, Object> params) {
-      String uri = getApiBase() + "/api/" + API_VERSION + "/" + endpoint;
-
-      if (null == params) {
-          return uri;
-      }
+      String uri = apiBase + "/api/" + API_VERSION + "/" + endpoint;
 
       if ((params != null) && (!params.isEmpty())) {
         try {
