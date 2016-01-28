@@ -19,7 +19,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class PokitDok {
-    public static final String VERSION = "0.8";
+    public static final String VERSION = "0.9";
     public static final String API_VERSION = "v4";
     public static final String DEFAULT_API_BASE = "https://platform.pokitdok.com";
     public static final String DEFAULT_SCOPE = "default";
