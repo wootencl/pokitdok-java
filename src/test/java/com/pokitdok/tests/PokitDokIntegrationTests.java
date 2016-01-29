@@ -14,29 +14,20 @@ import org.junit.runners.Suite;
 import static org.mockito.Mockito.*;
 
 public class PokitDokIntegrationTests {
-    private static String CLIENT_ID;
-    private static String CLIENT_SECRET;
-    private static String API_BASE;
     private static PokitDok pd;
+    private static Map<String, String> env = System.getenv();
 
     @BeforeClass
     public static void setup() throws Exception {
-        Map<String, String> env = System.getenv();
-        CLIENT_ID = null != CLIENT_ID ? CLIENT_ID : env.get("PD_CLIENT_ID");
-        CLIENT_SECRET = null != CLIENT_SECRET ? CLIENT_SECRET : env.get("PD_CLIENT_SECRET");
-        if ((CLIENT_ID == null) || (CLIENT_SECRET == null)) {
+
+        String clientId = env.get("PD_CLIENT_ID");
+        String clientSecret = env.get("PD_CLIENT_SECRET");
+        if ((clientId == null) || (clientSecret == null)) {
             fail("Please provide a PokitDok client ID and secret in the environment variables PD_CLIENT_ID and PD_CLIENT_SECRET.");
         }
 
-        API_BASE = env.get("PD_API_BASE");
-
-        if (null == API_BASE) {
-            pd = new PokitDok(CLIENT_ID, CLIENT_SECRET);
-        } else {
-            pd = new PokitDok(CLIENT_ID, CLIENT_SECRET, API_BASE);
-        }
-
-
+        String apiBase = env.get("PD_API_BASE");
+        pd = new PokitDok(clientId, clientSecret, null, apiBase);
     }
 
     @Test
@@ -247,7 +238,6 @@ public class PokitDokIntegrationTests {
 
         JSONArray data = data(response);
         assertNotNull(data);
-        assertEquals(data.size(), 4);
 	}
 
     /*******************
