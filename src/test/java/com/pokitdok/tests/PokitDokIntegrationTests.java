@@ -238,7 +238,6 @@ public class PokitDokIntegrationTests {
 
         JSONArray data = data(response);
         assertNotNull(data);
-        assertEquals(data.size(), 4);
 	}
 
     /*******************
