@@ -1,7 +1,3 @@
-/**
-Client access library to the PokitDok APIs.
-*/
-
 package com.pokitdok;
 
 import java.io.File;
@@ -18,20 +14,98 @@ import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+    <p>
+    Main class of the pokitdok-java client access library for the PokitDok APIs.
+    </p>
+
+    <p>
+    The <a href="https://github.com/PokitDok/pokitdok-java">pokitdok-java</a> library provides a
+    concise means for applications written in Java (and related languages) to integrate functionality
+    from the <a href="https://pokitdok.com">PokitDok</a> health APIs. It handles user authentication,
+    scoping for endpoints that require it, and parsing results.
+    </p>
+
+    <p>
+    <b>Basic usage example:</b>
+    <pre>
+        import java.util.HashMap;
+        import java.util.Map;
+        import com.pokitdok.*;
+        import org.json.simple.*;
+
+        public class PokitDokTest {
+            public static void main(String argv[]) {
+                PokitDok pd = new PokitDok("client_id", "client_secret");
+
+                Map<String, String> query = new HashMap<String, String>();
+                query.put("last_name", "Aya-ay");
+
+                Map<String, Object> results = pd.providers(query);
+                System.out.println((JSONArray) results.get("data"));
+            }
+        }
+    </pre>
+    </p>
+
+    <p>
+        For simplicity, pokitdok-java uses the json-simple library for parsing results.
+    </p>
+
+    @version 0.9
+    @author PokitDok, Inc.
+*/
 public class PokitDok {
+    /** The current version of the library. */
     public static final String VERSION = "0.9";
+
+    /** The API version the client uses. Currently this is v4, the only deployed version of
+        the PokitDok APIs. */
     public static final String API_VERSION = "v4";
+
+    /** Default URL used to access the PokitDok Platform. */
     public static final String DEFAULT_API_BASE = "https://platform.pokitdok.com";
+
+    /** The default scope for most requests. */
     public static final String DEFAULT_SCOPE = "default";
+
+    /** The default scope for scheduling requests. */
     public static final String USER_SCHEDULE_SCOPE = "user_schedule";
 
-    private PokitDokHTTPConnector connector;
-    private String                clientId;
-    private String                clientSecret;
-    private String                apiVersion;
-    private final String          apiBase;
-    public static Map<String, String> defaultHeaders;
-    private JSONParser            parser;
+    /**
+        A reference to a {@link PokitDokHTTPConnector} used by this instance. This Connector is used
+        to isolate the client implementation from the HTTP library used (in the current implementation,
+        the one from Apache.)
+    */
+    private PokitDokHTTPConnector       connector;
+
+    /** The PokitDok Client ID used by this instance. */
+    private String                      clientId;
+
+    /** The PokitDok Client Secret used by this instance. */
+    private String                      clientSecret;
+
+    /**
+        The version of the PokitDok API being used by this instance. Note that the only
+        valid value is 'v4', since that is the only deployed API version ('v3' was deprecated some
+        time ago)
+     */
+    private String                      apiVersion;
+
+    /**
+        The base URL used to connect to the PokitDok Platform. Can be overridden for internal
+        testing.
+    */
+    private static String               apiBase = DEFAULT_API_BASE;
+
+    /**
+        A default set of HTTP headers transmitted with every request. Currently used to transmit
+        client and JVM versions for logging purposes.
+    */
+    public static Map<String, String>   defaultHeaders;
+
+    /** An instance of JSONParser re-used for construction efficiency. */
+    private JSONParser                  parser;
 
     public PokitDok(String clientId, String clientSecret) throws IOException, ParseException {
         this(clientId, clientSecret, null, null);
@@ -39,16 +113,15 @@ public class PokitDok {
 
     public PokitDok(String clientId, String clientSecret, PokitDokHTTPConnector connector)
         throws IOException {
-	this(clientId, clientSecret, connector, null);
+        this(clientId, clientSecret, connector, null);
     }
 
     public PokitDok(String clientId, String clientSecret, PokitDokHTTPConnector connector, String apiBase)
         throws IOException {
         this.clientId     = clientId;
         this.clientSecret = clientSecret;
-	this.apiBase      = apiBase != null ? apiBase : DEFAULT_API_BASE;
-        this.connector    = connector != null ? connector
-	    : new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders(), this.apiBase);
+	    this.apiBase      = apiBase != null ? apiBase : DEFAULT_API_BASE;
+        this.connector    = connector != null ? connector : new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders(), this.apiBase);
         this.parser       = new JSONParser();
     }
 
