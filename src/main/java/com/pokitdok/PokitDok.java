@@ -115,7 +115,7 @@ public class PokitDok {
         @throws ParseException if the platform server's response couldn't be parsed
     */
     public PokitDok(String clientId, String clientSecret, String apiBase) throws IOException, ParseException {
-        this(clientId, clientSecret, new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders()));
+        this(clientId, clientSecret, new ApacheHTTPConnector(clientId, clientSecret, getDefaultHeaders(), apiBase));
         this.apiBase = apiBase;
     }
 
@@ -176,8 +176,8 @@ public class PokitDok {
         @param params the params to attach to the url (usually for GET requests)
         @return the URL for the given endpoint and the list of parameters
     */
-    public static String apiUrl(String endpoint, Map<String, Object> params) {
-      String uri = getApiBase() + "/api/" + API_VERSION + "/" + endpoint;
+    public static String apiUrl(String apiBase, String endpoint, Map<String, Object> params) {
+      String uri = apiBase + "/api/" + API_VERSION + "/" + endpoint;
 
       if (null == params) {
           return uri;
