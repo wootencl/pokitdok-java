@@ -507,8 +507,10 @@ public class PokitDok {
     /* Scheduling endpoints */
 
     /**
-        Invokes the appointments endpoint, for a singular appointment, with a HashMap of parameters.
+        Queries for information about a single appointment.
 
+        @param uuid the uuid of the appointment to search for
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -522,8 +524,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the appointments endpoint, with a HashMap of parameters.
+        Queries for appointments.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -537,9 +540,10 @@ public class PokitDok {
     }
 
     /**
-        Invokes the appointment types endpoint, for a singular appointment type,
-        with a HashMap of parameters.
+        Queries for information about a single appointment type,
 
+        @param type the specified appointment type
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -553,8 +557,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the appointment types endpoint with a HashMap of parameters.
+        Lists the available appointment types.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -568,8 +573,10 @@ public class PokitDok {
     }
 
     /**
-        Invokes the appointments endpoint to book a new appointment with a HashMap of parameters.
+        Books a new appointment.
 
+        @param uuid
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -583,7 +590,7 @@ public class PokitDok {
     }
 
     /**
-        Invokes the appointments endpoint to cancel a new appointment with a HashMap of parameters.
+        Cancels an appointment.
 
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
@@ -598,8 +605,10 @@ public class PokitDok {
     }
 
     /**
-        Invokes the schedulers endpoint, for a singular scheduler, with a HashMap of parameters.
+        Invokes the schedulers endpoint to return information about a specified scheduler.
 
+        @param schedulerId the scheduler to search for
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -613,8 +622,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the schedulers endpoint with a HashMap of parameters.
+        Invokes the schedulers endpoint to list the available schedulers.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -631,6 +641,8 @@ public class PokitDok {
         Invokes the appointments endpoint to update an existing appointment,
         with a HashMap of parameters.
 
+        @param uuid the uuid of the appointment to update
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -646,8 +658,9 @@ public class PokitDok {
     /* Medical procedure code endpoints */
 
     /**
-        Invokes the medical procedure code endpoint with a HashMap of parameters.
+        Invokes the medical procedure code endpoint to search for MPCs.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -661,8 +674,10 @@ public class PokitDok {
     }
 
     /**
-        Invokes the medical procedure code endpoint with a MPC and a HashMap of parameters.
+        Invokes the medical procedure code endpoint to search for a given MPC by code.
 
+        @param code the MPC to search for
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -676,30 +691,84 @@ public class PokitDok {
     }
 
     /* Identity Endpoints */
+
+    /**
+        Invokes the identity endpoint to create an identity resource.
+
+        @param params a Map of parameters to include with the request
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
     public Map<String, Object> createIdentity(Map <String, Object> params)
             throws IOException, ParseException, UnauthorizedException {
         String results = connector.post("identity/", params, defaultHeaders);
         return (JSONObject) parser.parse(results);
     }
 
+    /**
+        Invokes the identity endpoint to update an identity resource.
+
+        @param uuid the uuid of the identity to update
+        @param params a Map of parameters to include with the request
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
     public Map<String, Object> updateIdentity(String uuid, Map <String, Object> params)
             throws IOException, ParseException, UnauthorizedException {
         String results = connector.put("identity/" + uuid, params, defaultHeaders);
         return (JSONObject) parser.parse(results);
     }
 
+    /**
+        Invokes the identity endpoint to search for an identity resource, with a UUID but no
+        other parameters.
+
+        @param uuid the UUID of the identity to search for
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
     public Map<String, Object> identity(String uuid)
             throws IOException, ParseException, UnauthorizedException {
         return identity(uuid, null);
     }
 
-    public Map<String, Object> identity(Map <String, Object> params)
+    /**
+        Invokes the identity endpoint to search for an identity resource.
+
+        @param params a Map of parameters to include with the request
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
+
+    public Map<String, Object> identity(Map<String, Object> params)
             throws IOException, ParseException, UnauthorizedException {
         return identity(null, params);
     }
 
-    /* get particular if uuid. otherwise search */
-    public Map<String, Object> identity(String uuid, Map <String, Object> params)
+    /**
+        Invokes the identity endpoint to search for an identity resource.
+
+        @param uuid
+        @param params a Map of parameters to include with the request
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
+    public Map<String, Object> identity(String uuid, Map<String, Object> params)
             throws IOException, ParseException, UnauthorizedException {
         String urlString = "identity";
         if (null != uuid && !uuid.isEmpty()) {
