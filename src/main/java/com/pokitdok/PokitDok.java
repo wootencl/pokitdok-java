@@ -144,6 +144,16 @@ public class PokitDok {
         this(clientId, clientSecret, connector, null);
     }
 
+    /**
+        Constructor which accepts a replacement {@link PokitDokHTTPConnector} to override the default,
+        as well as a replacement API base URL for testing.
+
+        @param clientId a PokitDok client ID
+        @param clientSecret a PokitDok client secret
+        @param connector a new implementation of {@link PokitDokHTTPConnector} to override the default.
+        @param apiBase a String representing a platform URL to connect to
+        @throws IOException usually implying a connectivity error reaching the platform server
+    */
     public PokitDok(String clientId, String clientSecret, PokitDokHTTPConnector connector, String apiBase)
         throws IOException {
         this.clientId     = clientId;
@@ -172,7 +182,8 @@ public class PokitDok {
         Constructs and returns a URL for the specified endpoint. If parameters are passed in,
         these are attached to the URL with a {@link URIBuilder}.
 
-        @param endpoint the PokitDok endpoint to Invokes
+        @param apiBase the base Platform url to use to construct the url
+        @param endpoint the PokitDok endpoint to invoke
         @param params the params to attach to the url (usually for GET requests)
         @return the URL for the given endpoint and the list of parameters
     */
@@ -204,6 +215,7 @@ public class PokitDok {
     /**
         Invokes the activities endpoint, with a HashMap of parameters.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -230,8 +242,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the authorizations endpoint, with a HashMap of parameters.
+        Invokes the authorizations endpoint.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -245,8 +258,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the cash prices endpoint, with a HashMap of parameters.
+        Queries the cash prices index.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -260,8 +274,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the claims endpoint, with a HashMap of parameters.
+        Submits a claim.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -275,8 +290,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the claims status endpoint, with a HashMap of parameters.
+        Invokes the claims status endpoint.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -290,8 +306,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the eligibility endpoint, with a HashMap of parameters.
+        Performs an eligibility check.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -305,8 +322,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the enrollment endpoint, with a HashMap of parameters.
+        Invokes the enrollment endpoint.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -354,8 +372,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the insurance prices endpoint, with a HashMap of parameters.
+        Searches the insurance prices index.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -371,6 +390,7 @@ public class PokitDok {
     /**
         Invokes the payers endpoint, with a HashMap of parameters.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -411,8 +431,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the plans endpoint, with a HashMap of parameters.
+        Invokes the plans endpoint.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -425,7 +446,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the providers endpoint, with a HashMap of parameters.
+        Invokes the providers endpoint.
+
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -452,8 +475,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the referrals endpoint, with a HashMap of parameters.
+        Invokes the referrals endpoint.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -466,8 +490,9 @@ public class PokitDok {
     }
 
     /**
-        Invokes the trading partners endpoint, with a HashMap of parameters.
+        Invokes the trading partners endpoint.
 
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -575,7 +600,7 @@ public class PokitDok {
     /**
         Books a new appointment.
 
-        @param uuid
+        @param uuid the uuid of the open appointment slot to book
         @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
@@ -592,6 +617,8 @@ public class PokitDok {
     /**
         Cancels an appointment.
 
+        @param uuid the uuid of the appointment to cancelAppointment
+        @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -729,7 +756,7 @@ public class PokitDok {
         Invokes the identity endpoint to search for an identity resource, with a UUID but no
         other parameters.
 
-        @param uuid the UUID of the identity to search for
+        @param uuid the UUID of the identity resource to search for
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
         @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
@@ -760,7 +787,7 @@ public class PokitDok {
     /**
         Invokes the identity endpoint to search for an identity resource.
 
-        @param uuid
+        @param uuid the UUID of the identity resource to search for
         @param params a Map of parameters to include with the request
         @throws IOException usually implying a connectivity error reaching the platform server
         @throws ParseException if the platform server's response couldn't be parsed
