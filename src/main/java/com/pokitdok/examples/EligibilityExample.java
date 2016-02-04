@@ -8,7 +8,7 @@ import org.json.simple.JSONValue;
 public class EligibilityExample {
   public static void main(String argv[]) {
     try {
-      PokitDok pd = new PokitDok("2MBlqahR2xiaBtVSS50n", "FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS");
+      PokitDok pd = new PokitDok("CLIENT_ID_GOES_HERE", "CLIENT_SECRET_GOES_HERE");
 
       StringBuffer eligibilityRequest = new StringBuffer();
       eligibilityRequest.append("{");
