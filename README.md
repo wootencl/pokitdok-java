@@ -23,15 +23,15 @@ pokitdok-java is pushed to Maven Central via the Sonatype OSS repository.
 
 * Group ID: com.pokitdok
 * Artifact ID: pokitdok-java
-* Latest Version: 0.8
+* Latest Version: 0.9
 
 So, for example, in Gradle, you could add the dependency
 ```java
-compile "com.pokitdok:pokitdok-java:0.8"
+compile "com.pokitdok:pokitdok-java:0.9"
 ```
 
 ### Manual Install
-You can download pokitdok-java-0.8.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.8.jar) and include it on your classpath, like any other JAR.
+You can download pokitdok-java-0.9.jar from [here](https://github.com/pokitdok/pokitdok-java/raw/master/build/libs/pokitdok-java-0.9.jar) and include it on your classpath, like any other JAR.
 A few other JAR requirements need to be on your classpath as well. They are:
 * Apache HTTPCore and HTTPClient, available from [http://hc.apache.org/downloads.cgi](http://hc.apache.org/downloads.cgi)
 * Apache Commons Codec, available from [http://commons.apache.org/proper/commons-codec/download_codec.cgi](http://commons.apache.org/proper/commons-codec/download_codec.cgi)
@@ -255,6 +255,6 @@ Security.addProvider(new BouncyCastleProvider());
 Of course, the recommended fix is to upgrade to a supported JDK version, but if this is not possible, the
 above fix should work for you.
 ## License
-Copyright (c) 2014 PokitDok Inc. See [LICENSE][] for details.
+Copyright (c) 2014-2016 PokitDok Inc. See [LICENSE][] for details.
 
 [license]: LICENSE.txt
