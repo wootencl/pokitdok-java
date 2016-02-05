@@ -259,4 +259,4 @@ above fix should work for you.
 ## License
 Copyright (c) 2014-2016 PokitDok Inc. See [LICENSE][] for details.
 
-[license]: LICENSE.txt
+[license]: LICENSE
