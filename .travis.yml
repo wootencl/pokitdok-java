@@ -4,3 +4,12 @@ jdk:
   - oraclejdk7
   - openjdk7
   - openjdk6
+# Fix for ipv4-related hostname crash - fix inspired by https://github.com/gschueler/rundeck
+before_install:
+  - sudo chsh --shell $(which bash)
+  - hostname
+  - cat /etc/hosts
+  - sudo hostname "$(hostname | cut -c1-63)"
+  - sed -e "s/^\\(127\\.0\\.0\\.1.*\\)/\\1 $(hostname | cut -c1-63)/" /etc/hosts | sudo tee /etc/hosts
+  - hostname
+  - cat /etc/hosts
