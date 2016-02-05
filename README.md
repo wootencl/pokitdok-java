@@ -9,12 +9,14 @@ PokitDok Platform API Client for Java
 
 ## Resources
 * [Read the PokitDok API docs][apidocs]
+* [Read the pokitdok-java Javadoc][javadoc]
 * [View Source on GitHub][code]
 * [Report Issues on GitHub][issues]
 
 [apidocs]: https://platform.pokitdok.com/documentation/v4#/
 [code]: https://github.com/PokitDok/pokitdok-java
 [issues]: https://github.com/PokitDok/pokitdok-java/issues
+[javadoc]: https://pokitdok.github.io/pokitdok-java/javadoc
 
 ## Installation
 
