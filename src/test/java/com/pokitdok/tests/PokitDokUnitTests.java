@@ -365,4 +365,68 @@ public class PokitDokUnitTests {
 			if (inputStream != null) inputStream.close();
 		}
 	}
+
+	@Test
+	@Category(UnitTests.class)
+	public void pharmacyPlansTest() throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+                params.put("trading_partner_id", "medicare_national");
+                params.put("plan_number", "S5601034");
+		Map<String, Object> response = client.pharmacyPlans(params);
+
+		verify(mockConnector).get(eq("pharmacy/plans"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	@Category(UnitTests.class)
+	public void pharmacyFormularyTest() throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+                params.put("trading_partner_id", "medicare_national");
+                params.put("plan_number", "S5820003");
+                params.put("ndc", "59310057922");
+		Map<String, Object> response = client.pharmacyFormulary(params);
+
+		verify(mockConnector).get(eq("pharmacy/formulary"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	@Category(UnitTests.class)
+	public void pharmacyDrugCostTest() throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+                params.put("trading_partner_id", "medicare_national");
+                params.put("plan_number", "S5820003");
+                params.put("ndc", "59310057922");
+		Map<String, Object> response = client.pharmacyDrugCost(params);
+
+		verify(mockConnector).get(eq("pharmacy/drug/cost"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	@Category(UnitTests.class)
+	public void pharmacyNetworkNoNPI() throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+                params.put("trading_partner_id", "medicare_national");
+                params.put("plan_number", "S5820003");
+                params.put("zipcode", "94401");
+		Map<String, Object> response = client.pharmacyNetwork(params);
+
+		verify(mockConnector).get(eq("pharmacy/network"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
+	@Test
+	@Category(UnitTests.class)
+	public void pharmacyNetworkNPI() throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+                params.put("trading_partner_id", "medicare_national");
+                params.put("plan_number", "S5820003");
+		Map<String, Object> response = client.pharmacyNetwork("1275827032", params);
+
+		verify(mockConnector).get(eq("pharmacy/network/1275827032"), eq(params), anyMap());
+		assertNotNull(response);
+	}
+
 }

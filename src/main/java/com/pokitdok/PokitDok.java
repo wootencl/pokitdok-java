@@ -804,4 +804,92 @@ public class PokitDok {
         String results = connector.get(urlString, params, defaultHeaders);
         return (JSONObject) parser.parse(results);
     }
+
+    /**
+        Invokes the pharmacy plans endpoint.
+
+        @param params a Map of parameters to include with the request
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
+    public Map<String, Object> pharmacyPlans(Map<String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        String urlString = "pharmacy/plans";
+        String results = connector.get(urlString, params, defaultHeaders);
+        return (JSONObject) parser.parse(results);
+    }
+
+    /**
+        Invokes the pharmacy formulary endpoint.
+
+        @param params a Map of parameters to include with the request
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
+    public Map<String, Object> pharmacyFormulary(Map<String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        String urlString = "pharmacy/formulary";
+        String results = connector.get(urlString, params, defaultHeaders);
+        return (JSONObject) parser.parse(results);
+    }
+
+    /**
+        Invokes the pharmacy drug cost endpoint.
+
+        @param params a Map of parameters to include with the request
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
+    public Map<String, Object> pharmacyDrugCost(Map<String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        String urlString = "pharmacy/drug/cost";
+        String results = connector.get(urlString, params, defaultHeaders);
+        return (JSONObject) parser.parse(results);
+    }
+
+    /**
+        Invokes the pharmacy network endpoint.
+
+        @param params a Map of parameters to include with the request
+        @param npi the NPI of a pharmacy to check in-network status
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
+    public Map<String, Object> pharmacyNetwork(String npi, Map<String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+        String urlString = "pharmacy/network";
+        if (null != npi && !npi.isEmpty()) {
+            urlString += "/" + npi;
+        }
+        String results = connector.get(urlString, params, defaultHeaders);
+        return (JSONObject) parser.parse(results);
+    }
+
+    /**
+        Invokes the pharmacy network endpoint without an NPI
+
+        @param params a Map of parameters to include with the request
+        @param npi the NPI of a pharmacy to check in-network status
+        @throws IOException usually implying a connectivity error reaching the platform server
+        @throws ParseException if the platform server's response couldn't be parsed
+        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
+            given client ID and client secret
+        @return a {@link Map} of results
+    */
+    public Map<String, Object> pharmacyNetwork(Map<String, Object> params)
+            throws IOException, ParseException, UnauthorizedException {
+	    return pharmacyNetwork(null, params);
+    }
 }
