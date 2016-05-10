@@ -304,6 +304,74 @@ public class PokitDokIntegrationTests {
         }
     }
 
+    @Test
+    @Category(IntegrationTests.class)
+    public void pharmacyPlansTest() throws Exception {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("trading_partner_id", "medicare_national");
+        params.put("plan_number", "S5820003");
+        Map<String, Object> response = pd.pharmacyPlans(params);
+
+        assertNotNull(response);
+        JSONObject data = (JSONObject) response.get("data");
+        assertNotNull(data);
+	}
+
+    @Test
+    @Category(IntegrationTests.class)
+    public void pharmacyFormularyTest() throws Exception {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("trading_partner_id", "medicare_national");
+        params.put("plan_number", "S5820003");
+        params.put("ndc", "59310057922");
+        Map<String, Object> response = pd.pharmacyFormulary(params);
+
+        assertNotNull(response);
+        JSONArray data = data(response);
+        assertNotNull(data);
+	}
+
+    @Test
+    @Category(IntegrationTests.class)
+    public void pharmacyDrugCostTest() throws Exception {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("trading_partner_id", "medicare_national");
+        params.put("plan_number", "S5820003");
+        params.put("ndc", "68180042902");
+        Map<String, Object> response = pd.pharmacyDrugCost(params);
+
+        assertNotNull(response);
+        JSONArray data = data(response);
+        assertNotNull(data);
+	}
+
+    @Test
+    @Category(IntegrationTests.class)
+    public void pharmacyNetworkNoNPITest() throws Exception {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("trading_partner_id", "medicare_national");
+        params.put("plan_number", "S5820003");
+        params.put("zipcode", "94401");
+        Map<String, Object> response = pd.pharmacyNetwork(params);
+
+        assertNotNull(response);
+        JSONArray data = data(response);
+        assertNotNull(data);
+	}
+
+    @Test
+    @Category(IntegrationTests.class)
+    public void pharmacyNetworkNPITest() throws Exception {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("trading_partner_id", "medicare_national");
+        params.put("plan_number", "S5820003");
+        Map<String, Object> response = pd.pharmacyNetwork("1912301953", params);
+
+        assertNotNull(response);
+        JSONArray data = data(response);
+        assertNotNull(data);
+	}
+
     /** Test suite to assemble all integration tests */
     @RunWith(Categories.class)
     @Suite.SuiteClasses(PokitDokIntegrationTests.class)
