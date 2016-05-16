@@ -333,20 +333,6 @@ public class PokitDokIntegrationTests {
 
     @Test
     @Category(IntegrationTests.class)
-    public void pharmacyDrugCostTest() throws Exception {
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put("trading_partner_id", "medicare_national");
-        params.put("plan_number", "S5820003");
-        params.put("ndc", "68180042902");
-        Map<String, Object> response = pd.pharmacyDrugCost(params);
-
-        assertNotNull(response);
-        JSONArray data = data(response);
-        assertNotNull(data);
-	}
-
-    @Test
-    @Category(IntegrationTests.class)
     public void pharmacyNetworkNoNPITest() throws Exception {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("trading_partner_id", "medicare_national");
