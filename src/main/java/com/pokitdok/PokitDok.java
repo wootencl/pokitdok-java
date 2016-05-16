@@ -840,23 +840,6 @@ public class PokitDok {
     }
 
     /**
-        Invokes the pharmacy drug cost endpoint.
-
-        @param params a Map of parameters to include with the request
-        @throws IOException usually implying a connectivity error reaching the platform server
-        @throws ParseException if the platform server's response couldn't be parsed
-        @throws UnauthorizedException if, after 2 tries, the client could not authenticate with the
-            given client ID and client secret
-        @return a {@link Map} of results
-    */
-    public Map<String, Object> pharmacyDrugCost(Map<String, Object> params)
-            throws IOException, ParseException, UnauthorizedException {
-        String urlString = "pharmacy/drug/cost";
-        String results = connector.get(urlString, params, defaultHeaders);
-        return (JSONObject) parser.parse(results);
-    }
-
-    /**
         Invokes the pharmacy network endpoint.
 
         @param params a Map of parameters to include with the request

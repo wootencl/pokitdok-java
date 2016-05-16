@@ -393,19 +393,6 @@ public class PokitDokUnitTests {
 
 	@Test
 	@Category(UnitTests.class)
-	public void pharmacyDrugCostTest() throws Exception {
-		Map<String, Object> params = new HashMap<String, Object>();
-                params.put("trading_partner_id", "medicare_national");
-                params.put("plan_number", "S5820003");
-                params.put("ndc", "59310057922");
-		Map<String, Object> response = client.pharmacyDrugCost(params);
-
-		verify(mockConnector).get(eq("pharmacy/drug/cost"), eq(params), anyMap());
-		assertNotNull(response);
-	}
-
-	@Test
-	@Category(UnitTests.class)
 	public void pharmacyNetworkNoNPI() throws Exception {
 		Map<String, Object> params = new HashMap<String, Object>();
                 params.put("trading_partner_id", "medicare_national");
