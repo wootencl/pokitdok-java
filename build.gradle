@@ -60,6 +60,10 @@ test {
 	useJUnit {
 		includeCategories 'com.pokitdok.tests.categories.UnitTests'
 	}
+	testLogging {
+		events "passed", "skipped", "failed", "standardOut", "standardError"
+		outputs.upToDateWhen {false}
+	}
 }
 
 task integrationTest(type: Test) {

@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pokitdok.tests.PokitDokUnitTests" tests="27" skipped="0" failures="0" errors="0" timestamp="2016-07-12T20:57:43" hostname="Carter-Wooten---MacBook-Pro" time="0.132">
+<testsuite name="com.pokitdok.tests.PokitDokUnitTests" tests="27" skipped="0" failures="0" errors="0" timestamp="2016-07-13T19:11:50" hostname="Carter-Wooten---MacBook-Pro" time="0.116">
   <properties/>
-  <testcase name="shouldInstantiateTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.098"/>
-  <testcase name="activitiesTestWithParams" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.006"/>
+  <testcase name="shouldInstantiateTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.086"/>
+  <testcase name="activitiesTestWithParams" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.005"/>
   <testcase name="payersTestWithParams" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="pharmacyNetworkNoNPI" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="pharmacyNetworkNoNPI" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
   <testcase name="pharmacyNetworkNPI" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
   <testcase name="activitiesTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="tradingPartnerTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
-  <testcase name="tradingPartnersTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
-  <testcase name="planTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="plansTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
-  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.004"/>
-  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
-  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.003"/>
-  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.002"/>
-  <testcase name="createIdentityTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="updateIdentityTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.002"/>
   <testcase name="getIdentityUuidTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
-  <testcase name="getIdentityParamsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
-  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
-  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="mpcTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="getIdentityParamsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.005"/>
+  <testcase name="cashPricesTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="insurancePricesTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
+  <testcase name="mpcTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
   <testcase name="mpcsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
   <testcase name="providersTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="pharmacyPlansTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
-  <testcase name="pharmacyFormularyTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
+  <testcase name="pharmacyPlansTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
+  <testcase name="pharmacyFormularyTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="payersTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="tradingPartnerTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
+  <testcase name="tradingPartnersTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="planTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
+  <testcase name="plansTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="authorizationsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="eligibilityTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="claimsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="claimsStatusTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="referralsTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="createIdentityTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.001"/>
+  <testcase name="updateIdentityTest" classname="com.pokitdok.tests.PokitDokUnitTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
