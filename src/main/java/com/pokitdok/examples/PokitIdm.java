@@ -32,39 +32,6 @@ public class PokitIdm
     private static String CLIENT_SECRET;
     private static PokitDok pd;
 
-    private static String IDM_STRING = "{\n" +
-            "  \"prefix\": \"Ms\",\n" +
-            "  \"first_name\": \"Peg\",\n" +
-            "  \"last_name\": \"PokitDok\",\n" +
-            "  \"gender\": \"female\",\n" +
-            "  \"birth_date\": \"1991-05-19\",\n" +
-            "  \"email\": \"peggy@pokitdok.com\",\n" +
-            "  \"address\": {\n" +
-            "    \"address_lines\": [\"1542 Anywhere Avenue\"],\n" +
-            "    \"city\": \"Charleston\",\n" +
-            "    \"state\": \"SC\",\n" +
-            "    \"zipcode\": \"29407\"\n" +
-            "  }\n" +
-            "}";
-
-    private static String IDM_GET_STRING = "{\n" +
-        "  \"prefix\": \"Ms\",\n" +
-        "  \"first_name\": \"Peg\",\n" +
-        "  \"last_name\": \"PokitDok\",\n" +
-        "  \"gender\": \"female\",\n" +
-        "  \"birth_date\": \"1991-05-19\",\n" +
-        "  \"email\": \"peggy@pokitdok.com\",\n" +
-        "}";
-
-    private static String IDM_UPDATE_STRING = "{\n" +
-            "  \"prefix\": \"Ms\",\n" +
-            "  \"first_name\": \"Peggy\",\n" +
-            "  \"last_name\": \"PokitDok\",\n" +
-            "  \"gender\": \"female\",\n" +
-            "  \"birth_date\": \"1991-05-23\",\n" +
-            "  \"email\": \"peggy_email2@pokitdok.com\"\n" +
-            "}";
-
     public static void main( String[] args )
     {
         Map<String, String> env = System.getenv();
@@ -82,15 +49,10 @@ public class PokitIdm
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        // the create identity object
-        Map<String, Object> postObject = (JSONObject) JSONValue.parse(IDM_STRING);
-        // the query identity parameters object
-        Map<String, Object> getObject = (JSONObject) JSONValue.parse(IDM_GET_STRING);
-        // update string object
-        Map<String, Object> updateObject = (JSONObject) JSONValue.parse(IDM_UPDATE_STRING);
+
         try {
             // create identity
-            Map<String, Object> response = pd.createIdentity(postObject);
+            Map<String, Object> response = pd.activities();
             System.out.println(response);
         } catch (IOException e) {
             e.printStackTrace();
