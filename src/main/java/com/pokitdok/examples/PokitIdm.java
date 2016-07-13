@@ -68,15 +68,15 @@ public class PokitIdm
     public static void main( String[] args )
     {
         Map<String, String> env = System.getenv();
-        CLIENT_ID = null != CLIENT_ID ? CLIENT_ID : env.get("PD_CLIENT_ID");
-        CLIENT_SECRET = null != CLIENT_SECRET ? CLIENT_SECRET : env.get("PD_CLIENT_SECRET");
+        CLIENT_ID = "9P10N4H2F7ZbaAU6RYct";
+        CLIENT_SECRET = "gOFzgJiIUoqnUhjaZezDxUf7ugPF6FsRAPy2tWDT";
         if ((CLIENT_ID == null) || (CLIENT_SECRET == null)) {
             System.out.println("Please provide a PokitDok client ID and secret in the environment variables PD_CLIENT_ID and PD_CLIENT_SECRET.");
         }
 
         // create connection to PokitDok platform with client credentials
         try {
-            pd = new PokitDok(CLIENT_ID, CLIENT_SECRET);
+            pd = new PokitDok(CLIENT_ID, CLIENT_SECRET, "http://localhost:5002");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
