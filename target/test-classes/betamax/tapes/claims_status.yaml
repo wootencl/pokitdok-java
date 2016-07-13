@@ -1,0 +1,48 @@
+!tape
+name: claims_status
+interactions:
+- recorded: 2015-04-14T19:04:00.438Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/oauth2/token
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic RVk5R3BPWFM0MkVVSUJRQ2QxRnQ6T1FjZGlaTmpPSG1TMkwybUFVWG03eHdYNWRRQmVKQms5bXd3Y1RhRg==
+      Content-Length: '29'
+      Content-Type: application/x-www-form-urlencoded
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+    body: grant_type=client_credentials
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-store
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 14 Apr 2015 19:04:00 GMT
+      Pragma: no-cache
+      Server: Werkzeug/0.9.4 Python/2.7.6
+    body: '{"access_token": "hWh4eIPhRxjmh48t7XaJQzRRAY2wtpfuKJJPNzq8", "token_type": "bearer", "expires": 1429041841, "expires_in": 3600}'
+- recorded: 2015-04-14T19:04:00.461Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/api/v4/eligibility/
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer hWh4eIPhRxjmh48t7XaJQzRRAY2wtpfuKJJPNzq8
+      Content-Encoding: UTF-8
+      Content-Length: '231'
+      Content-Type: application/json
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+    body: '{"patient":{"id":"1234567890","first_name":"JANE","birth_date":"1970-01-01","last_name":"DOE"},"provider":{"first_name":"Jerome","npi":"1467560003","last_name":"Aya-Ay"},"trading_partner_id":"MOCKPAYER","service_date":"2014-01-01"}'
+  response:
+    status: 422
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 14 Apr 2015 19:04:00 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+      charset: utf-8
+      mimetype: application/json
+    body: '{"meta": {"processing_time": 8, "rate_limit_amount": 7, "rate_limit_reset": 1429041834, "application_mode": "test", "rate_limit_cap": 1000}, "data": {"errors": {"validation": {"service_date": "Rogue field", "patient": "Rogue field"}}}}'

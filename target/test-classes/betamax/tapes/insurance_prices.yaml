@@ -1,0 +1,46 @@
+!tape
+name: insurance_prices
+interactions:
+- recorded: 2015-04-14T19:03:57.941Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/oauth2/token
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic RVk5R3BPWFM0MkVVSUJRQ2QxRnQ6T1FjZGlaTmpPSG1TMkwybUFVWG03eHdYNWRRQmVKQms5bXd3Y1RhRg==
+      Content-Length: '29'
+      Content-Type: application/x-www-form-urlencoded
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+    body: grant_type=client_credentials
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-store
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 14 Apr 2015 19:03:58 GMT
+      Pragma: no-cache
+      Server: Werkzeug/0.9.4 Python/2.7.6
+    body: '{"access_token": "okPHuyUmG1EXJYd0rZaGnWM9lUOE9WHRdjVm4wEo", "token_type": "bearer", "expires": 1429041838, "expires_in": 3600}'
+- recorded: 2015-04-14T19:03:57.975Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/prices/insurance?zip_code=29403&cpt_code=87799
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer okPHuyUmG1EXJYd0rZaGnWM9lUOE9WHRdjVm4wEo
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 200
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 14 Apr 2015 19:03:58 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+      charset: utf-8
+      mimetype: application/json
+    body: '{"meta": {"rate_limit_amount": 3, "rate_limit_reset": 1429041836, "application_mode": "test", "processing_time": 21, "rate_limit_cap": 1000, "credits_remaining": -2, "activity_id": "552d649e0640fd27428d3464", "credits_billed": 1}, "data": {"amounts":
+      [{"high_price": 23.43, "standard_deviation": 2.95, "average_price": 18.43, "payer_type": "insurance", "payment_type": "allowed", "low_price": 15.42, "median_price": 19.27}, {"high_price": 54.85, "standard_deviation": 8.42, "average_price": 30.9, "payer_type":
+      "insurance", "payment_type": "submitted", "low_price": 24.65, "median_price": 29.74}], "cpt_code": "87799", "geo_zip_area": "294"}}'

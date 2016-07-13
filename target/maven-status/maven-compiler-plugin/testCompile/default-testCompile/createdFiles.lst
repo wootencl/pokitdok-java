@@ -1,0 +1,7 @@
+com/pokitdok/tests/PokitDokUnitTests$PokitDokUnitTestSuite.class
+com/pokitdok/tests/categories/UnitTests.class
+com/pokitdok/tests/categories/IntegrationTests.class
+com/pokitdok/tests/PokitDokUnitTests.class
+com/pokitdok/tests/Constants.class
+com/pokitdok/tests/PokitDokIntegrationTests.class
+com/pokitdok/tests/PokitDokIntegrationTests$PokitDokIntegrationTestSuite.class

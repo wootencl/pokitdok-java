@@ -1,0 +1,102 @@
+!tape
+name: activities
+interactions:
+- recorded: 2015-04-14T19:04:01.008Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/oauth2/token
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic RVk5R3BPWFM0MkVVSUJRQ2QxRnQ6T1FjZGlaTmpPSG1TMkwybUFVWG03eHdYNWRRQmVKQms5bXd3Y1RhRg==
+      Content-Length: '29'
+      Content-Type: application/x-www-form-urlencoded
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+    body: grant_type=client_credentials
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-store
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 14 Apr 2015 19:04:01 GMT
+      Pragma: no-cache
+      Server: Werkzeug/0.9.4 Python/2.7.6
+    body: '{"access_token": "RcLasMWiW1asHYlMElAds2AHflkiC4psMM3JsqFl", "token_type": "bearer", "expires": 1429041841, "expires_in": 3600}'
+- recorded: 2015-04-14T19:04:01.053Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/activities
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer RcLasMWiW1asHYlMElAds2AHflkiC4psMM3JsqFl
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 200
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 14 Apr 2015 19:04:01 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+      charset: utf-8
+      mimetype: application/json
+    body: '{"meta": {"rate_limit_amount": 8, "rate_limit_reset": 1429041834, "application_mode": "test", "processing_time": 27, "rate_limit_cap": 1000, "activity_id": "552d64a10640fd27428d3467", "result_count": 6}, "data": [{"units_of_work": 1, "_type": "PlatformActivityModel",
+      "name": "insurance_prices", "parameters": {"cpt_code": "87799", "zip_code": "29403"}, "_uuid": "2279beb1-fa2b-41de-a1c8-ee77bb46ad80", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "552d649e0640fd27428d3464",
+      "transition_path": ["process", "complete"], "history": [{"record_dt": "2015-04-14T19:03:58.266000", "name": "init", "title": "Initializing"}, {"record_dt": "2015-04-14T19:03:58.266000", "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+      1, "_type": "PlatformActivityModel", "name": "providers", "parameters": {"npi": "1467560003"}, "_uuid": "a24d837d-cd27-45ad-bb11-614880dc0e29", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "552d649e0640fd27428d3465",
+      "transition_path": ["process", "complete"], "history": [{"record_dt": "2015-04-14T19:03:58.846000", "name": "init", "title": "Initializing"}, {"record_dt": "2015-04-14T19:03:58.846000", "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+      1, "_type": "PlatformActivityModel", "name": "authorizations", "parameters": {"patient": {"birth_date": "1970-01-01", "first_name": "JANE", "last_name": "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "Mock
+      Payer for Testing", "id": "MOCKPAYER"}, "correlation_id": "4297b781-4ff1-444c-a3dd-912c5862a316", "client_id": "EY9GpOXS42EUIBQCd1Ft", "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "npi": "1467560003"}, "async": false, "event": {"category":
+      "health_services_review", "diagnoses": [{"date": "2014-10-01", "code": "789.00"}], "place_of_service": "office", "delivery": {"quantity_qualifier": "visits", "quantity": 1}, "provider": {"organization_name": "KELLY ULTRASOUND CENTER, LLC", "phone": "8642341234",
+      "npi": "1760779011"}, "services": [{"cpt_code": "76700", "measurement": "unit", "quantity": 1}], "certification_type": "initial", "type": "diagnostic_medical"}}, "_uuid": "ded09211-13ce-495b-ba44-a42667b6a60a", "state": {"name": "completed", "title": "Completed"},
+      "result": {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id": "4297b781-4ff1-444c-a3dd-912c5862a316",
+      "client_id": "EY9GpOXS42EUIBQCd1Ft", "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "tax_id": "1467560003"}, "async": false, "event": {"category": "health_services_review", "diagnoses": [{"date": "2005-04-30", "code": "410.90"}], "place_of_service":
+      "office", "review": {"certification_number": "AUTH0001", "second_surgical_opinion_required": false, "certification_action": "certified_in_total"}, "delivery": {"quantity_qualifier": "visits", "quantity": 1}, "provider": {"organization_name": "KELLY ULTRASOUND
+      CENTER, LLC", "tax_id": "1760779011"}, "certification_type": "initial", "type": "diagnostic_medical"}, "valid_request": true}, "trading_partner_id": "MOCKPAYER", "id": "552d649c0640fd27428d3462", "transition_path": ["generate", "transmit", "wait", "receive",
+      "process", "complete"], "history": [{"record_dt": "2015-04-14T19:03:57.053000", "name": "init", "title": "Initializing"}, {"record_dt": "2015-04-14T19:03:57.053000", "name": "generating", "title": "Generating transactions"}, {"record_dt": "2015-04-14T19:03:57.053000",
+      "name": "transmitting", "title": "Transmitting transactions to Trading Partner"}, {"record_dt": "2015-04-14T19:03:57.053000", "name": "waiting", "title": "Waiting on Trading Partner Response"}, {"record_dt": "2015-04-14T19:03:57.053000", "name": "receiving",
+      "title": "Receiving transactions from Trading Partner"}, {"record_dt": "2015-04-14T19:03:57.053000", "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "cash_prices", "parameters":
+      {"cpt_code": "87799", "zip_code": "75201"}, "_uuid": "56ba0749-ac0f-41f0-a7ce-b0dc1ca57345", "state": {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "552d649d0640fd27428d3463", "transition_path": ["process", "complete"],
+      "history": [{"record_dt": "2015-04-14T19:03:57.692000", "name": "init", "title": "Initializing"}, {"record_dt": "2015-04-14T19:03:57.692000", "name": "processing", "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+      "name": "activities", "remaining_transitions": ["process", "complete"], "_uuid": "210931eb-80de-47ea-b04d-d64ab35e3de6", "state": {"name": "init", "title": "Initializing"}, "trading_partner_id": "PokitDok", "id": "552d64a10640fd27428d3467", "transition_path":
+      ["process", "complete"]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "eligibility", "parameters": {"service_types": ["health_benefit_plan_coverage"], "trading_partner_id": "MOCKPAYER", "payer": {"id": "MOCKPAYER", "name": "Mockpayer
+      For Testing"}, "member": {"birth_date": "1970-01-01", "first_name": "Jane", "last_name": "Doe", "id": "W000000000"}, "correlation_id": "65c9da65-69cc-4e43-bd75-4ac6ab151a1c", "client_id": "EY9GpOXS42EUIBQCd1Ft", "provider": {"first_name": "JEROME", "last_name":
+      "AYA-AY", "npi": "1467560003"}, "async": false, "transaction_code": "request"}, "_uuid": "a378a17c-7de7-467d-b070-84eea1037056", "state": {"name": "completed", "title": "Completed"}, "result": {"service_types": ["professional_physician_visit_office"],
+      "client_id": "EY9GpOXS42EUIBQCd1Ft", "payer": {"id": "MOCKPAYER", "name": "MOCK PAYER INC"}, "summary": {"deductible": {"individual": {"in_network": {"applied": {"currency": "USD", "amount": "16.43"}, "limit": {"currency": "USD", "amount": "3000"}, "remaining":
+      {"currency": "USD", "amount": "2983.57"}}, "out_of_network": {"applied": {"currency": "USD", "amount": "16.43"}, "limit": {"currency": "USD", "amount": "6000"}, "remaining": {"currency": "USD", "amount": "5983.57"}}}, "family": {"in_network": {"applied":
+      {"currency": "USD", "amount": "43.91"}, "limit": {"currency": "USD", "amount": "6000"}, "remaining": {"currency": "USD", "amount": "5956.09"}}, "out_of_network": {"applied": {"currency": "USD", "amount": "43.91"}, "limit": {"currency": "USD", "amount":
+      "12000"}, "remaining": {"currency": "USD", "amount": "11956.09"}}}}, "out_of_pocket": {"individual": {"in_network": {"applied": {"currency": "USD", "amount": "16.43"}, "limit": {"currency": "USD", "amount": "3000"}, "remaining": {"currency": "USD", "amount":
+      "2983.57"}}, "out_of_network": {"applied": {"currency": "USD", "amount": "16.43"}, "limit": {"currency": "USD", "amount": "12500"}, "remaining": {"currency": "USD", "amount": "12483.57"}}}, "family": {"in_network": {"applied": {"currency": "USD", "amount":
+      "43.91"}, "limit": {"currency": "USD", "amount": "6000"}, "remaining": {"currency": "USD", "amount": "5956.09"}}, "out_of_network": {"applied": {"currency": "USD", "amount": "43.91"}, "limit": {"currency": "USD", "amount": "25000"}, "remaining": {"currency":
+      "USD", "amount": "24956.09"}}}}}, "subscriber": {"first_name": "Jane", "last_name": "Doe", "gender": "male", "address": {"city": "SPARTANBURG", "state": "SC", "zipcode": "29307", "address_lines": ["123 MAIN ST"]}, "birth_date": "1970-01-01", "id": "W000000000"},
+      "correlation_id": "65c9da65-69cc-4e43-bd75-4ac6ab151a1c", "trading_partner_id": "MOCKPAYER", "provider": {"first_name": "JEROME", "last_name": "JEROME AYA-AY", "npi": "1467560003"}, "coverage": {"limitations": [{"benefit_amount": {"currency": "USD", "amount":
+      "0"}, "coverage_level": "employee_and_spouse", "messages": [{"message": "Unlimited Lifetime Benefits"}], "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network": "not_applicable", "benefit_amount": {"currency": "USD", "amount": "0"}, "coverage_level":
+      "employee_and_spouse", "messages": [{"message": "Plan Requires PreCert"}], "service_types": ["professional_physician_visit_office"]}, {"benefit_amount": {"currency": "USD", "amount": "0"}, "coverage_level": "employee_and_spouse", "messages": [{"message":
+      "Commercial"}, {"message": "Plan includes NAP"}, {"message": "Pre-Existing may apply"}], "service_types": ["professional_physician_visit_office"]}], "service_types": ["professional_physician_visit_office"], "group_number": "088818801000013", "out_of_pocket":
+      [{"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount": "3000"}, "coverage_level": "individual", "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount": "2983.57"},
+      "coverage_level": "individual", "time_period": "remaining", "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount": "6000"}, "coverage_level": "family", "service_types": ["health_benefit_plan_coverage"]},
+      {"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount": "5956.09"}, "coverage_level": "family", "time_period": "remaining", "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network": "no", "benefit_amount": {"currency":
+      "USD", "amount": "12500"}, "coverage_level": "individual", "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network": "no", "benefit_amount": {"currency": "USD", "amount": "12483.57"}, "coverage_level": "individual", "time_period": "remaining",
+      "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network": "no", "benefit_amount": {"currency": "USD", "amount": "25000"}, "coverage_level": "family", "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network": "no", "benefit_amount":
+      {"currency": "USD", "amount": "24956.09"}, "coverage_level": "family", "time_period": "remaining", "service_types": ["health_benefit_plan_coverage"]}], "insurance_type": "ppo", "contacts": [{"contact_type": "payer", "name": "Aetna", "address": {"city":
+      "Lexington", "state": "KY", "zipcode": "40512", "address_lines": ["PO Box 14079"]}}], "copay": [{"in_plan_network": "yes", "service_types": ["professional_physician_visit_office"], "coverage_level": "employee_and_spouse", "messages": [{"message": "PRIMARY
+      OFFICE"}], "copayment": {"currency": "USD", "amount": "0"}}, {"in_plan_network": "not_applicable", "service_types": ["professional_physician_visit_office"], "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE VS"}, {"message":
+      "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC VISIT"}, {"message": "PRIME CARE VST"}], "copayment": {"currency": "USD", "amount": "0"}}], "plan_description": "Open Choice", "deductibles": [{"service_types": ["health_benefit_plan_coverage"],
+      "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"}], "in_plan_network": "yes", "eligibility_date": "2013-01-01", "time_period": "calendar_year", "coverage_level":
+      "family", "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"service_types": ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "yes", "time_period": "remaining", "coverage_level": "family", "benefit_amount":
+      {"currency": "USD", "amount": "5956.09"}}, {"service_types": ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"}], "in_plan_network":
+      "yes", "eligibility_date": "2013-01-01", "time_period": "calendar_year", "coverage_level": "individual", "benefit_amount": {"currency": "USD", "amount": "3000"}}, {"service_types": ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND
+      RX"}], "in_plan_network": "yes", "time_period": "remaining", "coverage_level": "individual", "benefit_amount": {"currency": "USD", "amount": "2983.57"}}, {"service_types": ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN OFFICE
+      VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "no", "eligibility_date": "2013-01-01", "time_period": "calendar_year", "coverage_level": "family", "benefit_amount": {"currency": "USD", "amount": "12000"}},
+      {"service_types": ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "no", "time_period": "remaining", "coverage_level": "family", "benefit_amount": {"currency": "USD", "amount": "11956.09"}}, {"service_types":
+      ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "no", "eligibility_date": "2013-01-01", "time_period": "calendar_year",
+      "coverage_level": "individual", "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"service_types": ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "no", "time_period": "remaining", "coverage_level":
+      "individual", "benefit_amount": {"currency": "USD", "amount": "5983.57"}}], "plan_begin_date": "2013-02-15", "eligibility_begin_date": "2012-02-01", "active": true, "coinsurance": [{"benefit_percent": 0.0, "service_types": ["professional_physician_visit_office"],
+      "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE VS"}, {"message": "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC VISIT"}, {"message": "PRIMARY OFFICE"}, {"message": "PRIME CARE VST"}], "in_plan_network": "yes"},
+      {"benefit_percent": 0.5, "service_types": ["professional_physician_visit_office"], "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE VS,COINS APPLIES TO OUT OF POCKET"}, {"message": "GYN VISIT,COINS APPLIES TO OUT OF POCKET"},
+      {"message": "SPEC OFFICE,COINS APPLIES TO OUT OF POCKET"}, {"message": "SPEC VISIT,COINS APPLIES TO OUT OF POCKET"}, {"message": "PRIME CARE VST,COINS APPLIES TO OUT OF POCKET"}], "in_plan_network": "no"}], "group_description": "MOCK INDIVIDUAL ADVANTAGE
+      PLAN", "plan_number": "0888188", "service_date": "2013-08-10", "level": "employee_and_spouse"}, "valid_request": true}, "trading_partner_id": "MOCKPAYER", "id": "552d649f0640fd27428d3466", "transition_path": ["generate", "transmit", "wait", "receive",
+      "process", "complete"], "history": [{"record_dt": "2015-04-14T19:03:59.589000", "name": "init", "title": "Initializing"}, {"record_dt": "2015-04-14T19:03:59.589000", "name": "generating", "title": "Generating transactions"}, {"record_dt": "2015-04-14T19:03:59.589000",
+      "name": "transmitting", "title": "Transmitting transactions to Trading Partner"}, {"record_dt": "2015-04-14T19:03:59.589000", "name": "waiting", "title": "Waiting on Trading Partner Response"}, {"record_dt": "2015-04-14T19:03:59.589000", "name": "receiving",
+      "title": "Receiving transactions from Trading Partner"}, {"record_dt": "2015-04-14T19:03:59.589000", "name": "processing", "title": "Processing transactions"}]}]}'
