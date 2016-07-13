@@ -1,0 +1,206 @@
+!tape
+name: scheduling
+interactions:
+- recorded: 2015-04-14T21:15:35.888Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/oauth2/token
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic RVk5R3BPWFM0MkVVSUJRQ2QxRnQ6T1FjZGlaTmpPSG1TMkwybUFVWG03eHdYNWRRQmVKQms5bXd3Y1RhRg==
+      Content-Length: '29'
+      Content-Type: application/x-www-form-urlencoded
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+    body: grant_type=client_credentials
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-store
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 14 Apr 2015 21:02:55 GMT
+      Pragma: no-cache
+      Server: Werkzeug/0.9.4 Python/2.7.6
+      X-Betamax: !!org.codehaus.groovy.runtime.GStringImpl {}
+    body: '{"access_token": "oNTsVHfXjYRZ7ORtU0yzocXKYRBxCyzv2CWN4TUq", "token_type": "bearer", "expires": 1429048975, "expires_in": 3600}'
+- recorded: 2015-04-14T21:15:35.950Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/schedulers/
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer oNTsVHfXjYRZ7ORtU0yzocXKYRBxCyzv2CWN4TUq
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 404
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 14 Apr 2015 21:02:55 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+    body: "<!DOCTYPE html>\n<!--[if lte IE 8]>\n<html class=\"lt-ie9\" lang=\"en\" ng-app=\"app\" ng-controller=\"AppCtrl\"> <![endif]-->\n<!--[if IE 9]>\n<html class=\"ie9\" lang=\"en\" ng-app=\"app\" ng-controller=\"AppCtrl\"><!--<![endif]-->\n<html lang=\"\
+      en\" ng-app=\"app\" ng-controller=\"AppCtrl\">\n<head>\n    <meta charset=\"utf-8\">\n    <title>PokitDok Platform | X12 Medical Billing & Claims Processing API </title>\n    <meta name=\"description\"\n          content=\"A simple API for health data\
+      \ & X12. See cash prices for the healthcare\n          market, search our provider directory & communicate with payers with our clean JSON API.\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n    <meta name=\"viewport\" content=\"width=device-width,\
+      \ initial-scale=1\">\n    <link rel=\"apple-touch-icon-precomposed\" href=\"/static/pd-assets/images/icon-logo-152.png\">\n    <link rel=\"shortcut icon\" href=\"/static/pd-assets/images/favicon.ico\"/>\n    <link rel=\"icon\" sizes=\"16x16 32x32\" href=\"\
+      /static/pd-assets/images/favicon.ico\">\n    <meta name=\"msapplication-TileColor\" content=\"#FFFFFF\">\n    <meta name=\"msapplication-TileImage\" content=\"/static/pd-assets/images/icon-logo-152.png\">\n    \n    <link rel=\"stylesheet\" type=\"text/css\"\
+      \ href=\"/static/main.css?1429025415\"/>\n    \n</head>\n<body id=\"body\" ng-class=\"{'no-scroll':overlay.open}\" class=\"body-drawer \">\n\n<nav role=\"navigation\" class=\"main-nav\"  ng-class=\"{'drawer-out':isDrawerOut}\">\n        <div class=\"navbar-default\"\
+      \ nav-affix offset=\"80\" id=\"main-nav\">\n            <button type=\"button\" class=\"navbar-toggle navbar-toggle-static btn-hover pull-right\"\n                ng-click=\"isDrawerOut = !isDrawerOut\">\n                <span class=\"sr-only\">Toggle\
+      \ navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n\n            \n                <div class=\"navbar-header\"\
+      >\n                    <a href=\"/\" id=\"brand-nav\" class=\"navbar-brand\"\n                       title=\"PokitDok Platform Home\"><img src=\"/static/images/pdlogo_platform_470x100.png\"\n                                                           alt=\"\
+      PokitDok Platform\"/></a>\n                    <p id=\"build-version\" class=\"h5\"><small></small></p>\n\n                </div>\n                <div class=\"hidden-xs navbar-collapse collapse\" id=\"nav-platform-top\">\n                        <div\
+      \ class=\"menu-links\">\n                            \n                                    <a href=\"/signup\" class=\"btn btn-sm btn-warning\">Sign Up Free</a>\n                                    <a href=\"/login\" class=\"btn btn-sm btn-link\">Login</a>\n\
+      \                            </div>\n                </div>\n            \n        </div>\n        <div class=\"drawer\" ng-class=\"{'drawer-out':isDrawerOut}\">\n                <div class=\"nav\">\n                    <a href=\"/\" class=\"navbar-brand\"\
+      \ title=\"PokitDok Platform Home\"><img\n                        src=\"/static/images/pdlogo_platform_470x100.png\" alt=\"PokitDok Platform\"/></a>\n                    <ul data-id=\"drawer-user\">\n    \n    <li class=\"nav-item  visible-xs\"><a href=\"\
+      /signup\" class=\"btn btn-sm btn-warning\">Sign up Free</a>\n    </li>\n\n    <li class=\"nav-item  visible-xs\"><a href=\"#/login\">Login</a>\n    </li>\n\n</ul>\n<ul data-id=\"drawer-developer\">\n    <li class=\"nav-header\">Developers</li>\n    <li\
+      \ class=\"nav-item\"><a href=\"/\" >Introduction</a></li>\n    <li class=\"nav-item\"><a href=\"/pricing\">Startup API Pricing</a></li>\n    <li class=\"nav-item\"><a href=\"/seattle\">Price Index Demo</a></li>\n    <li class=\"nav-item\"><a href=\"/tradingpartners\"\
+      >Our Trading Partners</a></li>\n    <li class=\"nav-item\"><a href=\"/documentation/v4\">Documentation</a></li>\n    <li class=\"divider\"></li>\n</ul>\n\n<ul data-id=\"drawer-marketplace\">\n        <li class=\"nav-header\">Marketplace</li>\n        <li\
+      \ class=\"nav-item external-link\"><a href=\"http://www.pokitdok.com/marketplace\" target=\"_blank\">Consumers\n            <i class=\"pokit-icon pd-newtab\"></i></a></li>\n        <li class=\"nav-item external-link\"><a href=\"http://www.pokitdok.com/providers\"\
+      \ target=\"_blank\">Providers\n            <i class=\"pokit-icon pd-newtab\"></i></a></li>\n        <li class=\"divider\"></li>\n</ul>\n\n<ul data-id=\"drawer-other\">\n            <li class=\"external-link\" data-id=\"drawer-enterprise\"><a href=\"https://www.pokitdok.com/\"\
+      \n                     target=\"_blank\">Business Solutions\n                     <i class=\"pokit-icon pd-newtab\"></i></a></li>\n            <li class=\"external-link\" data-id=\"drawer-other\"><a href=\"http://blog.pokitdok.com\" target=\"_blank\">PokitBlog\n\
+      \                    <i class=\"pokit-icon pd-newtab\"></i></a></li>\n</ul>\n\n                </div>\n            </div>\n     </nav>\n\n<div class=\"site-wrapper\" ng-class=\"{'drawer-out':isDrawerOut}\">\n        \n        <div class=\"body container\
+      \ content\">\n            \n\n    <div class=\"container content\">\n\n        <h1 class=\"page-header\">Page Not Found</h1>\n\n        <p>We couldn't find the page you were looking for.</p>\n\n    </div>\n\n\n        </div>\n\n    <div id=\"footer\" class=\"\
+      footer container-fluid\">\n    <a class=\"link-jump go-up\" scroll-to=\"body\"><span class=\"arrow\"></span></a>\n\n    <div class=\"col-xs-4 footer-nav\">\n        <div class=\"footer-links\">\n            <ul>\n                <li><a href=\"https://pokitdok.com/blog\"\
+      \ target=\"_blank\">Blog</a></li>\n                <li><a href=\"http://www.pokitdok.com/about\" target=\"_blank\">About Us</a></li>\n                <li><a href=\"http://www.pokitdok.com/press\" target=\"_blank\">News Room</a></li>\n                <li><a\
+      \ href=\"http://www.pokitdok.com/career\" target=\"_blank\">Work With Us</a></li>\n                <li><a href=\"#/contact\">Contact Us</a></li>\n                <li><a href=\"http://www.pokitdok.com/faq#developers\" target=\"_blank\">FAQ</a></li>\n  \
+      \              <li><a href=\"http://www.pokitdok.com/directory\" target=\"_blank\">Directory</a></li>\n            </ul>\n            <ul class=\"mobile-links\">\n                <li><a href=\"https://pokitdok.com/marketplace\" target=\"_blank\">Consumers</a></li>\n\
+      \                <li><a href=\"https://pokitdok.com/providers\" target=\"_blank\">Providers</a></li>\n                <li><a href=\"https://www.pokitdok.com/\">Business Solutions</a></li>\n                <li><a href=\"/\">Developers</a></li>\n       \
+      \         <li><a href=\"https://play.google.com/store/apps/details?id=com.pokitdok.android\"\n                       target=\"_blank\">Android</a></li>\n                <li><a href=\"https://itunes.apple.com/us/app/pokitdok/id583529861?ls=1&mt=8\" target=\"\
+      _blank\">iPhone</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"col-xs-4 text-center\">\n        <ul class=\"footer-links list-inline social-links\">\n            <li><a href=\"https://www.facebook.com/pokitdok\"\
+      \ target=\"_blank\"\n                   class=\"pd-social pd-social-fb\" id=\"icon-fb\">\n            </a></li>\n            <li><a href=\"https://twitter.com/pokitdok\" target=\"_blank\"\n                   class=\"pd-social pd-social-tw\" id=\"icon-tw\"\
+      >\n            </a></li>\n            <li><a href=\"https://plus.google.com/116994365842912222314/posts\" target=\"_blank\"\n                   class=\"pd-social pd-social-gogl\" id=\"icon-gp\">\n            </a></li>\n            <li><a href=\"https://www.linkedin.com/company/pokitdok\"\
+      \ target=\"_blank\"\n                   class=\"pd-social pd-social-linkd\" id=\"icon-lk\">\n            </a></li>\n        </ul>\n    </div>\n    <div class=\"col-xs-4 text-right footer-copy\">\n        <div class=\"footer-links\">\n            <a href=\"\
+      https://pokitdok.com/privacy\" target=\"_blank\">Privacy policy</a>\n            |\n            <a href=\"/terms\">Terms of service</a>\n\n            <p>\n                <small>&copy;2014 PokitDok, Inc. All rights reserved.</small>\n            </p>\n\
+      \        </div>\n    </div>\n</div>\n</div>\n\n\n<div ui-view></div>\n<script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/d3/d3.min.js\"></script>\n<script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/jquery/dist/jquery.min.js\"\
+      ></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/lodash/dist/lodash.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular/angular.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-messages/angular-messages.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-animate/angular-animate.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-ui-router/release/angular-ui-router.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/highlightjs/highlight.pack.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-highlightjs/angular-highlightjs.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-ui-utils/ui-utils.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-bootstrap/ui-bootstrap.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/nvd3/nv.d3.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/js/ng.pokitdok.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/app.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/js/www/controllers.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/directives.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/filters.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/lib.js\"\
+      ></script><script type=\"text/javascript\" src=\"/static/js/www/services.js\"></script>\n<script type=\"text/javascript\" src=\"/static/www.templates.js?1429023161\"></script>\n\n<script>\n    angular.module('app').run(function (CFG) {\n        CFG.creditTiersDefault\
+      \ = JSON.parse('{}');\n        CFG.notifications = '';\n    });\n</script>\n\n<script>\n    (function (i, s, o, g, r, a, m) {\n        i['GoogleAnalyticsObject'] = r;\n        i[r] = i[r] || function () {\n            (i[r].q = i[r].q || []).push(arguments)\n\
+      \        }, i[r].l = 1 * new Date();\n        a = s.createElement(o),\n                m = s.getElementsByTagName(o)[0];\n        a.async = 1;\n        a.src = g;\n        m.parentNode.insertBefore(a, m);\n    })(window, document, 'script', '//www.google-analytics.com/analytics.js',\
+      \ 'ga');\n    ga('create', '', {'cookieDomain': ''});\n    ga('send', 'pageview');\n</script>\n\n</body>\n</html>"
+- recorded: 2015-04-14T21:15:37.097Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/appointment_types/
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer oNTsVHfXjYRZ7ORtU0yzocXKYRBxCyzv2CWN4TUq
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 404
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 14 Apr 2015 21:02:56 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+    body: "<!DOCTYPE html>\n<!--[if lte IE 8]>\n<html class=\"lt-ie9\" lang=\"en\" ng-app=\"app\" ng-controller=\"AppCtrl\"> <![endif]-->\n<!--[if IE 9]>\n<html class=\"ie9\" lang=\"en\" ng-app=\"app\" ng-controller=\"AppCtrl\"><!--<![endif]-->\n<html lang=\"\
+      en\" ng-app=\"app\" ng-controller=\"AppCtrl\">\n<head>\n    <meta charset=\"utf-8\">\n    <title>PokitDok Platform | X12 Medical Billing & Claims Processing API </title>\n    <meta name=\"description\"\n          content=\"A simple API for health data\
+      \ & X12. See cash prices for the healthcare\n          market, search our provider directory & communicate with payers with our clean JSON API.\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n    <meta name=\"viewport\" content=\"width=device-width,\
+      \ initial-scale=1\">\n    <link rel=\"apple-touch-icon-precomposed\" href=\"/static/pd-assets/images/icon-logo-152.png\">\n    <link rel=\"shortcut icon\" href=\"/static/pd-assets/images/favicon.ico\"/>\n    <link rel=\"icon\" sizes=\"16x16 32x32\" href=\"\
+      /static/pd-assets/images/favicon.ico\">\n    <meta name=\"msapplication-TileColor\" content=\"#FFFFFF\">\n    <meta name=\"msapplication-TileImage\" content=\"/static/pd-assets/images/icon-logo-152.png\">\n    \n    <link rel=\"stylesheet\" type=\"text/css\"\
+      \ href=\"/static/main.css?1429025415\"/>\n    \n</head>\n<body id=\"body\" ng-class=\"{'no-scroll':overlay.open}\" class=\"body-drawer \">\n\n<nav role=\"navigation\" class=\"main-nav\"  ng-class=\"{'drawer-out':isDrawerOut}\">\n        <div class=\"navbar-default\"\
+      \ nav-affix offset=\"80\" id=\"main-nav\">\n            <button type=\"button\" class=\"navbar-toggle navbar-toggle-static btn-hover pull-right\"\n                ng-click=\"isDrawerOut = !isDrawerOut\">\n                <span class=\"sr-only\">Toggle\
+      \ navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n\n            \n                <div class=\"navbar-header\"\
+      >\n                    <a href=\"/\" id=\"brand-nav\" class=\"navbar-brand\"\n                       title=\"PokitDok Platform Home\"><img src=\"/static/images/pdlogo_platform_470x100.png\"\n                                                           alt=\"\
+      PokitDok Platform\"/></a>\n                    <p id=\"build-version\" class=\"h5\"><small></small></p>\n\n                </div>\n                <div class=\"hidden-xs navbar-collapse collapse\" id=\"nav-platform-top\">\n                        <div\
+      \ class=\"menu-links\">\n                            \n                                    <a href=\"/signup\" class=\"btn btn-sm btn-warning\">Sign Up Free</a>\n                                    <a href=\"/login\" class=\"btn btn-sm btn-link\">Login</a>\n\
+      \                            </div>\n                </div>\n            \n        </div>\n        <div class=\"drawer\" ng-class=\"{'drawer-out':isDrawerOut}\">\n                <div class=\"nav\">\n                    <a href=\"/\" class=\"navbar-brand\"\
+      \ title=\"PokitDok Platform Home\"><img\n                        src=\"/static/images/pdlogo_platform_470x100.png\" alt=\"PokitDok Platform\"/></a>\n                    <ul data-id=\"drawer-user\">\n    \n    <li class=\"nav-item  visible-xs\"><a href=\"\
+      /signup\" class=\"btn btn-sm btn-warning\">Sign up Free</a>\n    </li>\n\n    <li class=\"nav-item  visible-xs\"><a href=\"#/login\">Login</a>\n    </li>\n\n</ul>\n<ul data-id=\"drawer-developer\">\n    <li class=\"nav-header\">Developers</li>\n    <li\
+      \ class=\"nav-item\"><a href=\"/\" >Introduction</a></li>\n    <li class=\"nav-item\"><a href=\"/pricing\">Startup API Pricing</a></li>\n    <li class=\"nav-item\"><a href=\"/seattle\">Price Index Demo</a></li>\n    <li class=\"nav-item\"><a href=\"/tradingpartners\"\
+      >Our Trading Partners</a></li>\n    <li class=\"nav-item\"><a href=\"/documentation/v4\">Documentation</a></li>\n    <li class=\"divider\"></li>\n</ul>\n\n<ul data-id=\"drawer-marketplace\">\n        <li class=\"nav-header\">Marketplace</li>\n        <li\
+      \ class=\"nav-item external-link\"><a href=\"http://www.pokitdok.com/marketplace\" target=\"_blank\">Consumers\n            <i class=\"pokit-icon pd-newtab\"></i></a></li>\n        <li class=\"nav-item external-link\"><a href=\"http://www.pokitdok.com/providers\"\
+      \ target=\"_blank\">Providers\n            <i class=\"pokit-icon pd-newtab\"></i></a></li>\n        <li class=\"divider\"></li>\n</ul>\n\n<ul data-id=\"drawer-other\">\n            <li class=\"external-link\" data-id=\"drawer-enterprise\"><a href=\"https://www.pokitdok.com/\"\
+      \n                     target=\"_blank\">Business Solutions\n                     <i class=\"pokit-icon pd-newtab\"></i></a></li>\n            <li class=\"external-link\" data-id=\"drawer-other\"><a href=\"http://blog.pokitdok.com\" target=\"_blank\">PokitBlog\n\
+      \                    <i class=\"pokit-icon pd-newtab\"></i></a></li>\n</ul>\n\n                </div>\n            </div>\n     </nav>\n\n<div class=\"site-wrapper\" ng-class=\"{'drawer-out':isDrawerOut}\">\n        \n        <div class=\"body container\
+      \ content\">\n            \n\n    <div class=\"container content\">\n\n        <h1 class=\"page-header\">Page Not Found</h1>\n\n        <p>We couldn't find the page you were looking for.</p>\n\n    </div>\n\n\n        </div>\n\n    <div id=\"footer\" class=\"\
+      footer container-fluid\">\n    <a class=\"link-jump go-up\" scroll-to=\"body\"><span class=\"arrow\"></span></a>\n\n    <div class=\"col-xs-4 footer-nav\">\n        <div class=\"footer-links\">\n            <ul>\n                <li><a href=\"https://pokitdok.com/blog\"\
+      \ target=\"_blank\">Blog</a></li>\n                <li><a href=\"http://www.pokitdok.com/about\" target=\"_blank\">About Us</a></li>\n                <li><a href=\"http://www.pokitdok.com/press\" target=\"_blank\">News Room</a></li>\n                <li><a\
+      \ href=\"http://www.pokitdok.com/career\" target=\"_blank\">Work With Us</a></li>\n                <li><a href=\"#/contact\">Contact Us</a></li>\n                <li><a href=\"http://www.pokitdok.com/faq#developers\" target=\"_blank\">FAQ</a></li>\n  \
+      \              <li><a href=\"http://www.pokitdok.com/directory\" target=\"_blank\">Directory</a></li>\n            </ul>\n            <ul class=\"mobile-links\">\n                <li><a href=\"https://pokitdok.com/marketplace\" target=\"_blank\">Consumers</a></li>\n\
+      \                <li><a href=\"https://pokitdok.com/providers\" target=\"_blank\">Providers</a></li>\n                <li><a href=\"https://www.pokitdok.com/\">Business Solutions</a></li>\n                <li><a href=\"/\">Developers</a></li>\n       \
+      \         <li><a href=\"https://play.google.com/store/apps/details?id=com.pokitdok.android\"\n                       target=\"_blank\">Android</a></li>\n                <li><a href=\"https://itunes.apple.com/us/app/pokitdok/id583529861?ls=1&mt=8\" target=\"\
+      _blank\">iPhone</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"col-xs-4 text-center\">\n        <ul class=\"footer-links list-inline social-links\">\n            <li><a href=\"https://www.facebook.com/pokitdok\"\
+      \ target=\"_blank\"\n                   class=\"pd-social pd-social-fb\" id=\"icon-fb\">\n            </a></li>\n            <li><a href=\"https://twitter.com/pokitdok\" target=\"_blank\"\n                   class=\"pd-social pd-social-tw\" id=\"icon-tw\"\
+      >\n            </a></li>\n            <li><a href=\"https://plus.google.com/116994365842912222314/posts\" target=\"_blank\"\n                   class=\"pd-social pd-social-gogl\" id=\"icon-gp\">\n            </a></li>\n            <li><a href=\"https://www.linkedin.com/company/pokitdok\"\
+      \ target=\"_blank\"\n                   class=\"pd-social pd-social-linkd\" id=\"icon-lk\">\n            </a></li>\n        </ul>\n    </div>\n    <div class=\"col-xs-4 text-right footer-copy\">\n        <div class=\"footer-links\">\n            <a href=\"\
+      https://pokitdok.com/privacy\" target=\"_blank\">Privacy policy</a>\n            |\n            <a href=\"/terms\">Terms of service</a>\n\n            <p>\n                <small>&copy;2014 PokitDok, Inc. All rights reserved.</small>\n            </p>\n\
+      \        </div>\n    </div>\n</div>\n</div>\n\n\n<div ui-view></div>\n<script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/d3/d3.min.js\"></script>\n<script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/jquery/dist/jquery.min.js\"\
+      ></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/lodash/dist/lodash.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular/angular.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-messages/angular-messages.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-animate/angular-animate.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-ui-router/release/angular-ui-router.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/highlightjs/highlight.pack.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-highlightjs/angular-highlightjs.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-ui-utils/ui-utils.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-bootstrap/ui-bootstrap.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/nvd3/nv.d3.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/js/ng.pokitdok.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/app.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/js/www/controllers.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/directives.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/filters.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/lib.js\"\
+      ></script><script type=\"text/javascript\" src=\"/static/js/www/services.js\"></script>\n<script type=\"text/javascript\" src=\"/static/www.templates.js?1429023161\"></script>\n\n<script>\n    angular.module('app').run(function (CFG) {\n        CFG.creditTiersDefault\
+      \ = JSON.parse('{}');\n        CFG.notifications = '';\n    });\n</script>\n\n<script>\n    (function (i, s, o, g, r, a, m) {\n        i['GoogleAnalyticsObject'] = r;\n        i[r] = i[r] || function () {\n            (i[r].q = i[r].q || []).push(arguments)\n\
+      \        }, i[r].l = 1 * new Date();\n        a = s.createElement(o),\n                m = s.getElementsByTagName(o)[0];\n        a.async = 1;\n        a.src = g;\n        m.parentNode.insertBefore(a, m);\n    })(window, document, 'script', '//www.google-analytics.com/analytics.js',\
+      \ 'ga');\n    ga('create', '', {'cookieDomain': ''});\n    ga('send', 'pageview');\n</script>\n\n</body>\n</html>"
+- recorded: 2015-04-14T21:15:38.454Z
+  request:
+    method: DELETE
+    uri: http://me.pokitdok.com:5002/api/v4/appointments/
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer oNTsVHfXjYRZ7ORtU0yzocXKYRBxCyzv2CWN4TUq
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 404
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 14 Apr 2015 21:02:57 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+    body: "<!DOCTYPE html>\n<!--[if lte IE 8]>\n<html class=\"lt-ie9\" lang=\"en\" ng-app=\"app\" ng-controller=\"AppCtrl\"> <![endif]-->\n<!--[if IE 9]>\n<html class=\"ie9\" lang=\"en\" ng-app=\"app\" ng-controller=\"AppCtrl\"><!--<![endif]-->\n<html lang=\"\
+      en\" ng-app=\"app\" ng-controller=\"AppCtrl\">\n<head>\n    <meta charset=\"utf-8\">\n    <title>PokitDok Platform | X12 Medical Billing & Claims Processing API </title>\n    <meta name=\"description\"\n          content=\"A simple API for health data\
+      \ & X12. See cash prices for the healthcare\n          market, search our provider directory & communicate with payers with our clean JSON API.\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n    <meta name=\"viewport\" content=\"width=device-width,\
+      \ initial-scale=1\">\n    <link rel=\"apple-touch-icon-precomposed\" href=\"/static/pd-assets/images/icon-logo-152.png\">\n    <link rel=\"shortcut icon\" href=\"/static/pd-assets/images/favicon.ico\"/>\n    <link rel=\"icon\" sizes=\"16x16 32x32\" href=\"\
+      /static/pd-assets/images/favicon.ico\">\n    <meta name=\"msapplication-TileColor\" content=\"#FFFFFF\">\n    <meta name=\"msapplication-TileImage\" content=\"/static/pd-assets/images/icon-logo-152.png\">\n    \n    <link rel=\"stylesheet\" type=\"text/css\"\
+      \ href=\"/static/main.css?1429025415\"/>\n    \n</head>\n<body id=\"body\" ng-class=\"{'no-scroll':overlay.open}\" class=\"body-drawer \">\n\n<nav role=\"navigation\" class=\"main-nav\"  ng-class=\"{'drawer-out':isDrawerOut}\">\n        <div class=\"navbar-default\"\
+      \ nav-affix offset=\"80\" id=\"main-nav\">\n            <button type=\"button\" class=\"navbar-toggle navbar-toggle-static btn-hover pull-right\"\n                ng-click=\"isDrawerOut = !isDrawerOut\">\n                <span class=\"sr-only\">Toggle\
+      \ navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n\n            \n                <div class=\"navbar-header\"\
+      >\n                    <a href=\"/\" id=\"brand-nav\" class=\"navbar-brand\"\n                       title=\"PokitDok Platform Home\"><img src=\"/static/images/pdlogo_platform_470x100.png\"\n                                                           alt=\"\
+      PokitDok Platform\"/></a>\n                    <p id=\"build-version\" class=\"h5\"><small></small></p>\n\n                </div>\n                <div class=\"hidden-xs navbar-collapse collapse\" id=\"nav-platform-top\">\n                        <div\
+      \ class=\"menu-links\">\n                            \n                                    <a href=\"/signup\" class=\"btn btn-sm btn-warning\">Sign Up Free</a>\n                                    <a href=\"/login\" class=\"btn btn-sm btn-link\">Login</a>\n\
+      \                            </div>\n                </div>\n            \n        </div>\n        <div class=\"drawer\" ng-class=\"{'drawer-out':isDrawerOut}\">\n                <div class=\"nav\">\n                    <a href=\"/\" class=\"navbar-brand\"\
+      \ title=\"PokitDok Platform Home\"><img\n                        src=\"/static/images/pdlogo_platform_470x100.png\" alt=\"PokitDok Platform\"/></a>\n                    <ul data-id=\"drawer-user\">\n    \n    <li class=\"nav-item  visible-xs\"><a href=\"\
+      /signup\" class=\"btn btn-sm btn-warning\">Sign up Free</a>\n    </li>\n\n    <li class=\"nav-item  visible-xs\"><a href=\"#/login\">Login</a>\n    </li>\n\n</ul>\n<ul data-id=\"drawer-developer\">\n    <li class=\"nav-header\">Developers</li>\n    <li\
+      \ class=\"nav-item\"><a href=\"/\" >Introduction</a></li>\n    <li class=\"nav-item\"><a href=\"/pricing\">Startup API Pricing</a></li>\n    <li class=\"nav-item\"><a href=\"/seattle\">Price Index Demo</a></li>\n    <li class=\"nav-item\"><a href=\"/tradingpartners\"\
+      >Our Trading Partners</a></li>\n    <li class=\"nav-item\"><a href=\"/documentation/v4\">Documentation</a></li>\n    <li class=\"divider\"></li>\n</ul>\n\n<ul data-id=\"drawer-marketplace\">\n        <li class=\"nav-header\">Marketplace</li>\n        <li\
+      \ class=\"nav-item external-link\"><a href=\"http://www.pokitdok.com/marketplace\" target=\"_blank\">Consumers\n            <i class=\"pokit-icon pd-newtab\"></i></a></li>\n        <li class=\"nav-item external-link\"><a href=\"http://www.pokitdok.com/providers\"\
+      \ target=\"_blank\">Providers\n            <i class=\"pokit-icon pd-newtab\"></i></a></li>\n        <li class=\"divider\"></li>\n</ul>\n\n<ul data-id=\"drawer-other\">\n            <li class=\"external-link\" data-id=\"drawer-enterprise\"><a href=\"https://www.pokitdok.com/\"\
+      \n                     target=\"_blank\">Business Solutions\n                     <i class=\"pokit-icon pd-newtab\"></i></a></li>\n            <li class=\"external-link\" data-id=\"drawer-other\"><a href=\"http://blog.pokitdok.com\" target=\"_blank\">PokitBlog\n\
+      \                    <i class=\"pokit-icon pd-newtab\"></i></a></li>\n</ul>\n\n                </div>\n            </div>\n     </nav>\n\n<div class=\"site-wrapper\" ng-class=\"{'drawer-out':isDrawerOut}\">\n        \n        <div class=\"body container\
+      \ content\">\n            \n\n    <div class=\"container content\">\n\n        <h1 class=\"page-header\">Page Not Found</h1>\n\n        <p>We couldn't find the page you were looking for.</p>\n\n    </div>\n\n\n        </div>\n\n    <div id=\"footer\" class=\"\
+      footer container-fluid\">\n    <a class=\"link-jump go-up\" scroll-to=\"body\"><span class=\"arrow\"></span></a>\n\n    <div class=\"col-xs-4 footer-nav\">\n        <div class=\"footer-links\">\n            <ul>\n                <li><a href=\"https://pokitdok.com/blog\"\
+      \ target=\"_blank\">Blog</a></li>\n                <li><a href=\"http://www.pokitdok.com/about\" target=\"_blank\">About Us</a></li>\n                <li><a href=\"http://www.pokitdok.com/press\" target=\"_blank\">News Room</a></li>\n                <li><a\
+      \ href=\"http://www.pokitdok.com/career\" target=\"_blank\">Work With Us</a></li>\n                <li><a href=\"#/contact\">Contact Us</a></li>\n                <li><a href=\"http://www.pokitdok.com/faq#developers\" target=\"_blank\">FAQ</a></li>\n  \
+      \              <li><a href=\"http://www.pokitdok.com/directory\" target=\"_blank\">Directory</a></li>\n            </ul>\n            <ul class=\"mobile-links\">\n                <li><a href=\"https://pokitdok.com/marketplace\" target=\"_blank\">Consumers</a></li>\n\
+      \                <li><a href=\"https://pokitdok.com/providers\" target=\"_blank\">Providers</a></li>\n                <li><a href=\"https://www.pokitdok.com/\">Business Solutions</a></li>\n                <li><a href=\"/\">Developers</a></li>\n       \
+      \         <li><a href=\"https://play.google.com/store/apps/details?id=com.pokitdok.android\"\n                       target=\"_blank\">Android</a></li>\n                <li><a href=\"https://itunes.apple.com/us/app/pokitdok/id583529861?ls=1&mt=8\" target=\"\
+      _blank\">iPhone</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"col-xs-4 text-center\">\n        <ul class=\"footer-links list-inline social-links\">\n            <li><a href=\"https://www.facebook.com/pokitdok\"\
+      \ target=\"_blank\"\n                   class=\"pd-social pd-social-fb\" id=\"icon-fb\">\n            </a></li>\n            <li><a href=\"https://twitter.com/pokitdok\" target=\"_blank\"\n                   class=\"pd-social pd-social-tw\" id=\"icon-tw\"\
+      >\n            </a></li>\n            <li><a href=\"https://plus.google.com/116994365842912222314/posts\" target=\"_blank\"\n                   class=\"pd-social pd-social-gogl\" id=\"icon-gp\">\n            </a></li>\n            <li><a href=\"https://www.linkedin.com/company/pokitdok\"\
+      \ target=\"_blank\"\n                   class=\"pd-social pd-social-linkd\" id=\"icon-lk\">\n            </a></li>\n        </ul>\n    </div>\n    <div class=\"col-xs-4 text-right footer-copy\">\n        <div class=\"footer-links\">\n            <a href=\"\
+      https://pokitdok.com/privacy\" target=\"_blank\">Privacy policy</a>\n            |\n            <a href=\"/terms\">Terms of service</a>\n\n            <p>\n                <small>&copy;2014 PokitDok, Inc. All rights reserved.</small>\n            </p>\n\
+      \        </div>\n    </div>\n</div>\n</div>\n\n\n<div ui-view></div>\n<script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/d3/d3.min.js\"></script>\n<script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/jquery/dist/jquery.min.js\"\
+      ></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/lodash/dist/lodash.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular/angular.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-messages/angular-messages.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-animate/angular-animate.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-ui-router/release/angular-ui-router.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/highlightjs/highlight.pack.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-highlightjs/angular-highlightjs.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-ui-utils/ui-utils.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/angular-bootstrap/ui-bootstrap.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/pd-assets/bower_components/nvd3/nv.d3.min.js\"></script><script type=\"text/javascript\" src=\"/static/pd-assets/js/ng.pokitdok.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/app.js\"></script><script type=\"text/javascript\"\
+      \ src=\"/static/js/www/controllers.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/directives.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/filters.js\"></script><script type=\"text/javascript\" src=\"/static/js/www/lib.js\"\
+      ></script><script type=\"text/javascript\" src=\"/static/js/www/services.js\"></script>\n<script type=\"text/javascript\" src=\"/static/www.templates.js?1429023161\"></script>\n\n<script>\n    angular.module('app').run(function (CFG) {\n        CFG.creditTiersDefault\
+      \ = JSON.parse('{}');\n        CFG.notifications = '';\n    });\n</script>\n\n<script>\n    (function (i, s, o, g, r, a, m) {\n        i['GoogleAnalyticsObject'] = r;\n        i[r] = i[r] || function () {\n            (i[r].q = i[r].q || []).push(arguments)\n\
+      \        }, i[r].l = 1 * new Date();\n        a = s.createElement(o),\n                m = s.getElementsByTagName(o)[0];\n        a.async = 1;\n        a.src = g;\n        m.parentNode.insertBefore(a, m);\n    })(window, document, 'script', '//www.google-analytics.com/analytics.js',\
+      \ 'ga');\n    ga('create', '', {'cookieDomain': ''});\n    ga('send', 'pageview');\n</script>\n\n</body>\n</html>"

@@ -67,8 +67,6 @@ com_crashlytics_export_strings.xml
 .gradle
 build/libs/*.asc
 build/tmp
-build/resources/
-build/test-results/
 build/libs/
 
 # Ignore Gradle GUI config

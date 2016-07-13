@@ -1,0 +1,44 @@
+!tape
+name: pharmacy/plans
+interactions:
+- recorded: 2015-04-14T19:04:03.877Z
+  request:
+    method: POST
+    uri: http://me.pokitdok.com:5002/oauth2/token
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic RVk5R3BPWFM0MkVVSUJRQ2QxRnQ6T1FjZGlaTmpPSG1TMkwybUFVWG03eHdYNWRRQmVKQms5bXd3Y1RhRg==
+      Content-Length: '29'
+      Content-Type: application/x-www-form-urlencoded
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+    body: grant_type=client_credentials
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-store
+      Content-Type: application/json;charset=UTF-8
+      Date: Tue, 14 Apr 2015 19:04:04 GMT
+      Pragma: no-cache
+      Server: Werkzeug/0.9.4 Python/2.7.6
+    body: '{"access_token": "RiHNHDpZXexvZcoNJNAaX8b8ybyhMxagAeynhOGB", "token_type": "bearer", "expires": 1429041844, "expires_in": 3600}'
+- recorded: 2015-04-14T19:04:03.913Z
+  request:
+    method: GET
+    uri: http://me.pokitdok.com:5002/api/v4/pharmacy/plans?trading_partner_id=medicare_national&plan_number=:5601034
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer RiHNHDpZXexvZcoNJNAaX8b8ybyhMxagAeynhOGB
+      Host: me.pokitdok.com:5002
+      Proxy-Connection: Keep-Alive
+      User-Agent: pokitdok-java 0.7 jvm version 1.7.0_45
+  response:
+    status: 200
+    headers:
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 14 Apr 2015 19:04:04 GMT
+      Server: Werkzeug/0.9.4 Python/2.7.6
+      charset: utf-8
+      mimetype: application/json
+    body: '{"meta": {"activity_id": "572cb883a308b605c3829ec4", "application_mode": "production", "processing_time": 38, "credits_billed": 1, "rate_limit_amount": 7, "rate_limit_reset": 1462551818, "rate_limit_cap": 5000, "credits_remaining": 884}, "data": {"deductible": {"currency": "USD", "amount": "0.00"}, "premium": {"currency": "USD", "amount": "20.50"}, "plan_name": "SilverScript Choice (PDP)", "trading_partner_id": "medicare_national", "initial_coverage_limit": {"currency": "USD", "amount": "3310.00"}, "mail": {"tier_two_90_day_copay": {"currency": "USD", "amount": "40.00"}, "tier_one_90_day_copay": {"currency": "USD", "amount": "7.50"}, "tier_three_90_day_copay": {"currency": "USD", "amount": "115.00"}}, "retail": {"tier_two_30_day_copay": {"currency": "USD", "amount": "16.00"}, "tier_one_30_day_copay": {"currency": "USD", "amount": "3.00"}, "tier_three_30_day_copay": {"currency": "USD", "amount": "46.00"}}, "plan_number": "S5601034"}}'
