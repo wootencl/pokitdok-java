@@ -15,17 +15,6 @@ repositories {
 	jcenter()
 }
 
-sourceSets {
-    integrationTest {
-        java {
-            compileClasspath += main.output + test.output
-            runtimeClasspath += main.output + test.output
-            srcDir file('src/test/java')
-        }
-        resources.srcDir file('src/test/resources')
-    }
-}
-
 configurations {
     compile {
         transitive = true
@@ -39,14 +28,6 @@ configurations {
     	extendsFrom compile
     	transitive = true
     }
-
-	integrationTestCompile {
-		extendsFrom testCompile
-	}
-
-	integrationTestRuntime {
-		extendsFrom testRuntime
-	}
 }
 
 dependencies {
@@ -60,18 +41,6 @@ test {
 	useJUnit {
 		includeCategories 'com.pokitdok.tests.categories.UnitTests'
 	}
-}
-
-task integrationTest(type: Test) {
-    testClassesDir = sourceSets.integrationTest.output.classesDir
-    classpath = sourceSets.integrationTest.runtimeClasspath
-}
-
-integrationTest {
-	useJUnit {
-		includeCategories "com.pokitdok.tests.categories.IntegrationTests"
-	}
-	reports.html.destination = file("${reporting.baseDir}/${name}")
 }
 
 if (hasProperty("sonatypeUsername") && hasProperty("sonatypePassword")) {
