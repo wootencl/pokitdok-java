@@ -67,6 +67,14 @@ com_crashlytics_export_strings.xml
 .gradle
 build/libs/*.asc
 build/tmp
+build/resources/
+build/test-results/
+build/libs/
+
+### Maven ###
+target/
+pom.xml
+src/main/java/com/pokitdok/examples/
 
 # Ignore Gradle GUI config
 gradle-app.setting
