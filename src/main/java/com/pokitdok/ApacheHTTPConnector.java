@@ -24,34 +24,51 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class ApacheHTTPConnector implements PokitDokHTTPConnector {
-    private HttpClientBuilder     builder;
-    private JSONParser            parser;
-    private boolean               failedOnceAlready;
-    private final String          apiBase;
-    private Map<String, String>   defaultHeaders;
-    private String                clientId;
-    private String                clientSecret;
-    private Map<String, String>   scopeTokens;
+    private HttpClientBuilder       builder;
+    private JSONParser              parser;
+    private boolean                 failedOnceAlready;
+    private final String            apiBase;
+    private Map<String, String>     defaultHeaders;
+    private String                  clientId;
+    private String                  clientSecret;
+    private OAuthAccessToken        accessToken;
+    private String                  authCode;
+
 
     public ApacheHTTPConnector(String clientId, String clientSecret, Map<String, String> defaultHeaders, String apiBase) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.defaultHeaders = defaultHeaders;
         this.apiBase = apiBase;
-        this.scopeTokens = new HashMap<String, String>();
+        this.accessToken = new OAuthAccessToken();
     }
 
-    public void connect(String scopeName) throws IOException, ParseException {
-        scopeTokens = new HashMap<String, String>();
+    public void authenticate() {
+        try {
+            if (this.authCode != null) {
+                //auth code grant type
+            } else {
+                AuthenticateClientCredentials();
+            }
+        } catch (Exception exc) {
+            if (exc instanceof IOException) {
+                System.err.println("IOException: " + exc.getMessage());
+            } else if (exc instanceof ParseException) {
+                System.err.println("ParseException: " + exc.getMessage());
+            }
+        }
 
+    }
+
+    public void AuthenticateClientCredentials() throws IOException, ParseException {
         parser = new JSONParser();
-        failedOnceAlready = false;
         builder = HttpClientBuilder.create();
         builder.useSystemProperties();
 
@@ -73,20 +90,16 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
             Map<String, Object> parsedResponse = (JSONObject) parser.parse(
                 EntityUtils.toString(response.getEntity()));
 
-            scopeTokens.put(scopeName, (String) parsedResponse.get("access_token"));
+            accessToken.access_token = (String) parsedResponse.get("access_token");
         }
         finally {
             if (client != null) client.close();
         }
     }
 
-    public void connect() throws IOException, ParseException {
-        connect(PokitDok.DEFAULT_SCOPE);
-    }
-
     private String execute(HttpRequestBase request, String scopeName, Map<String, String> headers)
     throws IOException, ParseException, UnauthorizedException {
-        String accessToken = getAccessTokenForScope(scopeName);
+        String accessToken = this.accessToken.access_token;
         request.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken);
         setDefaultHeaders(request);
         CloseableHttpClient client = builder.build();
@@ -94,17 +107,6 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
 
         String res = EntityUtils.toString(response.getEntity());
         Map<String, Object> parsedResponse = (JSONObject) parser.parse(res);
-
-        /* Check for, and recover from, potential token timeout */
-        if (isUnauthorized(parsedResponse, failedOnceAlready)) {
-            failedOnceAlready = true;
-
-            connect();
-            res = execute(request, scopeName, headers);
-
-            /* If we fall through, all is okay. */
-            failedOnceAlready = false;
-        }
 
         return res;
     }
@@ -187,16 +189,28 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
       return unauthorized;
     }
 
-    private String getAccessTokenForScope(String scopeName) throws IOException, ParseException {
-      if (!scopeTokens.containsKey(scopeName)) {
-        connect(scopeName);
-      }
-
-      return scopeTokens.get(scopeName);
-    }
     private void setDefaultHeaders(HttpRequestBase request) {
         for (Map.Entry<String, String> entry: defaultHeaders.entrySet()) {
             request.setHeader(entry.getKey(), entry.getValue());
         }
+    }
+
+    // Inner Classes/Objects
+    private class OAuthAccessToken {
+        public String access_token;
+        public String refresh_token;
+        public String token_type;
+        public int expires;
+        public int expires_in;
+
+
+        public OAuthAccessToken() {
+            this.access_token = "";
+            this.refresh_token = "";
+            this.token_type = "Bearer";
+            this.expires = 0;
+            this.expires_in = 3600;
+        }
+
     }
 }
