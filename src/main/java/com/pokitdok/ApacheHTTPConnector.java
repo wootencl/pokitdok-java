@@ -33,6 +33,7 @@ import org.json.simple.parser.ParseException;
 public class ApacheHTTPConnector implements PokitDokHTTPConnector {
     private HttpClientBuilder       builder;
     private JSONParser              parser;
+    private Gson                    gson;
     private boolean                 failedOnceAlready;
     private final String            apiBase;
     private Map<String, String>     defaultHeaders;
@@ -69,6 +70,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
 
     public void AuthenticateClientCredentials() throws IOException, ParseException {
         parser = new JSONParser();
+        gson = new Gson();
         builder = HttpClientBuilder.create();
         builder.useSystemProperties();
 
@@ -87,10 +89,7 @@ public class ApacheHTTPConnector implements PokitDokHTTPConnector {
         CloseableHttpClient client = builder.build();
         try {
             HttpResponse response = client.execute(request);
-            Map<String, Object> parsedResponse = (JSONObject) parser.parse(
-                EntityUtils.toString(response.getEntity()));
-
-            accessToken.access_token = (String) parsedResponse.get("access_token");
+            accessToken = gson.fromJson(EntityUtils.toString(response.getEntity()), OAuthAccessToken.class);
         }
         finally {
             if (client != null) client.close();
